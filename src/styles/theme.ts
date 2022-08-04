@@ -50,3 +50,9 @@ const theme = extendTheme({
 });
 
 export default theme;
+
+export const darkColorBg = 'blue.900';
+export const darkColorText = 'gray.50';
+
+export const lightColorBg = 'purple.100';
+export const lightColorText = 'gray.600';

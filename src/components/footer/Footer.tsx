@@ -1,6 +1,12 @@
 import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text, useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import {
+  darkColorBg,
+  darkColorText,
+  lightColorBg,
+  lightColorText,
+} from 'styles/theme';
 
 const StickyFooter = styled(Flex)`
   z-index: 10;
@@ -9,6 +15,10 @@ const StickyFooter = styled(Flex)`
 `;
 
 export default function Footer() {
+  // Colors for light and dark mode
+  const bg = useColorModeValue(lightColorBg, darkColorBg);
+  const color = useColorModeValue(lightColorText, darkColorText);
+
   return (
     <StickyFooter>
       <Flex
@@ -17,11 +27,11 @@ export default function Footer() {
         justifyContent="center"
         alignContent="center"
         textAlign="center"
-        backgroundColor="cyan.600"
-        color="white"
+        backgroundColor={bg}
+        color={color}
         flexDirection="column"
       >
-        <Text>Adam Drake &#169; {new Date().getFullYear()}</Text>
+        <Text>Adam Drakes Site &#169; {new Date().getFullYear()}</Text>
       </Flex>
     </StickyFooter>
   );

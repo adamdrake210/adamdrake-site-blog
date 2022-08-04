@@ -16,6 +16,12 @@ import {
 } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import {
+  darkColorBg,
+  darkColorText,
+  lightColorBg,
+  lightColorText,
+} from 'styles/theme';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -30,8 +36,8 @@ const Navigation: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   // Colors for light and dark mode
-  const bg = useColorModeValue('purple.100', 'blue.900');
-  const color = useColorModeValue('gray.700', 'gray.50');
+  const bg = useColorModeValue(lightColorBg, darkColorBg);
+  const color = useColorModeValue(lightColorText, darkColorText);
 
   function DrawerNav() {
     const btnRef = React.useRef();
