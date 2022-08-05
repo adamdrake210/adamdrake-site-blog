@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
 import Navigation from 'components/navigation/Navigation';
 import Footer from 'components/footer/Footer';
-import { darkColorText, lightColorBg, lightColorText } from 'styles/theme';
+import { darkColorText, lightColorText } from 'styles/theme';
 
 type Props = {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ const PageContainer = ({ children, maxWidth }: Props) => {
   return (
     <>
       <Navigation />
-      <Flex minH="100%" grow={1} as="main">
+      <Flex minH="100%" grow={1} as="main" pb={12}>
         <Box w="100%" m="0 auto" maxW={maxWidth} bg={bg} color={color}>
           {children}
         </Box>

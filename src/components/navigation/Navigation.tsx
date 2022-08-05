@@ -12,16 +12,10 @@ import {
   DrawerCloseButton,
   useDisclosure,
   useColorMode,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import {
-  darkColorBg,
-  darkColorText,
-  lightColorBg,
-  lightColorText,
-} from 'styles/theme';
+import { useThemeColors } from 'hooks/useThemeColors';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -36,8 +30,7 @@ const Navigation: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   // Colors for light and dark mode
-  const bg = useColorModeValue(lightColorBg, darkColorBg);
-  const color = useColorModeValue(lightColorText, darkColorText);
+  const { bgColor, color } = useThemeColors();
 
   function DrawerNav() {
     const btnRef = React.useRef();
@@ -56,7 +49,7 @@ const Navigation: React.FC = () => {
             <DrawerCloseButton />
             <DrawerHeader
               borderBottomWidth="1px"
-              backgroundColor={bg}
+              backgroundColor={bgColor}
               color={color}
               fontWeight={600}
               fontFamily="Eczar"
@@ -77,7 +70,7 @@ const Navigation: React.FC = () => {
                     variant="link"
                     fontSize={18}
                     py={[3]}
-                    color={bg}
+                    color={bgColor}
                     fontWeight={600}
                   >
                     Articles
@@ -106,7 +99,7 @@ const Navigation: React.FC = () => {
   return (
     <StickyNav
       width="100%"
-      bg={bg}
+      bg={bgColor}
       as="nav"
       p={[2]}
       fontFamily="Raleway"

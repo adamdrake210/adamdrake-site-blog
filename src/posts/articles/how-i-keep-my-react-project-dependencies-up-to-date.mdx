@@ -1,0 +1,115 @@
+---
+title: 'How I keep my React project dependencies up to date.'
+description:
+  'Starting a new project is always exciting but when it comes to maintaining
+  projects and their package dependencies you often find your enthusiasm
+  dwindling. Over the years though I have evolved a process which works for me
+  and enables me to keep my npm packages up to date on my active projects.'
+intro: ''
+slug: 'how-i-keep-my-react-project-dependencies-up-to-date'
+imageUniqueIdentifier: 'og0xac'
+tags: 'reactjs, typescript, npm, nodejs, dependencies'
+publishedDate: '06-08-2022'
+published: true
+layout: 'article'
+writtenBy: 'Adam Drake'
+---
+
+<p style={{ fontSize: '20px' }}>
+  Starting a new project is always exciting but when it comes to maintaining
+  projects and their package dependencies you often find your enthusiasm
+  dwindling. Over the years though I have evolved a process which works for me
+  and enables me to keep my npm packages up to date on my active projects.
+</p>
+
+> "Unfortunately there isn’t anything sexy or glamorous about maintaining > your
+> repos packages."
+
+## Consistency
+
+Unfortunately there isn’t anything sexy or glamorous about maintaining your
+repos packages. It requires a long term approach and being able to maintain a
+consistent low level of effort over that period.
+
+## Reminders
+
+For this I use calendar reminders (Google or Microsoft Outlook calendar work
+just fine) and I set up a recurring calendar invite for 30mins every 2 weeks.
+Therefore I don’t have to remember to update my repo, I just treat it like any
+other recurring meeting.
+
+## Checking Package Versions
+
+For this I use an npm library called
+[npm-check-updates](https://www.npmjs.com/package/npm-check-updates). I have it
+installed globally on my machine and it’s very simple to use. I navigate to the
+repo of choice and run the command:
+
+```
+ncu
+```
+
+Simple right!? This then checks all the dependencies in your package.json and
+shows the versions you have installed and which ones have updates available.
+Something like this:
+
+<Image960x660
+  src="building-your-trigger_liy57s"
+  altText="Presenter to audience"
+  imageCategory="articles"
+/>
+
+From the given output you can see which packages could update and to which
+version so you can see if it’s a minor version update or a major version update.
+
+> The pace at which the packages on npm update is fast so you can expect if you
+> haven’t updated packages on your repo for even 6 months that there will be
+> some major updates and with major updates come breaking changes!!
+
+## Don’t update too much at once
+
+This part is very important! When you first start doing this on repos
+(especially if they haven’t been touched for a while) then the output from
+running ncu can be really long and you maybe tempted to update everything all at
+once. After all its just one command with this npm-check-updates package:
+
+```
+ncu -u
+```
+
+However, in my experience this can cause more pain that it’s worth. The pace at
+which the packages on npm update is fast so you can expect if you haven’t
+updated packages on your repo for even 6 months that there will be some major
+updates and with major updates come breaking changes!! And these can very easily
+break your app or break a certain feature within your app.
+
+## Slowly Slowly Catch a Monkey
+
+I tend to focus one of these update sessions by either updating all packages
+with minor updates or on one package with a major update. If a major update I
+ALWAYS go to the Github release notes and check what the changes are. Then I
+will update the package either by running
+
+```
+npm install <package-name>@<version-number || latest>
+```
+
+or
+
+```
+ncu <package-name>
+```
+
+Once the package is updated then I make sure to run all tests, linting, type
+checking, run the app and check for any errors or console errors. From my
+experience by doing these updates regularly you rarely run into an update that
+will cause you big problems to implement.
+
+## Conclusion
+
+I have heard quite a few different approaches to keeping packages up to date in
+repos with frequency of updates varying from a week all the way to every 6
+months. Some people like to wait ages and then update everything at once and
+spend a day making sure everything works. Some people (like me) prefer the —
+do-a-little-bit-often-over-a-long-time-approach — I don’t think one method is
+the best but you need to choose what works for you.

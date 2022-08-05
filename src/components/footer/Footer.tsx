@@ -1,12 +1,7 @@
 import React from 'react';
-import { Flex, Text, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import {
-  darkColorBg,
-  darkColorText,
-  lightColorBg,
-  lightColorText,
-} from 'styles/theme';
+import { useThemeColors } from 'hooks/useThemeColors';
 
 const StickyFooter = styled(Flex)`
   z-index: 10;
@@ -16,8 +11,7 @@ const StickyFooter = styled(Flex)`
 
 export default function Footer() {
   // Colors for light and dark mode
-  const bg = useColorModeValue(lightColorBg, darkColorBg);
-  const color = useColorModeValue(lightColorText, darkColorText);
+  const { bgColor, color } = useThemeColors();
 
   return (
     <StickyFooter>
@@ -27,7 +21,7 @@ export default function Footer() {
         justifyContent="center"
         alignContent="center"
         textAlign="center"
-        backgroundColor={bg}
+        backgroundColor={bgColor}
         color={color}
         flexDirection="column"
       >

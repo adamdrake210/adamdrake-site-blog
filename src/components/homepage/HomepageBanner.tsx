@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Text, Box, Link, Tag, Image, Heading } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { CLOUDINARY_URL } from 'constants/constants';
-import { useHeadingColors } from 'hooks/useHeadingColors';
+import { useThemeColors } from 'hooks/useThemeColors';
 
 type Props = {
   post: any;
@@ -18,7 +18,7 @@ export default function HomepageBanner({
   pageTitle,
 }: Props) {
   const { slug, title, description, imageUniqueIdentifier } = post;
-  const headingColor = useHeadingColors();
+  const { headingColor } = useThemeColors();
 
   return (
     <Box
