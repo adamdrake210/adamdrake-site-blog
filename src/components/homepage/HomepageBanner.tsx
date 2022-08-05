@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Text, Box, Link, Tag, Image, Heading } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { CLOUDINARY_URL } from 'constants/constants';
+import { useHeadingColors } from 'hooks/useHeadingColors';
 
 type Props = {
   post: any;
@@ -17,6 +18,7 @@ export default function HomepageBanner({
   pageTitle,
 }: Props) {
   const { slug, title, description, imageUniqueIdentifier } = post;
+  const headingColor = useHeadingColors();
 
   return (
     <Box
@@ -33,7 +35,7 @@ export default function HomepageBanner({
         mb={4}
         w="100%"
         textAlign={['center', 'center', 'left']}
-        color="cyan.900"
+        color={headingColor}
         px={[4]}
       >
         {pageTitle}
@@ -65,7 +67,7 @@ export default function HomepageBanner({
               alignItems="flex-start"
               justifyContent="flex-start"
             >
-              <Heading fontSize={40} color="cyan.900">
+              <Heading fontSize={40} color={headingColor}>
                 {title}
               </Heading>
               <Text mt={2} fontSize={20}>

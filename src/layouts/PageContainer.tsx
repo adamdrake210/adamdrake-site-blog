@@ -1,7 +1,8 @@
 import React from 'react';
-import { useColorMode, Flex, Box } from '@chakra-ui/react';
+import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
 import Navigation from 'components/navigation/Navigation';
 import Footer from 'components/footer/Footer';
+import { darkColorText, lightColorBg, lightColorText } from 'styles/theme';
 
 type Props = {
   children: React.ReactNode;
@@ -9,28 +10,15 @@ type Props = {
 };
 
 const PageContainer = ({ children, maxWidth }: Props) => {
-  const { colorMode } = useColorMode();
-
-  const bgColor = {
-    light: 'white',
-    dark: 'gray.900',
-  };
-  const primarytextColor = {
-    light: 'black',
-    dark: 'white',
-  };
+  // Colors for light and dark mode
+  const bg = useColorModeValue('white', 'gray.800');
+  const color = useColorModeValue(lightColorText, darkColorText);
 
   return (
     <>
       <Navigation />
       <Flex minH="100%" grow={1} as="main">
-        <Box
-          w="100%"
-          m="0 auto"
-          maxW={maxWidth}
-          bg={bgColor[colorMode]}
-          color={primarytextColor[colorMode]}
-        >
+        <Box w="100%" m="0 auto" maxW={maxWidth} bg={bg} color={color}>
           {children}
         </Box>
       </Flex>
