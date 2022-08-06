@@ -129,9 +129,10 @@ const Navigation: React.FC = () => {
             </Button>
           </NextLink>
         </Box>
-        <Box
+        <Flex
           color="#ffffff"
-          display={['none', 'none', 'none', 'block']}
+          display={['none', 'none', 'none', 'flex']}
+          alignItems="center"
           fontWeight={600}
           textTransform="uppercase"
         >
@@ -159,7 +160,7 @@ const Navigation: React.FC = () => {
             </Button>
           </NextLink>
           <SelectColorMode />
-        </Box>
+        </Flex>
         <Box color="#ffffff" display={['block', 'block', 'block', 'none']}>
           <Button
             as="button"

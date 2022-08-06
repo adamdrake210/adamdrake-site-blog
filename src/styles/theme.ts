@@ -31,6 +31,10 @@ const theme = extendTheme({
         flexDirection: 'column',
         minHeight: '100vh',
       },
+      pre: {
+        whiteSpace: 'pre-wrap',
+        wordWrap: 'break-word',
+      },
     },
   },
   fonts: {

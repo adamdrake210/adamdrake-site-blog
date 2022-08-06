@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Button, useColorMode } from '@chakra-ui/react';
+import { Box, Button, useColorMode } from '@chakra-ui/react';
 
 import { useThemeColors } from 'hooks/useThemeColors';
 
 export const SelectColorMode = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { color } = useThemeColors();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
-    <Button variant="link" onClick={toggleColorMode}>
+    <Box px={4} _hover={{ cursor: 'pointer' }}>
       {colorMode === 'light' ? (
-        <MoonIcon color={color} />
+        <MoonIcon onClick={toggleColorMode} color={color} />
       ) : (
-        <SunIcon color={color} />
+        <SunIcon onClick={toggleColorMode} color={color} />
       )}
-    </Button>
+    </Box>
   );
 };
