@@ -67,10 +67,10 @@ export default function HomepageBanner({
               alignItems="flex-start"
               justifyContent="flex-start"
             >
-              <Heading fontSize={40} color={headingColor}>
+              <Heading fontSize={40} mt={-2} color={headingColor}>
                 {title}
               </Heading>
-              <Text mt={2} fontSize={20}>
+              <Text mt={2} fontSize={16}>
                 {description}
               </Text>
               <Box w="100%" textAlign={['center', 'left']}>
