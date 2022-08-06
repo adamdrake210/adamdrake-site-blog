@@ -3,7 +3,6 @@ export type FrontMatterArticles = {
   description: string;
   intro: string;
   slug: string;
-  imageUniqueIdentifier: string;
   tags: string;
   publishedDate: string;
   published: boolean;

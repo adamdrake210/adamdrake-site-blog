@@ -37,7 +37,12 @@ export default function ArticlesPageContainer({ articlePosts }: Props) {
               data.published && (
                 <Box flex={['1 0 100%']} mb={8} key={data.slug}>
                   <NextLink passHref href={`/articles/${data.slug}`}>
-                    <Link>
+                    <Link
+                      textDecoration="none"
+                      _hover={{
+                        textDecoration: 'none',
+                      }}
+                    >
                       <Flex
                         justifyContent={['center', 'space-between']}
                         alignItems="center"

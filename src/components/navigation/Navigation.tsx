@@ -11,11 +11,12 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  useColorMode,
 } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import { useThemeColors } from 'hooks/useThemeColors';
+import { SITE_NAME } from 'constants/constants';
+import { SelectColorMode } from './SelectColorMode';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -27,7 +28,6 @@ const StickyNav = styled(Flex)`
 
 const Navigation: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
 
   // Colors for light and dark mode
   const { bgColor, color } = useThemeColors();
@@ -52,9 +52,10 @@ const Navigation: React.FC = () => {
               backgroundColor={bgColor}
               color={color}
               fontWeight={600}
-              fontFamily="Eczar"
+              fontFamily="Amatic SC"
+              fontSize={36}
             >
-              Adam Drake
+              {SITE_NAME}
             </DrawerHeader>
             <DrawerBody>
               <Flex
@@ -70,7 +71,7 @@ const Navigation: React.FC = () => {
                     variant="link"
                     fontSize={18}
                     py={[3]}
-                    color={bgColor}
+                    color={color}
                     fontWeight={600}
                   >
                     Articles
@@ -82,7 +83,7 @@ const Navigation: React.FC = () => {
                     variant="link"
                     fontSize={18}
                     py={[3]}
-                    color="cyan.400"
+                    color={color}
                     fontWeight={600}
                   >
                     About
@@ -124,7 +125,7 @@ const Navigation: React.FC = () => {
               p={[1, 2]}
               fontFamily="Amatic SC"
             >
-              Adam Drake
+              {SITE_NAME}
             </Button>
           </NextLink>
         </Box>
@@ -138,7 +139,7 @@ const Navigation: React.FC = () => {
             <Button
               as="a"
               variant="link"
-              fontSize={28}
+              fontSize={32}
               p={[1, 4]}
               color={color}
             >
@@ -150,20 +151,14 @@ const Navigation: React.FC = () => {
             <Button
               as="a"
               variant="link"
-              fontSize={28}
+              fontSize={32}
               p={[1, 4]}
               color={color}
             >
               About
             </Button>
           </NextLink>
-          <Button variant="link" onClick={toggleColorMode}>
-            {colorMode === 'light' ? (
-              <MoonIcon color={color} />
-            ) : (
-              <SunIcon color={color} />
-            )}
-          </Button>
+          <SelectColorMode />
         </Box>
         <Box color="#ffffff" display={['block', 'block', 'block', 'none']}>
           <Button
@@ -173,6 +168,8 @@ const Navigation: React.FC = () => {
             p={[1, 4]}
             onClick={onOpen}
           >
+            <SelectColorMode />
+
             <HamburgerIcon color={color} />
           </Button>
         </Box>

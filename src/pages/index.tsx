@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 import HomepageContainer from 'components/homepage/HomepageContainer';
+import { SITE_NAME } from 'constants/constants';
 
 type Props = {
   articlePostsRemote: any;
@@ -16,7 +17,7 @@ export default function PageIndex({ articlePostsRemote }: Props) {
   return (
     <>
       <Head>
-        <title>Adam Drakes Blog | Home</title>
+        <title>{SITE_NAME} | Home</title>
       </Head>
 
       <PageContainer maxWidth="1000px">

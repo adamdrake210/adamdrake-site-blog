@@ -33,7 +33,7 @@ const components = {
 };
 
 export default function InterviewLayout({ frontMatter, source }: Props) {
-  const { title, slug, imageUniqueIdentifier } = frontMatter;
+  const { title, slug } = frontMatter;
   const { headingColor } = useThemeColors();
 
   return (
