@@ -43,11 +43,7 @@ export default function InterviewLayout({ frontMatter, source }: Props) {
         type="articles"
         url={`https://adamdrake.dev/articles/${slug}`}
       />
-      <Image960x660
-        src={`${slug}_${imageUniqueIdentifier}`}
-        imageCategory="articles"
-        altText={slug}
-      />
+      <Image960x660 src={`${slug}`} altText={slug} />
       <Flex
         p={[4]}
         pt={[0, 0]}

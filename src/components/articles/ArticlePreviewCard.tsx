@@ -7,18 +7,11 @@ import { useThemeColors } from 'hooks/useThemeColors';
 type Props = {
   slug: string;
   title: string;
-  imageUniqueIdentifier: string;
   description: string;
   readTime: ReadTime;
 };
 
-const ArticlePreviewCard = ({
-  slug,
-  title,
-  imageUniqueIdentifier,
-  description,
-  readTime,
-}: Props) => {
+const ArticlePreviewCard = ({ slug, title, description, readTime }: Props) => {
   const { headingColor } = useThemeColors();
 
   return (
@@ -29,7 +22,7 @@ const ArticlePreviewCard = ({
         justifyContent="center"
       >
         <Image
-          src={`${CLOUDINARY_URL}c_scale,h_205,w_300/images/articles/${slug}_${imageUniqueIdentifier}.jpg`}
+          src={`${CLOUDINARY_URL}c_scale,h_205,w_300/adamdrake-blog/${slug}.png`}
           alt={title}
           w={['100%', 300]}
           mr={[0, 0, 4]}

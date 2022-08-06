@@ -9,6 +9,16 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
+// Colors
+export const darkColorBg = 'blue.900';
+export const darkColorText = 'white';
+
+export const lightColorBg = 'purple.100';
+export const lightColorText = 'gray.600';
+
+export const lightHeadingColor = 'cyan.700';
+export const darkHeadingColor = 'cyan.600';
+
 const theme = extendTheme({
   ...chakraTheme,
   styles: {
@@ -24,9 +34,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: '"Eczar", sans-serif',
-    body: '"Raleway", sans-serif',
-    mono: 'Menlo, monospace',
+    heading: `'Amatic SC', cursive`,
+    body: `'Josefin Slab', serif`,
   },
   fontWeights: {
     light: 300,
@@ -50,13 +59,3 @@ const theme = extendTheme({
 });
 
 export default theme;
-
-// Colors
-export const darkColorBg = 'blue.900';
-export const darkColorText = 'gray.50';
-
-export const lightColorBg = 'purple.100';
-export const lightColorText = 'gray.600';
-
-export const lightHeadingColor = 'cyan.700';
-export const darkHeadingColor = 'cyan.600';

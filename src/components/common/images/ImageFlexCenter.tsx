@@ -6,7 +6,6 @@ interface Props {
   src: string;
   altText: string;
   imageSize: string;
-  imageCategory: string;
   width: number;
   height?: number;
   marginTop?: number;
@@ -16,7 +15,6 @@ export const ImageFlexCenter: React.FC<Props> = ({
   src,
   altText,
   imageSize,
-  imageCategory,
   width,
   height,
   marginTop,
@@ -24,7 +22,7 @@ export const ImageFlexCenter: React.FC<Props> = ({
   return (
     <Flex justifyContent="center" alignItems="center" mt={marginTop || 3}>
       <Image
-        src={`${CLOUDINARY_URL}${imageSize}/images/${imageCategory}/${src}.jpg`}
+        src={`${CLOUDINARY_URL}${imageSize}/adamdrake-blog/${src}`}
         alt={altText}
         w={width}
         h={height}

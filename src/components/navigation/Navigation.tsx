@@ -102,7 +102,7 @@ const Navigation: React.FC = () => {
       bg={bgColor}
       as="nav"
       p={[2]}
-      fontFamily="Raleway"
+      fontFamily="Amatic SC"
       shadow="lg"
     >
       <Flex
@@ -118,11 +118,11 @@ const Navigation: React.FC = () => {
             <Button
               as="a"
               variant="link"
-              fontSize={[20, 20, 36]}
+              fontSize={[28, 28, 46]}
               fontWeight={700}
               color={color}
               p={[1, 2]}
-              fontFamily="Eczar"
+              fontFamily="Amatic SC"
             >
               Adam Drake
             </Button>
@@ -138,7 +138,7 @@ const Navigation: React.FC = () => {
             <Button
               as="a"
               variant="link"
-              fontSize={20}
+              fontSize={28}
               p={[1, 4]}
               color={color}
             >
@@ -150,7 +150,7 @@ const Navigation: React.FC = () => {
             <Button
               as="a"
               variant="link"
-              fontSize={20}
+              fontSize={28}
               p={[1, 4]}
               color={color}
             >

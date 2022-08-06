@@ -56,7 +56,7 @@ export default function HomepageBanner({
             justifyContent="flex-start"
           >
             <Image
-              src={`${CLOUDINARY_URL}c_scale,h_345,w_500/images/${pageCategory}/${slug}_${imageUniqueIdentifier}.jpg`}
+              src={`${CLOUDINARY_URL}c_scale,h_230,w_400/adamdrake-blog/${slug}.png`}
               alt={`${title}`}
               w={['100%', '100%', '100%', '50%']}
               mr={[0, 0, 0, 4]}

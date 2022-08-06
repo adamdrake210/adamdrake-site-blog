@@ -44,7 +44,6 @@ export default function ArticlesPageContainer({ articlePosts }: Props) {
                       ></Flex>
                       <ArticlePreviewCard
                         slug={data.slug}
-                        imageUniqueIdentifier={data.imageUniqueIdentifier}
                         title={data.title}
                         description={data.description}
                         readTime={data.readTime}
