@@ -31,7 +31,7 @@ export default function HomepageBanner({
     >
       <Heading
         as="h2"
-        fontSize={['4xl', '5xl']}
+        fontSize={['6xl', '6xl']}
         mb={4}
         w="100%"
         textAlign={['center', 'center', 'left']}
@@ -74,7 +74,7 @@ export default function HomepageBanner({
                 {description}
               </Text>
               <Box w="100%" textAlign={['center', 'left']}>
-                <Tag colorScheme="cyan" size="lg" mt={2}>
+                <Tag colorScheme="cyan" size="lg" mt={2} py={3}>
                   {cta}
                 </Tag>
               </Box>

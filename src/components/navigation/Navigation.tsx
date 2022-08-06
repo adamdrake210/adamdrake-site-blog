@@ -161,7 +161,12 @@ const Navigation: React.FC = () => {
           </NextLink>
           <SelectColorMode />
         </Flex>
-        <Box color="#ffffff" display={['block', 'block', 'block', 'none']}>
+        <Box
+          color="#ffffff"
+          display={['flex', 'flex', 'flex', 'none']}
+          alignItems="center"
+        >
+          <SelectColorMode />
           <Button
             as="button"
             variant="link"
@@ -169,8 +174,6 @@ const Navigation: React.FC = () => {
             p={[1, 4]}
             onClick={onOpen}
           >
-            <SelectColorMode />
-
             <HamburgerIcon color={color} />
           </Button>
         </Box>
