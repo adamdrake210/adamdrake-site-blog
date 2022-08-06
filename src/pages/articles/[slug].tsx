@@ -54,7 +54,7 @@ export default function InterviewLayout({ frontMatter, source }: Props) {
         flexWrap="wrap"
       >
         <Box textAlign="center" w="100%">
-          <Heading as="h1" color={headingColor}>
+          <Heading as="h1" size="3xl" color={headingColor}>
             {title}
           </Heading>
         </Box>

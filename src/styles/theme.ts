@@ -39,7 +39,7 @@ const theme = extendTheme({
   },
   fonts: {
     heading: `'Amatic SC', cursive`,
-    body: `'Josefin Slab', serif`,
+    body: `'Montserrat', serif`,
   },
   fontWeights: {
     light: 300,

@@ -41,10 +41,9 @@ const Quote = (props: any) => {
       mt={4}
       w="95%"
       color={headingColor}
-      backgroundColor={bgColor}
-      fontSize="20px"
-      fontStyle="italic"
-      fontWeight="600"
+      // backgroundColor={bgColor}
+      fontSize={36}
+      fontFamily="Amatic SC"
       variant="left-accent"
       status="info"
       css={{
