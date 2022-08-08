@@ -17,7 +17,7 @@ export default function HomepageBanner({
   cta,
   pageTitle,
 }: Props) {
-  const { slug, title, description, imageUniqueIdentifier } = post;
+  const { slug, title, description } = post;
   const { headingColor } = useThemeColors();
 
   return (
@@ -36,7 +36,6 @@ export default function HomepageBanner({
         w="100%"
         textAlign={['center', 'center', 'left']}
         color={headingColor}
-        px={[4]}
       >
         {pageTitle}
       </Heading>
