@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Text, Box, Link } from '@chakra-ui/react';
+import { Flex, Text, Box, Link, Heading } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { ArticlesContentFrontMatter } from 'types/types';
 import { sortNumberByPublishedDateRemote } from 'utils/sortNumberByPublishedDateRemote';
 import ArticlePreviewCard from './ArticlePreviewCard';
+import { useThemeColors } from 'hooks/useThemeColors';
 
 type Props = {
   articlePosts: any;
@@ -11,6 +12,7 @@ type Props = {
 
 export default function ArticlesPageContainer({ articlePosts }: Props) {
   const [sortedPosts, setSortedPosts] = useState([]);
+  const { headingColor } = useThemeColors();
 
   const handleSortingOrder = () => {
     return articlePosts.sort(sortNumberByPublishedDateRemote);
@@ -32,6 +34,9 @@ export default function ArticlesPageContainer({ articlePosts }: Props) {
           direction={['column', 'row']}
           flexWrap="wrap"
         >
+          <Heading as="h1" size="3xl" mb={4} color={headingColor}>
+            Articles
+          </Heading>
           {sortedPosts?.map(
             ({ data }: ArticlesContentFrontMatter) =>
               data.published && (

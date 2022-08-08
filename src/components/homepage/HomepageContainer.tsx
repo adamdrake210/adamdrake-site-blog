@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Flex, Box } from '@chakra-ui/react';
 import HomepageBanner from './HomepageBanner';
 import { sortNumberByPublishedDateRemote } from 'utils/sortNumberByPublishedDateRemote';
+import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
 
 type Props = {
   articlePosts: any[];
@@ -16,6 +17,7 @@ export default function HomepageContainer({ articlePosts }: Props) {
 
   return (
     <Flex mt={[2, 2, 2, 12]} w="100%" direction="column" alignItems="center">
+      <HomepageAboutMeBanner />
       {articleArr.length && (
         <HomepageBanner
           post={articleArr[0].data}

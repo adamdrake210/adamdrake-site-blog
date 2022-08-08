@@ -9,7 +9,6 @@ type Props = {
   slug: string;
   url: string;
   author?: string;
-  imageUniqueIdentifier?: string;
   type: string;
 };
 
@@ -20,11 +19,10 @@ const PageSeo: React.FC<Props> = ({
   slug,
   url,
   author,
-  imageUniqueIdentifier,
   type,
 }) => {
   const featuredImage = {
-    url: `${CLOUDINARY_URL}images/${type}/${slug}_${imageUniqueIdentifier}.jpg`,
+    url: `${CLOUDINARY_URL}/adamdrake-blog/${slug}.png`,
     alt: title,
   };
 
