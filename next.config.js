@@ -9,14 +9,6 @@ const nextConfig = {
   env: {
     GOOGLE_ANALYTICS_WEB: process.env.GOOGLE_ANALYTICS_WEB,
   },
-  // webpack: (config, { isServer }) => {
-  //   if (isServer) {
-  //     // eslint-disable-next-line global-require
-  //     require('./scripts/generate-sitemap');
-  //   }
-
-  //   return config;
-  // },
 };
 
 module.exports = nextConfig;
