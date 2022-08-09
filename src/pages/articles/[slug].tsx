@@ -3,8 +3,7 @@ import React from 'react';
 import { Heading, Box, Flex } from '@chakra-ui/react';
 import PageSeo from 'components/common/PageSeo';
 import { FrontMatterArticles } from 'types/types';
-import { Image960x660 } from 'components/common/images/Image960x660';
-import { Image266x400 } from 'components/common/images/Image266x400';
+import { ImageComponent } from 'components/common/images/ImageComponent';
 import readingTime from 'reading-time';
 
 // Remote packages
@@ -28,8 +27,7 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Box,
-  Image266x400,
-  Image960x660,
+  ImageComponent,
 };
 
 export default function InterviewLayout({ frontMatter, source }: Props) {
@@ -43,7 +41,14 @@ export default function InterviewLayout({ frontMatter, source }: Props) {
         type="articles"
         url={`https://adamdrake.dev/articles/${slug}`}
       />
-      <Image960x660 src={`${slug}`} altText={slug} />
+      <Box my={4}>
+        <ImageComponent
+          src={`${slug}`}
+          altText={slug}
+          width={960}
+          height={560}
+        />
+      </Box>
       <Flex
         p={[4]}
         pt={[0, 0]}
