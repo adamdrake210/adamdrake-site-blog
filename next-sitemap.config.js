@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: process.env.SITE_URL,
-  generateRobotsTxt: true,
-};
+  generateRobotsTxt: true
+}
 
-module.exports = config;
+module.exports = config
