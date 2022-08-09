@@ -1,15 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true
-}
-
-module.exports = nextConfig
-
-module.exports = {
-  // Public, build-time env vars.
-  // https://nextjs.org/docs#build-time-configuration
+  swcMinify: true,
   env: {
     GOOGLE_ANALYTICS_WEB: process.env.GOOGLE_ANALYTICS_WEB
   }
 }
+
+module.exports = nextConfig
+
+
