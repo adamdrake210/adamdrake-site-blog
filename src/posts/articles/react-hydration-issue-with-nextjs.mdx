@@ -1,0 +1,82 @@
+---
+title: 'React 18 Hydration Issue with Nextjs'
+description:
+  'React Hydration errors can occur when some code on your page is relying on
+  something that differs between pre-rendering and the browser. '
+intro: ''
+slug: 'react-hydration-issue-with-nextjs'
+tags: 'reactjs,nextjs,hydration,ssr'
+publishedDate: '12-08-2022'
+published: true
+layout: 'article'
+writtenBy: 'Adam Drake'
+---
+
+I recently was creating a new Nextjs application and I ran into a problem where
+if I refreshed the page manually on the keyboard Nextjs would start screaming at
+me and my console was full of error messages. Like the below:
+
+<ImageComponent
+  src="nextjs_error_react_hydration.png"
+  altText="Screenshot Nextjs Error caused by misuse of React."
+  height={651}
+  width={728}
+/>
+
+For me the error message was a little cryptic:
+
+```
+Warning: Expected server HTML to contain a matching <button> in <button>.
+```
+
+> It tells you that this sort of error occurs when some code on your page is
+> relying on something that could differ between pre-rendering and the browser.
+
+It turns out it was a React Hydration Error. After a bit of googling I stumbled
+upon this page:
+[https://nextjs.org/docs/messages/react-hydration-error](https://nextjs.org/docs/messages/react-hydration-error).
+It tells you that this sort of error occurs when some code on your page is
+relying on something that could differ between pre-rendering and the browser.
+This is connected with server-side-rendering (SSR) and if you don’t take the
+time to sit down and understand it properly it will no doubt catch you out at
+some point (like it just did for me!!).
+
+There is
+[this article](https://www.joshwcomeau.com/react/the-perils-of-rehydration/)
+from [Josh Comeau](https://twitter.com/JoshWComeau) who does a great job of
+explaining why this error occurs and what you can do to resolve it. There is
+also the same solution found in this
+[Github Issue](https://github.com/vercel/next.js/discussions/17443) on the
+Nextjs Github Repo.
+
+## Code changes
+
+This was my code before:
+
+<ImageComponent
+  src="react_hydration_code_before.png"
+  altText="React Code before change"
+  height={675}
+  width={728}
+/>
+
+This was my code after:
+
+<ImageComponent
+  src="react_hydration_code_after.png"
+  altText="React Code after change"
+  height={722}
+  width={728}
+/>
+
+Now the error has gone away!
+
+## Conclusion
+
+I have to say that Josh Comeau’s analogy with the cereal box in his article
+really helped illustrate the point for me. Cereal boxes can be printed way in
+advance (static non personal content) and then when the cereal is actually put
+in the box the ‘sell by date’ can be printed on the box (dynamic content).
+
+Thinking about it like this can really help you analyze your app’s content and
+code and then make informed decisions about how to lay it out.
