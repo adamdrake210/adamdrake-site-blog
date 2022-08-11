@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Box, Button, useColorMode } from '@chakra-ui/react';
+import { Box, useColorMode } from '@chakra-ui/react';
 
 import { useThemeColors } from 'hooks/useThemeColors';
 
