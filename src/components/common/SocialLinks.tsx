@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Icon } from '@chakra-ui/react';
 
 import { GithubLogo } from 'assets/icons/GithubLogo';
-import { TwitterLogo } from 'assets/icons/twitterLogo';
+import { TwitterLogo } from 'assets/icons/TwitterLogo';
 import { LinkedInLogo } from 'assets/icons/LinkedInLogo';
 
 export const SocialLinks = () => {
