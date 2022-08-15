@@ -24,7 +24,7 @@ export const HomepageAboutMeBanner = () => {
       >
         Hi, I&apos;m Adam Drake
       </Heading>
-      <Text mb={4} fontSize={['xl', '2xl']}>
+      <Text mb={4} fontSize={['xl', '2xl']} textAlign="justify">
         {ABOUT_ME_TEXT}
       </Text>
     </Box>
