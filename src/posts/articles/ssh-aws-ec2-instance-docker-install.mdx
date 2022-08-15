@@ -1,0 +1,65 @@
+---
+title: ''
+description: ''
+intro: ''
+slug: ''
+tags: ''
+publishedDate: '01-12-2021'
+published: true
+layout: 'article'
+writtenBy: ''
+---
+
+This article will show you how to `ssh` into an EC2 instance set up on AWS and
+install docker.
+
+First you will need to create a key/pair on AWS. Once you have created that,
+then download the key onto your machine.
+
+Restrict access to that key:
+
+```
+chmod 400 ~/Downloads/server-key.pem
+```
+
+_(Replace the path to the key to whereever you have saved the key on your
+machine.)_
+
+Then you can ssh into the server with that key:
+
+```
+ssh -i ~/Downloads/server-key.pem ubuntu@70.45.277.243
+```
+
+Type `yes` when prompted.
+
+Next you want to run an update to make sure everything on the server is up to
+date:
+
+```
+sudo apt update
+```
+
+Then you can install docker:
+
+```
+sudo apt install docker.io
+```
+
+Once this installation process has finished you can log out of the machine
+(ctrl + d) and log back in to complete the installation.
+
+To test it is working as expected:
+
+```
+docker ps
+```
+
+It should print out this:
+
+<ImageComponent
+  src="ncu_screenshot.png"
+  altText="Screenshot of ncu log"
+  height={440}
+  width={960}
+/>
