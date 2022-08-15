@@ -4,4 +4,4 @@ export const CLOUDINARY_URL =
 export const SITE_NAME = 'Adam Drake';
 
 export const ABOUT_ME_TEXT =
-  'I am a Frontend Developer with some Backend Experience based in Prague with 5 years experience. I work with React, Redux, JavaScript, Next.js, Nodejs and Jest daily. I love building React based applications, front end architecture, Backend APIs and coding in general. I am currently diving deep on Computer Science fundamentals to give me a solid, general overview.';
+  "I am a Frontend Developer who is very passionate about the quality of the web. I work with React, Redux, JavaScript, Next.js, Nodejs and Jest on a daily basis. I love building React based applications, front end architecture, Backend APIs and coding in general. It's important to love the process. I am currently diving deep on Computer Science fundamentals to give me a solid, general overview.";
