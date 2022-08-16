@@ -1,20 +1,35 @@
 ---
-title: ''
-description: ''
+title: 'Setting up Docker and Docker Compose on AWS EC2 Instance'
+description:
+  'This article will lead you through the process of installing docker and
+  docker-compose on an AWS EC2 instance via the terminal.'
 intro: ''
-slug: ''
-tags: ''
-publishedDate: '01-12-2021'
+slug: 'ssh-aws-ec2-instance-docker-install'
+tags: 'aws,docker,docker-compose,deployment,CI/CD'
+publishedDate: '16-08-2022'
 published: true
 layout: 'article'
-writtenBy: ''
+writtenBy: 'Adam Drake'
 ---
 
-This article will show you how to `ssh` into an EC2 instance set up on AWS and
-install docker.
+I was recently setting up an EC2 instance on AWS and thought it would be useful
+to document the very common terminal commands that are needed to set up your
+instance to work with **docker** containers and **docker-compose**. This article
+will show you how to **ssh** into an EC2 instance set up on AWS and install
+**docker** and **docker-compose**.
 
-First you will need to create a key/pair on AWS. Once you have created that,
-then download the key onto your machine.
+Once you have launched your instance on the AWS console you will then need to
+create a **key/pair**. Select the key pair type you want and the Private key
+format. For this application I chose:
+
+<ImageComponent
+  src="key-pair-aws-instance-ec2.png"
+  altText="Screenshot of key pair creation on EC2 instance of AWS"
+  height={540}
+  width={960}
+/>
+
+Once you have created that, then download the key onto your machine.
 
 Restrict access to that key:
 
@@ -31,7 +46,7 @@ Then you can ssh into the server with that key:
 ssh -i ~/Downloads/server-key.pem ubuntu@70.45.277.243
 ```
 
-Type `yes` when prompted.
+Type **yes** when prompted to finalise the ssh process into the server.
 
 Next you want to run an update to make sure everything on the server is up to
 date:
@@ -49,7 +64,7 @@ sudo apt install docker.io
 Once this installation process has finished you can log out of the machine
 (ctrl + d) and log back in to complete the installation.
 
-To test it is working as expected:
+To test it is working as expected, ssh back into the machine and type:
 
 ```
 docker ps
@@ -58,8 +73,24 @@ docker ps
 It should print out this:
 
 <ImageComponent
-  src="ncu_screenshot.png"
-  altText="Screenshot of ncu log"
-  height={440}
-  width={960}
+  src="docker-ps-command.png"
+  altText="Screenshot of docker-ps command"
+  height={80}
+  width={728}
 />
+
+Next install docker-compose
+
+```
+sudo apt install docker-compose
+```
+
+And again once this installation process has finished you can log out of the
+machine (ctrl + d) and log back in to complete the installation.
+
+## Conclusion
+
+So thats it! Nothing super complicated there but it's the sort of thing you do
+regularly enough that you need to know this process but not regularly enough
+that you can remember all the steps easily. At least I can't. Hope this is
+useful to some of you and I look forward to continuing to learn about AWS.
