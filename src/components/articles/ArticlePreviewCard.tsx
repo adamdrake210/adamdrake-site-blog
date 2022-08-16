@@ -29,7 +29,7 @@ const ArticlePreviewCard = ({ slug, title, description, readTime }: Props) => {
           mb={[4, 0]}
         />
         <Flex flexDirection="column">
-          <Heading fontSize="2xl" color={headingColor}>
+          <Heading fontSize="4xl" color={headingColor}>
             {title}
           </Heading>
           <Text mt={2}>{description}</Text>
