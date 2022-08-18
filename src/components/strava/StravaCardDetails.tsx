@@ -8,7 +8,7 @@ type Props = {
 
 export const StravaCardDetails = ({ heading, statistics }: Props) => {
   return (
-    <Flex flexDirection="column" alignItems="center">
+    <Flex flexDirection="column" alignItems="center" my={[4, 2]}>
       <Heading as="h3" size="xl">
         {heading}
       </Heading>

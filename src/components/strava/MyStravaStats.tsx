@@ -37,7 +37,11 @@ export const MyStravaStats = () => {
         height={70}
         width={70}
       />
-      <Flex width="100%" justifyContent="space-between">
+      <Flex
+        width="100%"
+        justifyContent="space-between"
+        flexDirection={['column', 'row']}
+      >
         <StravaCardDetails
           heading="Total Distance Ran"
           statistics={`${Math.floor(data.distance / 1000)} km`}
@@ -45,7 +49,7 @@ export const MyStravaStats = () => {
         <StravaCardDetails heading="Total Runs" statistics={data.count} />
         <StravaCardDetails
           heading="Total Running Time"
-          statistics={data.movingTime}
+          statistics={`${(data.movingTime * 0.0166667).toFixed(0)} mins`}
         />
       </Flex>
     </Flex>

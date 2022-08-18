@@ -7,7 +7,7 @@ export const Loader = () => {
 
   return (
     <Flex flexDirection="column" alignItems="center">
-      <Spinner color={color} />
+      <Spinner size="lg" color={color} />
       <Text fontSize="2xl" color={color}>
         Loading...
       </Text>
