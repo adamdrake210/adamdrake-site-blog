@@ -5,6 +5,7 @@ import HomepageBanner from './HomepageBanner';
 import { sortNumberByPublishedDateRemote } from 'utils/sortNumberByPublishedDateRemote';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
 import { SocialLinks } from 'components/common/SocialLinks';
+import { MyStravaStats } from 'components/strava/MyStravaStats';
 
 type Props = {
   articlePosts: any[];
@@ -30,6 +31,7 @@ export default function HomepageContainer({ articlePosts }: Props) {
           pageTitle="Latest Article"
         />
       )}
+      <MyStravaStats />
       <SocialLinks />
     </Flex>
   );
