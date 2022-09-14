@@ -1,8 +1,8 @@
 import React from 'react';
-import { Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Flex, Grid, Heading } from '@chakra-ui/react';
 
 import { useThemeColors } from 'hooks/useThemeColors';
+import { BookCard } from './BookCard';
 
 type Props = {
   heading: string;
@@ -20,23 +20,13 @@ export const BookSection = ({ heading, bookList }: Props) => {
       <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}>
         {bookList?.map((book: any) => {
           return (
-            <GridItem key={book.key}>
-              <Image
-                src={`https://covers.openlibrary.org/b/isbn/${book.identifiers.isbn_13}-M.jpg`}
-                alt={`Cover for ${book.title}`}
-                width={200}
-                height={300}
-              />
-              <a
-                href={`https://openlibrary.org/books/${book.identifiers.openlibrary}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Text fontSize="sm">
-                  {book.title} - {book.authors[0].name}
-                </Text>
-              </a>
-            </GridItem>
+            <BookCard
+              key={book.key}
+              title={book.title}
+              author={book.authors[0].name}
+              identifier={book.identifiers.openlibrary}
+              isbn_13={book.identifiers.isbn_13}
+            />
           );
         })}
       </Grid>

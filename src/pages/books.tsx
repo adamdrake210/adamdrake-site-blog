@@ -35,16 +35,24 @@ export async function getServerSideProps() {
   const OPEN_LIBRARY_API = 'https://openlibrary.org/api/books?bibkeys=ISBN:';
 
   const currentBooksList = currentlyReadingBooks.join(',');
-
-  const responseCurrentBooks = await fetch(
-    `${OPEN_LIBRARY_API}${currentBooksList}&jscmd=data&format=json`,
-  );
-  const currentBooksData = await responseCurrentBooks.json();
-
   const readBooksList = readBooks.join(',');
-  const responseReadBooks = await fetch(
-    `${OPEN_LIBRARY_API}${readBooksList}&jscmd=data&format=json`,
-  );
+
+  const fetchCurrentBooks = () => {
+    return fetch(
+      `${OPEN_LIBRARY_API}${currentBooksList}&jscmd=data&format=json`,
+    );
+  };
+
+  const fetchReadBooks = () => {
+    return fetch(`${OPEN_LIBRARY_API}${readBooksList}&jscmd=data&format=json`);
+  };
+
+  const [responseCurrentBooks, responseReadBooks] = await Promise.all([
+    fetchCurrentBooks(),
+    fetchReadBooks(),
+  ]);
+
+  const currentBooksData = await responseCurrentBooks.json();
   const readBooksData = await responseReadBooks.json();
 
   return {

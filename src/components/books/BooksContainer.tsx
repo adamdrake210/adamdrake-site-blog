@@ -1,7 +1,7 @@
+import React from 'react';
 import { Flex, Link, Text } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-import React from 'react';
 import { BookSection } from './BookSection';
 
 type Props = {
@@ -20,7 +20,7 @@ export const BooksContainer = ({ currentBooks, readBooks }: Props) => {
     >
       {/* Currently Reading */}
       <BookSection heading="Books I am reading" bookList={currentBooks} />
-      {/* Currently Reading */}
+      {/* Already Reading */}
       <BookSection heading="Books I have read" bookList={readBooks} />
 
       <Text fontSize="xs" mt={8}>
