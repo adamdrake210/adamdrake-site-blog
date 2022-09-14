@@ -17,6 +17,11 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { useThemeColors } from 'hooks/useThemeColors';
 import { SITE_NAME } from 'constants/constants';
 import { SelectColorMode } from './SelectColorMode';
+import {
+  ABOUT_ROUTE,
+  ARTICLES_ROUTE,
+  BOOKS_ROUTE,
+} from 'constants/routeConstants';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -25,6 +30,21 @@ const StickyNav = styled(Flex)`
   backdrop-filter: saturate(180%) blur(20px);
   transition: background-color 0.1 ease-in-out;
 `;
+
+const navLinks = [
+  {
+    link: ARTICLES_ROUTE,
+    text: 'Articles',
+  },
+  {
+    link: BOOKS_ROUTE,
+    text: 'Books',
+  },
+  {
+    link: ABOUT_ROUTE,
+    text: 'About',
+  },
+];
 
 const Navigation: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,30 +85,22 @@ const Navigation: React.FC = () => {
                 fontWeight={600}
                 textTransform="uppercase"
               >
-                <NextLink href="/articles" passHref>
-                  <Button
-                    as="a"
-                    variant="link"
-                    fontSize={18}
-                    py={[3]}
-                    color={color}
-                    fontWeight={600}
-                  >
-                    Articles
-                  </Button>
-                </NextLink>
-                <NextLink href="/about" passHref>
-                  <Button
-                    as="a"
-                    variant="link"
-                    fontSize={18}
-                    py={[3]}
-                    color={color}
-                    fontWeight={600}
-                  >
-                    About
-                  </Button>
-                </NextLink>
+                {navLinks.map(navLink => {
+                  return (
+                    <NextLink key={navLink.link} href={navLink.link} passHref>
+                      <Button
+                        as="a"
+                        variant="link"
+                        fontSize={18}
+                        py={[3]}
+                        color={color}
+                        fontWeight={600}
+                      >
+                        {navLink.text}
+                      </Button>
+                    </NextLink>
+                  );
+                })}
               </Flex>
             </DrawerBody>
           </DrawerContent>
@@ -136,29 +148,22 @@ const Navigation: React.FC = () => {
           fontWeight={600}
           textTransform="uppercase"
         >
-          <NextLink href="/articles" passHref>
-            <Button
-              as="a"
-              variant="link"
-              fontSize={32}
-              p={[1, 4]}
-              color={color}
-            >
-              Articles
-            </Button>
-          </NextLink>
+          {navLinks.map(navLink => {
+            return (
+              <NextLink key={navLink.link} href={navLink.link} passHref>
+                <Button
+                  as="a"
+                  variant="link"
+                  fontSize={32}
+                  p={[1, 4]}
+                  color={color}
+                >
+                  {navLink.text}
+                </Button>
+              </NextLink>
+            );
+          })}
 
-          <NextLink href="/about" passHref>
-            <Button
-              as="a"
-              variant="link"
-              fontSize={32}
-              p={[1, 4]}
-              color={color}
-            >
-              About
-            </Button>
-          </NextLink>
           <SelectColorMode />
         </Flex>
         <Box
