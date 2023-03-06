@@ -42,7 +42,7 @@ const theme = extendTheme({
     body: `'Montserrat', serif`,
   },
   fontWeights: {
-    light: 300,
+    light: 200,
     normal: 400,
     medium: 500,
     bold: 700,
