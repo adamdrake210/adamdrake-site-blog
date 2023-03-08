@@ -1,17 +1,12 @@
-import { createClient } from 'next-sanity';
 import { PortableText } from '@portabletext/react';
 import { Box, Code, Flex, Heading, Text } from '@chakra-ui/react';
 import { ImageComponent } from 'components/common/images/ImageComponent';
 import PageSeo from 'components/common/PageSeo';
 import { useThemeColors } from 'hooks/useThemeColors';
 import PageContainer from 'layouts/PageContainer';
-
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: 'production',
-  apiVersion: '2023-03-04',
-  useCdn: false,
-});
+import { client } from 'client';
+import { Post } from 'types/types';
+import { GetStaticProps } from 'next';
 
 const components = {
   marks: {
@@ -76,9 +71,9 @@ const components = {
   },
 };
 
-export default function IndexPage({ posts }: { posts: any[] }) {
-  console.log('🚀 ~ file: sanity.tsx:80 ~ IndexPage ~ posts:', posts);
-  const { slug, title, description, _updatedAt, content } = posts[2];
+function Post({ post }: { post: Post }) {
+  console.log('🚀 ~ file: sanity.tsx:80 ~ IndexPage ~ posts:', post);
+  const { slug, title, description, _updatedAt, content } = post;
   const { headingColor } = useThemeColors();
 
   return (
@@ -89,7 +84,7 @@ export default function IndexPage({ posts }: { posts: any[] }) {
           description={description}
           slug={slug}
           publishedDate={_updatedAt}
-          url={`https://adamdrake.dev/articles/${slug}`}
+          url={`https://adamdrake.dev/blog/${slug}`}
         />
         <Flex
           p={[4]}
@@ -122,12 +117,34 @@ export default function IndexPage({ posts }: { posts: any[] }) {
   );
 }
 
-export async function getStaticProps() {
-  const posts = await client.fetch(`*[_type == "post"]`);
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+    `*[_type == "post" && defined(slug)][].slug`,
+  );
+
+  return {
+    paths: paths.map((slug: string) => ({ params: { slug } })),
+    fallback: true,
+  };
+}
+
+export const getStaticProps: GetStaticProps = async context => {
+  // It's important to default the slug so that it doesn't return "undefined"
+  // @ts-ignore
+  const { slug = '' } = context.params;
+  console.log('🚀 ~ file: [slug].tsx:135 ~ slug:', slug);
+  const post = await client.fetch(
+    `
+    *[_type == "post" && slug == $slug][0]
+  `,
+    { slug },
+  );
 
   return {
     props: {
-      posts,
+      post,
     },
   };
-}
+};
+
+export default Post;

@@ -17,11 +17,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { useThemeColors } from 'hooks/useThemeColors';
 import { SITE_NAME } from 'constants/constants';
 import { SelectColorMode } from './SelectColorMode';
-import {
-  ABOUT_ROUTE,
-  ARTICLES_ROUTE,
-  BOOKS_ROUTE,
-} from 'constants/routeConstants';
+import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -33,8 +29,8 @@ const StickyNav = styled(Flex)`
 
 const navLinks = [
   {
-    link: ARTICLES_ROUTE,
-    text: 'Articles',
+    link: BLOG_ROUTE,
+    text: 'Blog',
   },
   {
     link: BOOKS_ROUTE,
