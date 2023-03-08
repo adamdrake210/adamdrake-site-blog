@@ -27,10 +27,12 @@ const BlogPreviewCard = ({ slug, title, description }: Props) => {
           mb={[4, 0]}
         />
         <Flex flexDirection="column">
-          <Heading fontSize="4xl" color={headingColor}>
+          <Heading fontSize="3xl" fontWeight={200} color={headingColor}>
             {title}
           </Heading>
-          <Text mt={2}>{description}</Text>
+          <Text mt={2} fontSize="xl">
+            {description}
+          </Text>
           <Box w="100%" textAlign={['center', 'left']}>
             <Tag colorScheme="cyan" size="md" mt={2}>
               Read Post

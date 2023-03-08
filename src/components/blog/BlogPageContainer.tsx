@@ -23,7 +23,13 @@ export default function BlogPageContainer({ posts }: Props) {
           direction={['column', 'row']}
           flexWrap="wrap"
         >
-          <Heading as="h1" size="3xl" mb={4} color={headingColor}>
+          <Heading
+            as="h1"
+            fontWeight={200}
+            size="2xl"
+            mb={4}
+            color={headingColor}
+          >
             Blog
           </Heading>
           {posts.map(post => {

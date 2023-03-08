@@ -31,7 +31,7 @@ const PageSeo: React.FC<Props> = ({
         description={description}
         canonical={url}
         openGraph={{
-          type: 'article',
+          type: 'blog post',
           article: {
             publishedTime: publishedDate,
           },
