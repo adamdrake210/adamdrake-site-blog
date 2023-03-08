@@ -38,8 +38,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: `'Amatic SC', cursive`,
-    body: `'Montserrat', serif`,
+    heading: `'Montserrat', serif`,
+    body: `'Source Serif Pro', serif`,
   },
   fontWeights: {
     light: 200,

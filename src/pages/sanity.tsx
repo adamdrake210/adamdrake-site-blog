@@ -7,46 +7,53 @@ import { useThemeColors } from 'hooks/useThemeColors';
 import PageContainer from 'layouts/PageContainer';
 
 const client = createClient({
-  projectId: 'z8nvtt9c',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: 'production',
   apiVersion: '2023-03-04',
   useCdn: false,
 });
 
 const components = {
+  marks: {
+    code: ({ children }: { children?: any }) => (
+      <Code colorScheme="green" my={4} py={2} px={4}>
+        {children}
+      </Code>
+    ),
+  },
   block: {
     h1: ({ children }: { children?: any }) => (
-      <Heading as="h1" size="3xl">
+      <Heading as="h1" size="2xl" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     h2: ({ children }: { children?: any }) => (
-      <Heading as="h2" size="2xl">
+      <Heading as="h2" size="xl" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     h3: ({ children }: { children?: any }) => (
-      <Heading as="h3" size="xl" my={2}>
+      <Heading as="h3" size="lg" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     h4: ({ children }: { children?: any }) => (
-      <Heading as="h4" size="lg" my={2}>
+      <Heading as="h4" size="md" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     h5: ({ children }: { children?: any }) => (
-      <Heading as="h5" size="md" my={2}>
+      <Heading as="h5" size="sm" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     h6: ({ children }: { children?: any }) => (
-      <Heading as="h6" size="sm" my={2}>
+      <Heading as="h6" size="sm" mb={2} mt={6} fontWeight={200}>
         {children}
       </Heading>
     ),
     normal: ({ children }: { children?: any }) => (
-      <Text fontSize="sm" fontWeight={200}>
+      <Text fontSize="lg" fontWeight={400} pb={2}>
         {children}
       </Text>
     ),
@@ -70,7 +77,8 @@ const components = {
 };
 
 export default function IndexPage({ posts }: { posts: any[] }) {
-  const { slug, title, description, _updatedAt, content } = posts[0];
+  console.log('🚀 ~ file: sanity.tsx:80 ~ IndexPage ~ posts:', posts);
+  const { slug, title, description, _updatedAt, content } = posts[2];
   const { headingColor } = useThemeColors();
 
   return (
@@ -84,6 +92,20 @@ export default function IndexPage({ posts }: { posts: any[] }) {
           type="articles"
           url={`https://adamdrake.dev/articles/${slug}`}
         />
+        <Flex
+          p={[4]}
+          pt={[0, 0]}
+          mt={12}
+          w="100%"
+          justify={['center']}
+          alignItems={['center']}
+          direction={['column']}
+          flexWrap="wrap"
+        >
+          <Heading as="h1" size="xl" fontWeight={200} color={headingColor}>
+            {title}
+          </Heading>
+        </Flex>
         <Box my={4}>
           <ImageComponent
             src={`${slug}`}
@@ -92,22 +114,8 @@ export default function IndexPage({ posts }: { posts: any[] }) {
             height={560}
           />
         </Box>
-        <Flex
-          p={[4]}
-          pt={[0, 0]}
-          w="100%"
-          justify={['center']}
-          alignItems={['center']}
-          direction={['column']}
-          flexWrap="wrap"
-        >
-          <Box textAlign="center" w="100%">
-            <Heading as="h1" size="3xl" color={headingColor}>
-              {title}
-            </Heading>
-          </Box>
-        </Flex>
-        <Box px={[4, 8]} mb={6}>
+
+        <Box px={[4, 8]} mb={8}>
           <PortableText value={content} components={components} />
         </Box>
       </PageContainer>
