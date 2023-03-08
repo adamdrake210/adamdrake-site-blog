@@ -31,11 +31,12 @@ export default function HomepageBanner({
     >
       <Heading
         as="h2"
-        fontSize={['6xl', '6xl']}
+        fontSize={['5xl']}
         mb={4}
         w="100%"
         textAlign={['center', 'center', 'left']}
         color={headingColor}
+        fontWeight={200}
       >
         {pageTitle}
       </Heading>
@@ -66,10 +67,15 @@ export default function HomepageBanner({
               alignItems="flex-start"
               justifyContent="flex-start"
             >
-              <Heading fontSize={40} mt={-2} color={headingColor}>
+              <Heading
+                mt={-2}
+                fontWeight={200}
+                fontSize="3xl"
+                color={headingColor}
+              >
                 {title}
               </Heading>
-              <Text mt={2} fontSize={16}>
+              <Text mt={2} fontSize="xl">
                 {description}
               </Text>
               <Box w="100%" textAlign={['center', 'left']}>

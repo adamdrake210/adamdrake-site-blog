@@ -9,10 +9,12 @@ export const About: React.FC = () => {
 
   return (
     <Box p={[4, 8]}>
-      <Heading as="h1" size="3xl" mb={4} color={headingColor}>
+      <Heading as="h1" size="2xl" fontWeight={200} mb={4} color={headingColor}>
         About Me
       </Heading>
-      <Text mb={4}>{ABOUT_ME_TEXT}</Text>
+      <Text mb={4} fontSize="xl">
+        {ABOUT_ME_TEXT}
+      </Text>
       <Divider />
       <Flex justifyContent="center">
         <SocialLinks />

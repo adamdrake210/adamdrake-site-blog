@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Divider } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 import HomepageBanner from './HomepageBanner';
 import { sortNumberByPublishedDateRemote } from 'utils/sortNumberByPublishedDateRemote';
@@ -21,7 +21,6 @@ export default function HomepageContainer({ articlePosts }: Props) {
   return (
     <Flex mt={[2, 2, 2, 12]} w="100%" direction="column" alignItems="center">
       <HomepageAboutMeBanner />
-      <Divider />
 
       {articleArr.length && (
         <HomepageBanner
