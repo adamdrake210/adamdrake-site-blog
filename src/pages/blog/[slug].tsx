@@ -72,47 +72,47 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  console.log('🚀 ~ file: sanity.tsx:80 ~ IndexPage ~ posts:', post);
-  const { slug, title, description, _updatedAt, content } = post;
   const { headingColor } = useThemeColors();
 
   return (
     <>
-      <PageContainer maxWidth="728px">
-        <PageSeo
-          title={title}
-          description={description}
-          slug={slug}
-          publishedDate={_updatedAt}
-          url={`https://adamdrake.dev/blog/${slug}`}
-        />
-        <Flex
-          p={[4]}
-          pt={[0, 0]}
-          mt={12}
-          w="100%"
-          justify={['center']}
-          alignItems={['center']}
-          direction={['column']}
-          flexWrap="wrap"
-        >
-          <Heading as="h1" size="xl" fontWeight={200} color={headingColor}>
-            {title}
-          </Heading>
-        </Flex>
-        <Box my={4}>
-          <ImageComponent
-            src={`${slug}`}
-            altText={slug}
-            width={960}
-            height={560}
+      {post && (
+        <PageContainer maxWidth="728px">
+          <PageSeo
+            title={post.title}
+            description={post.description}
+            slug={post.slug}
+            publishedDate={post._updatedAt}
+            url={`https://adamdrake.dev/blog/${post.slug}`}
           />
-        </Box>
+          <Flex
+            p={[4]}
+            pt={[0, 0]}
+            mt={12}
+            w="100%"
+            justify={['center']}
+            alignItems={['center']}
+            direction={['column']}
+            flexWrap="wrap"
+          >
+            <Heading as="h1" size="xl" fontWeight={200} color={headingColor}>
+              {post.title}
+            </Heading>
+          </Flex>
+          <Box my={4}>
+            <ImageComponent
+              src={`${post.slug}`}
+              altText={post.slug}
+              width={960}
+              height={560}
+            />
+          </Box>
 
-        <Box px={[4, 8]} mb={8}>
-          <PortableText value={content} components={components} />
-        </Box>
-      </PageContainer>
+          <Box px={[4, 8]} mb={8}>
+            <PortableText value={post.content} components={components} />
+          </Box>
+        </PageContainer>
+      )}
     </>
   );
 }
@@ -130,8 +130,8 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async context => {
   // It's important to default the slug so that it doesn't return "undefined"
-  // @ts-ignore
-  const { slug = '' } = context.params;
+  const params = context.params;
+  const slug = params?.slug || '';
   const post = await client.fetch(
     `
     *[_type == "post" && slug == $slug][0]
