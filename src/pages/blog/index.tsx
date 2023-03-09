@@ -2,24 +2,23 @@ import React from 'react';
 import Head from 'next/head';
 
 import PageContainer from 'layouts/PageContainer';
-import HomepageContainer from 'components/homepage/HomepageContainer';
 import { SITE_NAME } from 'constants/constants';
-import { client } from 'client';
 import { Post } from 'types/types';
+import BlogPageContainer from 'components/blog/BlogPageContainer';
+import { client } from 'client';
 
 type Props = {
-  latestPost: Post;
+  posts: Post[];
 };
 
-export default function PageIndex({ latestPost }: Props) {
+export default function BlogIndex({ posts }: Props) {
   return (
     <>
       <Head>
-        <title>{SITE_NAME} | Home</title>
+        <title>{SITE_NAME} | Blog</title>
       </Head>
-
       <PageContainer maxWidth="1000px">
-        <HomepageContainer latestPost={latestPost} />
+        <BlogPageContainer posts={posts} />
       </PageContainer>
     </>
   );
@@ -30,7 +29,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      latestPost: posts[0],
+      posts,
     },
   };
 }

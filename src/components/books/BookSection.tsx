@@ -14,7 +14,7 @@ export const BookSection = ({ heading, bookList }: Props) => {
 
   return (
     <Flex my={4} direction="column" alignItems="center">
-      <Heading as="h1" size="3xl" mb={4} color={headingColor}>
+      <Heading as="h2" size="2xl" fontWeight={200} mb={4} color={headingColor}>
         {heading}
       </Heading>
       <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}>

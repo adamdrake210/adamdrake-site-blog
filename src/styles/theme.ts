@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   useSystemColorMode: true,
 };
 
@@ -13,7 +13,7 @@ const config: ThemeConfig = {
 export const darkColorBg = 'blue.900';
 export const darkColorText = 'white';
 
-export const lightColorBg = 'purple.100';
+export const lightColorBg = 'blue.100';
 export const lightColorText = 'gray.600';
 
 export const lightHeadingColor = 'cyan.700';
@@ -38,11 +38,11 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: `'Amatic SC', cursive`,
-    body: `'Montserrat', serif`,
+    heading: `'Montserrat', serif`,
+    body: `'Source Serif Pro', serif`,
   },
   fontWeights: {
-    light: 300,
+    light: 200,
     normal: 400,
     medium: 500,
     bold: 700,

@@ -17,11 +17,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { useThemeColors } from 'hooks/useThemeColors';
 import { SITE_NAME } from 'constants/constants';
 import { SelectColorMode } from './SelectColorMode';
-import {
-  ABOUT_ROUTE,
-  ARTICLES_ROUTE,
-  BOOKS_ROUTE,
-} from 'constants/routeConstants';
+import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -33,8 +29,8 @@ const StickyNav = styled(Flex)`
 
 const navLinks = [
   {
-    link: ARTICLES_ROUTE,
-    text: 'Articles',
+    link: BLOG_ROUTE,
+    text: 'Blog',
   },
   {
     link: BOOKS_ROUTE,
@@ -72,7 +68,7 @@ const Navigation: React.FC = () => {
               backgroundColor={bgColor}
               color={color}
               fontWeight={600}
-              fontFamily="Amatic SC"
+              fontFamily="'Montserrat', serif"
               fontSize={36}
             >
               {SITE_NAME}
@@ -94,7 +90,7 @@ const Navigation: React.FC = () => {
                         fontSize={18}
                         py={[3]}
                         color={color}
-                        fontWeight={600}
+                        fontWeight={200}
                       >
                         {navLink.text}
                       </Button>
@@ -132,10 +128,14 @@ const Navigation: React.FC = () => {
               as="a"
               variant="link"
               fontSize={[28, 28, 46]}
-              fontWeight={700}
+              fontWeight={200}
               color={color}
               p={[1, 2]}
-              fontFamily="Amatic SC"
+              fontFamily="'Montserrat', serif"
+              textTransform="uppercase"
+              _hover={{
+                color: 'gray.400',
+              }}
             >
               {SITE_NAME}
             </Button>
@@ -145,7 +145,6 @@ const Navigation: React.FC = () => {
           color="#ffffff"
           display={['none', 'none', 'none', 'flex']}
           alignItems="center"
-          fontWeight={600}
           textTransform="uppercase"
         >
           {navLinks.map(navLink => {
@@ -157,6 +156,11 @@ const Navigation: React.FC = () => {
                   fontSize={32}
                   p={[1, 4]}
                   color={color}
+                  fontFamily="'Montserrat', serif"
+                  fontWeight={200}
+                  _hover={{
+                    color: 'gray.400',
+                  }}
                 >
                   {navLink.text}
                 </Button>

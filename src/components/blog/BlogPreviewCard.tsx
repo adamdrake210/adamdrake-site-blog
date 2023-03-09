@@ -1,17 +1,15 @@
 import React from 'react';
 import { Heading, Flex, Box, Text, Image, Tag } from '@chakra-ui/react';
 import { CLOUDINARY_URL } from 'constants/constants';
-import { ReadTime } from 'types/types';
 import { useThemeColors } from 'hooks/useThemeColors';
 
 type Props = {
   slug: string;
   title: string;
   description: string;
-  readTime: ReadTime;
 };
 
-const ArticlePreviewCard = ({ slug, title, description, readTime }: Props) => {
+const BlogPreviewCard = ({ slug, title, description }: Props) => {
   const { headingColor } = useThemeColors();
 
   return (
@@ -29,17 +27,16 @@ const ArticlePreviewCard = ({ slug, title, description, readTime }: Props) => {
           mb={[4, 0]}
         />
         <Flex flexDirection="column">
-          <Heading fontSize="4xl" color={headingColor}>
+          <Heading fontSize="3xl" fontWeight={200} color={headingColor}>
             {title}
           </Heading>
-          <Text mt={2}>{description}</Text>
+          <Text mt={2} fontSize="xl">
+            {description}
+          </Text>
           <Box w="100%" textAlign={['center', 'left']}>
-            <Tag colorScheme="cyan" size="md" mt={2} width="116px">
-              Read Article
+            <Tag colorScheme="cyan" size="md" mt={2}>
+              Read Post
             </Tag>
-            <Text fontStyle="italic" color="grey" mt={1}>
-              {`${readTime.text}`}
-            </Text>
           </Box>
         </Flex>
       </Flex>
@@ -47,4 +44,4 @@ const ArticlePreviewCard = ({ slug, title, description, readTime }: Props) => {
   );
 };
 
-export default ArticlePreviewCard;
+export default BlogPreviewCard;

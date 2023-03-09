@@ -16,15 +16,16 @@ export const HomepageAboutMeBanner = () => {
     >
       <Heading
         as="h1"
-        fontSize={['6xl', '6xl']}
+        fontSize={['5xl']}
         mb={4}
         w="100%"
         textAlign={['center', 'center', 'left']}
         color={headingColor}
+        fontWeight={200}
       >
         Hi, I&apos;m Adam Drake
       </Heading>
-      <Text mb={4} fontSize={['xl', '2xl']} textAlign="justify">
+      <Text mb={4} fontSize={['xl']} textAlign="justify">
         {ABOUT_ME_TEXT}
       </Text>
     </Box>

@@ -9,7 +9,6 @@ type Props = {
   slug: string;
   url: string;
   author?: string;
-  type: string;
 };
 
 const PageSeo: React.FC<Props> = ({
@@ -19,7 +18,6 @@ const PageSeo: React.FC<Props> = ({
   slug,
   url,
   author,
-  type,
 }) => {
   const featuredImage = {
     url: `${CLOUDINARY_URL}/adamdrake-blog/${slug}.png`,
@@ -33,7 +31,7 @@ const PageSeo: React.FC<Props> = ({
         description={description}
         canonical={url}
         openGraph={{
-          type: 'article',
+          type: 'blog post',
           article: {
             publishedTime: publishedDate,
           },

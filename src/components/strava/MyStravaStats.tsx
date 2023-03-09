@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 import { getMyStravaStats } from 'services/api/stravaApi';
 import { Loader } from 'components/common/Loader';
 import { useThemeColors } from 'hooks/useThemeColors';
@@ -27,16 +27,26 @@ export const MyStravaStats = () => {
       w="100%"
       p={4}
       mb={8}
+      shadow={['none', 'none', 'none', 'sm']}
     >
-      <Heading as="h2" size="3xl" color={headingColor} mb={4}>
-        My Strava Stats - {new Date().getFullYear()}
-      </Heading>
-      <ImageComponent
-        src="strave_logo.png"
-        altText="Strava logo"
-        height={70}
-        width={70}
-      />
+      <Flex align={'center'} flexDir={['column', 'row']}>
+        <ImageComponent
+          src="strave_logo.png"
+          altText="Strava logo"
+          height={50}
+          width={50}
+        />
+        <Heading
+          as="h2"
+          size="2xl"
+          fontWeight={200}
+          color={headingColor}
+          mb={4}
+          ml={4}
+        >
+          My Strava Stats - {new Date().getFullYear()}
+        </Heading>
+      </Flex>
       <Flex
         width="100%"
         justifyContent="space-between"
