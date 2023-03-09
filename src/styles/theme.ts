@@ -13,7 +13,7 @@ const config: ThemeConfig = {
 export const darkColorBg = 'blue.900';
 export const darkColorText = 'white';
 
-export const lightColorBg = 'purple.100';
+export const lightColorBg = 'blue.100';
 export const lightColorText = 'gray.600';
 
 export const lightHeadingColor = 'cyan.700';
