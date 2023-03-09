@@ -26,8 +26,8 @@ export default function HomepageBanner({
       w="100%"
       shadow={['none', 'none', 'none', 'sm']}
       p={4}
+      pb={8}
       mb={8}
-      borderBottom="5px solid #00A3C4"
     >
       <Heading
         as="h2"
