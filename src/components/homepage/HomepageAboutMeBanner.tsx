@@ -4,7 +4,7 @@ import { ABOUT_ME_TEXT } from 'constants/constants';
 
 export const HomepageAboutMeBanner = () => {
   return (
-    <Box component="section" w="100%" p={4} mb={8}>
+    <Box component="section" w="100%" p={4} mb={48}>
       <Title order={1} mb={4} w="100%">
         Hi, I&apos;m Adam Drake
       </Title>

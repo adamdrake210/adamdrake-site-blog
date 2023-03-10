@@ -48,13 +48,18 @@ export const theme: MantineThemeOverride = {
     fontFamily: "'Montserrat', serif",
     fontWeight: 200,
     sizes: {
-      h1: { fontSize: '32px', lineHeight: 1.5 },
-      h2: { fontSize: '26px', lineHeight: 1.5 },
-      h3: { fontSize: '22px', lineHeight: 1.5 },
+      h1: { fontSize: '48px', lineHeight: 1.5 },
+      h2: { fontSize: '32px', lineHeight: 1.5 },
+      h3: { fontSize: '26px', lineHeight: 1.5 },
     },
   },
 
   globalStyles: theme => ({
+    '#__next': {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    },
     body: {
       ...theme.fn.fontStyles(),
       fontWeight: 200,

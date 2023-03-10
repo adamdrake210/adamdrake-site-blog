@@ -19,7 +19,7 @@ export const MyStravaStats = () => {
     return <Text color="red">An error has occurred: {error.message}</Text>;
 
   return (
-    <Flex direction="column" align="center" w="100%" p={4} mb={8}>
+    <Flex direction="column" align="center" w="100%" p={16} mb={48}>
       <Flex
         align={'center'}
         sx={{
