@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Flex } from '@mantine/core';
 
 import HomepageBanner from './HomepageBanner';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
@@ -13,15 +13,15 @@ type Props = {
 
 export default function HomepageContainer({ latestPost }: Props) {
   return (
-    <Flex mt={[2, 2, 2, 12]} w="100%" direction="column" alignItems="center">
+    <Flex mt={32} w="100%" direction="column" align="center">
       <HomepageAboutMeBanner />
 
       {latestPost && (
         <HomepageBanner
           post={latestPost}
-          pageCategory="articles"
-          cta="Read Article"
-          pageTitle="Latest Article"
+          pageCategory="blog"
+          cta="Read Blog Post"
+          pageTitle="Latest Blog Post"
         />
       )}
       <MyStravaStats />

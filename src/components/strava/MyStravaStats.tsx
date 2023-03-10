@@ -1,14 +1,13 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Text, Title } from '@mantine/core';
+
 import { getMyStravaStats } from 'services/api/stravaApi';
 import { Loader } from 'components/common/Loader';
-import { useThemeColors } from 'hooks/useThemeColors';
 import { StravaCardDetails } from './StravaCardDetails';
 import { ImageComponent } from 'components/common/images/ImageComponent';
 
 export const MyStravaStats = () => {
-  const { headingColor } = useThemeColors();
   const { data, isLoading, isError, error } = useQuery<any, Error>(
     ['strave_stats'],
     getMyStravaStats,
@@ -17,40 +16,38 @@ export const MyStravaStats = () => {
   if (isLoading) return <Loader />;
 
   if (isError)
-    return <Text color="red.500">An error has occurred: {error.message}</Text>;
+    return <Text color="red">An error has occurred: {error.message}</Text>;
 
   return (
-    <Flex
-      as="section"
-      flexDir="column"
-      alignItems="center"
-      w="100%"
-      p={4}
-      mb={8}
-      shadow={['none', 'none', 'none', 'sm']}
-    >
-      <Flex align={'center'} flexDir={['column', 'row']}>
+    <Flex direction="column" align="center" w="100%" p={4} mb={8}>
+      <Flex
+        align={'center'}
+        sx={{
+          flexDirection: 'column',
+          '@media (min-width: 40em)': {
+            flexDirection: 'row',
+          },
+        }}
+      >
         <ImageComponent
           src="strave_logo.png"
           altText="Strava logo"
           height={50}
           width={50}
         />
-        <Heading
-          as="h2"
-          size="2xl"
-          fontWeight={200}
-          color={headingColor}
-          mb={4}
-          ml={4}
-        >
+        <Title order={2} mb={4} ml={4}>
           My Strava Stats - {new Date().getFullYear()}
-        </Heading>
+        </Title>
       </Flex>
       <Flex
-        width="100%"
-        justifyContent="space-between"
-        flexDirection={['column', 'row']}
+        w="100%"
+        justify="space-between"
+        sx={{
+          flexDirection: 'column',
+          '@media (min-width: 40em)': {
+            flexDirection: 'row',
+          },
+        }}
       >
         <StravaCardDetails
           heading="Total Distance Ran"
