@@ -1,22 +1,20 @@
 import React from 'react';
-import { Heading, Text, Box, Divider, Flex } from '@chakra-ui/react';
-import { useThemeColors } from 'hooks/useThemeColors';
+
+import { Box, Divider, Flex, Text, Title } from '@mantine/core';
 import { ABOUT_ME_TEXT } from 'constants/constants';
 import { SocialLinks } from 'components/common/SocialLinks';
 
 export const About: React.FC = () => {
-  const { headingColor } = useThemeColors();
-
   return (
-    <Box p={[4, 8]}>
-      <Heading as="h1" size="2xl" fontWeight={200} mb={4} color={headingColor}>
+    <Box p={{ base: 4, md: 8 }}>
+      <Title order={1} mb={16}>
         About Me
-      </Heading>
-      <Text mb={4} fontSize="xl">
+      </Title>
+      <Text mb={32} size="lg">
         {ABOUT_ME_TEXT}
       </Text>
       <Divider />
-      <Flex justifyContent="center">
+      <Flex justify="center" my={24}>
         <SocialLinks />
       </Flex>
     </Box>

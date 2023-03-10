@@ -1,8 +1,7 @@
 import React from 'react';
-import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
 import Navigation from 'components/navigation/Navigation';
 import Footer from 'components/footer/Footer';
-import { darkColorText, lightColorText } from 'styles/theme';
+import { Box, Flex } from '@mantine/core';
 
 type Props = {
   children: React.ReactNode;
@@ -10,15 +9,11 @@ type Props = {
 };
 
 const PageContainer = ({ children, maxWidth }: Props) => {
-  // Colors for light and dark mode
-  const bg = useColorModeValue('white', 'gray.800');
-  const color = useColorModeValue(lightColorText, darkColorText);
-
   return (
     <>
       <Navigation />
-      <Flex minH="100%" grow={1} as="main" pb={12}>
-        <Box w="100%" m="0 auto" maxW={maxWidth} bg={bg} color={color}>
+      <Flex mih="100%" sx={{ flexGrow: 1 }} pb={12}>
+        <Box w="100%" m="0 auto" maw={maxWidth}>
           {children}
         </Box>
       </Flex>

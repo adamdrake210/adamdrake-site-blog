@@ -1,6 +1,6 @@
+import { Anchor, Flex, Text } from '@mantine/core';
+import { IconExternalLink } from '@tabler/icons-react';
 import React from 'react';
-import { Flex, Link, Text } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { BookSection } from './BookSection';
 
@@ -12,22 +12,22 @@ type Props = {
 export const BooksContainer = ({ currentBooks, readBooks }: Props) => {
   return (
     <Flex
-      mt={[2, 2, 2, 12]}
-      p={[4]}
+      mt={{ base: 8, md: 16 }}
+      p={32}
       w="100%"
       direction="column"
-      alignItems="center"
+      align="center"
     >
       {/* Currently Reading */}
       <BookSection heading="Books I am reading" bookList={currentBooks} />
       {/* Already Reading */}
       <BookSection heading="Books I have read" bookList={readBooks} />
 
-      <Text fontSize="xs" mt={8}>
+      <Text size="xs" mt={48}>
         Book covers courtesy of{' '}
-        <Link href="https://openlibrary.org/developers/api" isExternal>
-          Open Library <ExternalLinkIcon mx="2px" />
-        </Link>
+        <Anchor href="https://openlibrary.org/developers/api">
+          Open Library <IconExternalLink />
+        </Anchor>
         .
       </Text>
     </Flex>

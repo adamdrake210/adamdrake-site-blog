@@ -1,9 +1,12 @@
-import { ColorModeScript } from '@chakra-ui/react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import { createGetInitialProps } from '@mantine/next';
 import { GA_TRACKING_ID } from 'utils/gtag';
-import theme from '../styles/theme';
+
+const getInitialProps = createGetInitialProps();
 
 export default class Document extends NextDocument {
+  static getInitialProps = getInitialProps;
+
   render() {
     return (
       <Html lang="en">
@@ -34,8 +37,6 @@ export default class Document extends NextDocument {
           />
         </Head>
         <body>
-          {/* 👇 Here's the script */}
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
