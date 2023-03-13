@@ -11,8 +11,6 @@ type Props = {
 export const PreviewCard = ({ title, description, slug }: Props) => {
   return (
     <Flex
-      align="flex-start"
-      justify="flex-start"
       mb={32}
       sx={{
         flexDirection: 'column',
@@ -21,16 +19,32 @@ export const PreviewCard = ({ title, description, slug }: Props) => {
         },
       }}
     >
-      <Image
-        src={`${CLOUDINARY_URL}c_scale,h_230,w_400/adamdrake-blog/${slug}.png`}
-        alt={`${title}`}
-        w="100%"
-      />
-      <Flex direction="column" align="flex-start" justify="flex-start" px={16}>
-        <Title order={3} mt={-2}>
-          {title}
-        </Title>
-        <Text mt={2} size="lg">
+      <Box
+        sx={{
+          '@media (min-width: 40em)': {
+            flex: '0 0 40%',
+          },
+        }}
+      >
+        <Image
+          src={`${CLOUDINARY_URL}c_scale,h_230,w_400/adamdrake-blog/${slug}.png`}
+          alt={`${title}`}
+          w="100%"
+        />
+      </Box>
+      <Flex
+        direction="column"
+        align="flex-start"
+        justify="flex-start"
+        px={16}
+        sx={{
+          '@media (min-width: 40em)': {
+            flex: '0 0 60%',
+          },
+        }}
+      >
+        <Title order={3}>{title}</Title>
+        <Text my={8} size="lg">
           {description}
         </Text>
         <Box

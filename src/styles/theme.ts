@@ -49,8 +49,8 @@ export const theme: MantineThemeOverride = {
     fontWeight: 200,
     sizes: {
       h1: { fontSize: '48px', lineHeight: 1.5 },
-      h2: { fontSize: '32px', lineHeight: 1.5 },
-      h3: { fontSize: '26px', lineHeight: 1.5 },
+      h2: { fontSize: '36px', lineHeight: 1.5 },
+      h3: { fontSize: '30px', lineHeight: 1.5 },
     },
   },
 
