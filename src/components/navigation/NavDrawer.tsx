@@ -1,8 +1,9 @@
 import React from 'react';
-import { Drawer, Flex, NavLink, Title } from '@mantine/core';
+import { Button, Drawer, Flex, NavLink, Title } from '@mantine/core';
 import { navLinks } from './Navigation';
 import NextLink from 'next/link';
 import { SITE_NAME } from 'constants/constants';
+import { NavLinkButton } from './NavLinkButton';
 
 type Props = {
   open: boolean;
@@ -16,19 +17,26 @@ export function NavDrawer({ open, handleClose }: Props) {
         opened={open}
         position="right"
         onClose={handleClose}
-        title="Navigation"
+        title="NAVIGATION"
       >
         <Flex direction="column">
-          <Title order={2}>{SITE_NAME}</Title>
+          <Title order={2} mb={24}>
+            {SITE_NAME}
+          </Title>
 
-          <Flex direction="column" align="flex-start">
+          <Flex
+            direction="column"
+            align="flex-start"
+            justify="space-between"
+            h={150}
+          >
             {navLinks.map(navLink => {
               return (
-                <NextLink key={navLink.link} href={navLink.link} passHref>
-                  <NavLink variant="link" py={12}>
-                    {navLink.text}
-                  </NavLink>
-                </NextLink>
+                <NavLinkButton
+                  key={navLink.link}
+                  btnText={navLink.text}
+                  href={navLink.link}
+                />
               );
             })}
           </Flex>

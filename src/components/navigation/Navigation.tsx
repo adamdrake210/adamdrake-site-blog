@@ -1,14 +1,16 @@
 import React from 'react';
 import NextLink from 'next/link';
-
 import styled from '@emotion/styled';
+import { ActionIcon, Box, Flex } from '@mantine/core';
+import { IconMenu2 } from '@tabler/icons-react';
+import { useMediaQuery } from '@mantine/hooks';
+
 import { SITE_NAME } from 'constants/constants';
 import SelectColorMode from './SelectColorMode';
 import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
-import { Box, Button, Flex } from '@mantine/core';
-import { IconMenu2 } from '@tabler/icons-react';
 import { NavDrawer } from './NavDrawer';
+import { NavLinkButton } from './NavLinkButton';
 
 const StickyNav = styled(Flex)`
   position: sticky;
@@ -35,46 +37,47 @@ export const navLinks = [
 
 const Navigation: React.FC = () => {
   const { open, handleOpen, handleClose } = useOpen();
-
-  // Colors for light and dark mode
+  const isMdDown = useMediaQuery('(max-width: 768px)');
 
   return (
-    <StickyNav w="100%" p={2}>
+    <StickyNav w="100%" p={16}>
       <Flex
         direction="row"
         justify="space-between"
         align="center"
-        maw="1200px"
+        maw="1020px"
         w="100%"
         m="0 auto"
       >
         <Box>
-          <NextLink href="/" passHref>
-            <Button variant="link" p={2} uppercase>
-              {SITE_NAME}
-            </Button>
-          </NextLink>
+          <NavLinkButton btnText={SITE_NAME} href="/" />
         </Box>
-        <Flex color="#ffffff" align="center">
-          {navLinks.map(navLink => {
-            return (
-              <NextLink key={navLink.link} href={navLink.link} passHref>
-                <Button variant="link" p={4}>
-                  {navLink.text}
-                </Button>
-              </NextLink>
-            );
-          })}
+        {!isMdDown && (
+          <Flex align="center">
+            {navLinks.map(navLink => {
+              return (
+                <NavLinkButton
+                  key={navLink.link}
+                  btnText={navLink.text}
+                  href={navLink.link}
+                />
+              );
+            })}
 
-          <SelectColorMode />
-        </Flex>
-        <Box color="#ffffff">
-          <SelectColorMode />
-          <Button variant="link" p={4} onClick={handleOpen}>
-            <IconMenu2 />
-          </Button>
-        </Box>
+            <SelectColorMode />
+          </Flex>
+        )}
+        {/* Mobile Buttons */}
+        {isMdDown && (
+          <Flex align="center">
+            <SelectColorMode />
+            <ActionIcon onClick={handleOpen} ml={16}>
+              <IconMenu2 />
+            </ActionIcon>
+          </Flex>
+        )}
       </Flex>
+      {/* Mobile Menu */}
       <NavDrawer open={open} handleClose={handleClose} />
     </StickyNav>
   );

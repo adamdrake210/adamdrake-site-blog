@@ -10,6 +10,7 @@ function SelectColorMode() {
       color={dark ? 'gray.1' : 'gray.8'}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
+      ml={32}
     >
       {dark ? <IconSun /> : <IconMoon />}
     </ActionIcon>
