@@ -38,8 +38,10 @@ export const PreviewCard = ({ title, description, slug }: Props) => {
         justify="flex-start"
         px={16}
         sx={{
+          marginTop: 16,
           '@media (min-width: 40em)': {
             flex: '0 0 60%',
+            marginTop: 0,
           },
         }}
       >
@@ -56,7 +58,7 @@ export const PreviewCard = ({ title, description, slug }: Props) => {
             },
           }}
         >
-          <Button size="md" mt={2} py={3}>
+          <Button size="md" mt={8} py={8}>
             Read Blog Post
           </Button>
         </Box>
