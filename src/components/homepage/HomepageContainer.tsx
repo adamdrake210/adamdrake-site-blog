@@ -13,7 +13,7 @@ type Props = {
 
 export default function HomepageContainer({ latestPost }: Props) {
   return (
-    <Flex mt={32} w="100%" direction="column" align="center">
+    <Flex mt={32} px={16} w="100%" direction="column" align="center">
       <HomepageAboutMeBanner />
 
       {latestPost && (

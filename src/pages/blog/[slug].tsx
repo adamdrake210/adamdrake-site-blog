@@ -2,7 +2,6 @@ import { PortableText } from '@portabletext/react';
 import { Box, Code, Flex, Heading, Text } from '@chakra-ui/react';
 import { ImageComponent } from 'components/common/images/ImageComponent';
 import PageSeo from 'components/common/PageSeo';
-import { useThemeColors } from 'hooks/useThemeColors';
 import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
@@ -72,8 +71,6 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  const { headingColor } = useThemeColors();
-
   return (
     <>
       {post && (
@@ -95,7 +92,7 @@ function Post({ post }: { post: Post }) {
             direction={['column']}
             flexWrap="wrap"
           >
-            <Heading as="h1" size="xl" fontWeight={200} color={headingColor}>
+            <Heading as="h1" size="xl" fontWeight={200}>
               {post.title}
             </Heading>
           </Flex>

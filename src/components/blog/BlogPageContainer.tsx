@@ -2,7 +2,6 @@ import React from 'react';
 import { Flex, Text, Box, Link, Heading } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { Post } from 'types/types';
-import { useThemeColors } from 'hooks/useThemeColors';
 import BlogPreviewCard from './BlogPreviewCard';
 
 type Props = {
@@ -10,8 +9,6 @@ type Props = {
 };
 
 export default function BlogPageContainer({ posts }: Props) {
-  const { headingColor } = useThemeColors();
-
   return (
     <Flex mt={12} w="100%" direction="column" alignItems="center">
       <Box as="section" mt={12} px={[4, 8]}>
@@ -23,13 +20,7 @@ export default function BlogPageContainer({ posts }: Props) {
           direction={['column', 'row']}
           flexWrap="wrap"
         >
-          <Heading
-            as="h1"
-            fontWeight={200}
-            size="2xl"
-            mb={4}
-            color={headingColor}
-          >
+          <Heading as="h1" fontWeight={200} size="2xl" mb={4}>
             Blog
           </Heading>
           {posts.map(post => {

@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Flex, Text, Title } from '@mantine/core';
 
 import { getMyStravaStats } from 'services/api/stravaApi';
-import { Loader } from 'components/common/Loader';
+import { CustomLoader } from 'components/common/CustomLoader';
 import { StravaCardDetails } from './StravaCardDetails';
 import { ImageComponent } from 'components/common/images/ImageComponent';
 
@@ -13,7 +13,7 @@ export const MyStravaStats = () => {
     getMyStravaStats,
   );
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <CustomLoader />;
 
   if (isError)
     return <Text color="red">An error has occurred: {error.message}</Text>;
@@ -35,7 +35,14 @@ export const MyStravaStats = () => {
           height={50}
           width={50}
         />
-        <Title order={2} mb={4} ml={4}>
+        <Title
+          order={2}
+          mb={24}
+          ml={16}
+          sx={{
+            textAlign: 'center',
+          }}
+        >
           My Strava Stats - {new Date().getFullYear()}
         </Title>
       </Flex>
