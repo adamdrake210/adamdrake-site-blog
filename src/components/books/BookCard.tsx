@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { GridItem, Link, Text } from '@chakra-ui/react';
+import { Grid, Text } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 type Props = {
   title: string;
@@ -10,19 +11,25 @@ type Props = {
 };
 
 export const BookCard = ({ title, author, identifier, isbn_13 }: Props) => {
+  const isSmDown = useMediaQuery('(max-width: 600px)');
+
   return (
-    <GridItem>
-      <Link href={`https://openlibrary.org/books/${identifier}`} isExternal>
+    <Grid.Col span={isSmDown ? 6 : 3}>
+      <a
+        href={`https://openlibrary.org/books/${identifier}`}
+        target="_blank"
+        rel="no-referrer noreferrer"
+      >
         <Image
           src={`https://covers.openlibrary.org/b/isbn/${isbn_13}-M.jpg`}
           alt={`Cover for ${title}`}
           width={200}
           height={300}
         />
-        <Text fontSize="sm">
+        <Text fz="sm">
           {title} - {author}
         </Text>
-      </Link>
-    </GridItem>
+      </a>
+    </Grid.Col>
   );
 };

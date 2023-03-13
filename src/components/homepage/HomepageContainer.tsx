@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@mantine/core';
+import { Divider, Flex } from '@mantine/core';
 
 import HomepageBanner from './HomepageBanner';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
