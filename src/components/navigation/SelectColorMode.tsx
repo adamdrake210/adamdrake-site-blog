@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Box, useColorMode } from '@chakra-ui/react';
+import { ActionIcon, useMantineColorScheme } from '@mantine/core';
+import { IconSun, IconMoon } from '@tabler/icons-react';
 
-import { useThemeColors } from 'hooks/useThemeColors';
-
-export const SelectColorMode = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const { color } = useThemeColors();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+function SelectColorMode() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
 
   return (
-    <Box px={4} _hover={{ cursor: 'pointer' }}>
-      {colorMode === 'light' ? (
-        <MoonIcon onClick={toggleColorMode} color={color} />
-      ) : (
-        <SunIcon onClick={toggleColorMode} color={color} />
-      )}
-    </Box>
+    <ActionIcon
+      color={dark ? 'gray.1' : 'gray.8'}
+      onClick={() => toggleColorScheme()}
+      title="Toggle color scheme"
+      ml={32}
+    >
+      {dark ? <IconSun /> : <IconMoon />}
+    </ActionIcon>
   );
-};
+}
+
+export default SelectColorMode;

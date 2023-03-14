@@ -1,69 +1,71 @@
 import { PortableText } from '@portabletext/react';
-import { Box, Code, Flex, Heading, Text } from '@chakra-ui/react';
+
 import { ImageComponent } from 'components/common/images/ImageComponent';
 import PageSeo from 'components/common/PageSeo';
-import { useThemeColors } from 'hooks/useThemeColors';
 import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
+import { Box, Code, Flex, Text, Title } from '@mantine/core';
 
 const components = {
   marks: {
     code: ({ children }: { children?: any }) => (
-      <Code colorScheme="green" my={4} py={2} px={4}>
+      <Code color="green" fz="lg" my={16} py={8} px={16}>
         {children}
       </Code>
     ),
   },
   block: {
     h1: ({ children }: { children?: any }) => (
-      <Heading as="h1" size="2xl" mb={2} mt={6} fontWeight={200}>
+      <Title order={1} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     h2: ({ children }: { children?: any }) => (
-      <Heading as="h2" size="xl" mb={2} mt={6} fontWeight={200}>
+      <Title order={2} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     h3: ({ children }: { children?: any }) => (
-      <Heading as="h3" size="lg" mb={2} mt={6} fontWeight={200}>
+      <Title order={3} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     h4: ({ children }: { children?: any }) => (
-      <Heading as="h4" size="md" mb={2} mt={6} fontWeight={200}>
+      <Title order={4} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     h5: ({ children }: { children?: any }) => (
-      <Heading as="h5" size="sm" mb={2} mt={6} fontWeight={200}>
+      <Title order={5} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     h6: ({ children }: { children?: any }) => (
-      <Heading as="h6" size="sm" mb={2} mt={6} fontWeight={200}>
+      <Title order={6} mb={16} mt={24} fw={200}>
         {children}
-      </Heading>
+      </Title>
     ),
     normal: ({ children }: { children?: any }) => (
-      <Text fontSize="lg" fontWeight={400} pb={2}>
+      <Text fz="lg" fw={400} pb={8}>
         {children}
       </Text>
     ),
     code: ({ children }: { children?: any }) => (
-      <Code colorScheme="red" my={8}>
+      <Code color="red" my={8}>
         {children}
       </Code>
     ),
     blockquote: ({ children }: { children?: any }) => (
       <Box
-        borderLeft="2px"
-        borderColor="blue.200"
+        sx={theme => ({
+          borderLeft: 2,
+          borderColor: theme.colors.blue[5],
+        })}
         pl={4}
         my={8}
-        fontStyle="italic"
+        fs="italic"
       >
         {children}
       </Box>
@@ -72,8 +74,6 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  const { headingColor } = useThemeColors();
-
   return (
     <>
       {post && (
@@ -86,18 +86,17 @@ function Post({ post }: { post: Post }) {
             url={`https://adamdrake.dev/blog/${post.slug}`}
           />
           <Flex
-            p={[4]}
-            pt={[0, 0]}
-            mt={12}
+            p={32}
+            pt={0}
+            mt={48}
             w="100%"
-            justify={['center']}
-            alignItems={['center']}
-            direction={['column']}
-            flexWrap="wrap"
+            justify="center"
+            align="center"
+            direction="column"
           >
-            <Heading as="h1" size="xl" fontWeight={200} color={headingColor}>
+            <Title order={1} fw={200}>
               {post.title}
-            </Heading>
+            </Title>
           </Flex>
           <Box my={4}>
             <ImageComponent
@@ -108,7 +107,7 @@ function Post({ post }: { post: Post }) {
             />
           </Box>
 
-          <Box px={[4, 8]} mb={8}>
+          <Box px={32} mb={48}>
             <PortableText value={post.content} components={components} />
           </Box>
         </PageContainer>

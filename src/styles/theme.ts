@@ -1,65 +1,73 @@
-import {
-  extendTheme,
-  theme as chakraTheme,
-  ThemeConfig,
-} from '@chakra-ui/react';
+import { MantineThemeOverride } from '@mantine/core';
 
-const config: ThemeConfig = {
-  initialColorMode: 'light',
-  useSystemColorMode: true,
-};
-
-// Colors
-export const darkColorBg = 'blue.900';
-export const darkColorText = 'white';
-
-export const lightColorBg = 'blue.100';
-export const lightColorText = 'gray.600';
-
-export const lightHeadingColor = 'cyan.700';
-export const darkHeadingColor = 'cyan.600';
-
-const theme = extendTheme({
-  ...chakraTheme,
-  styles: {
-    global: {
-      html: {
-        fontSize: '110%',
-      },
-      '#__next': {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-      },
-      pre: {
-        whiteSpace: 'pre-wrap',
-        wordWrap: 'break-word',
-      },
+export const theme: MantineThemeOverride = {
+  colors: {
+    secondary: [
+      '#e4f0f7',
+      '#d6e8f3',
+      '#bbd9ec',
+      '#add1e8',
+      '#a0cae4',
+      '#85bbdc',
+      '#77b3d8',
+      '#5f8fad',
+      '#476b82',
+      '#3c5a6c',
+    ],
+    dark: [
+      '#b3bcc5',
+      '#99a5b1',
+      '#808f9e',
+      '#4d6277',
+      '#334b63',
+      '#1a3550',
+      '#001e3c',
+      '#001b36',
+      '#001830',
+      '#001224',
+    ],
+  },
+  primaryShade: 4,
+  // eslint-disable-next-line quotes
+  fontFamily: "'Source Serif Pro', serif",
+  headings: {
+    // eslint-disable-next-line quotes
+    fontFamily: "'Montserrat', serif",
+    fontWeight: 200,
+    sizes: {
+      h1: { fontSize: '48px', lineHeight: 1.5 },
+      h2: { fontSize: '36px', lineHeight: 1.5 },
+      h3: { fontSize: '30px', lineHeight: 1.5 },
     },
   },
-  fonts: {
-    heading: `'Montserrat', serif`,
-    body: `'Source Serif Pro', serif`,
-  },
-  fontWeights: {
-    light: 200,
-    normal: 400,
-    medium: 500,
-    bold: 700,
-  },
-  fontSizes: {
-    xs: '0.75rem',
-    sm: '0.875rem',
-    md: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '1.875rem',
-    '4xl': '2.25rem',
-    '5xl': '3rem',
-    '6xl': '4rem',
-  },
-  config,
-});
 
-export default theme;
+  globalStyles: theme => ({
+    '#__next': {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    },
+    body: {
+      ...theme.fn.fontStyles(),
+      fontWeight: 200,
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.gray[0]
+          : theme.colors.gray[7],
+    },
+    a: {
+      textDecoration: 'none',
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.gray[0]
+          : theme.colors.gray[7],
+      '&:hover': {
+        textDecoration: 'none',
+        color:
+          theme.colorScheme === 'dark'
+            ? theme.colors.gray[4]
+            : theme.colors.gray[8],
+      },
+    },
+  }),
+};

@@ -1,56 +1,65 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, Title } from '@mantine/core';
+
 import { getMyStravaStats } from 'services/api/stravaApi';
-import { Loader } from 'components/common/Loader';
-import { useThemeColors } from 'hooks/useThemeColors';
+import { CustomLoader } from 'components/common/CustomLoader';
 import { StravaCardDetails } from './StravaCardDetails';
-import { ImageComponent } from 'components/common/images/ImageComponent';
+import { CLOUDINARY_URL } from 'constants/constants';
 
 export const MyStravaStats = () => {
-  const { headingColor } = useThemeColors();
   const { data, isLoading, isError, error } = useQuery<any, Error>(
     ['strave_stats'],
     getMyStravaStats,
   );
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <CustomLoader />;
 
   if (isError)
-    return <Text color="red.500">An error has occurred: {error.message}</Text>;
+    return <Text color="red">An error has occurred: {error.message}</Text>;
 
   return (
-    <Flex
-      as="section"
-      flexDir="column"
-      alignItems="center"
-      w="100%"
-      p={4}
-      mb={8}
-      shadow={['none', 'none', 'none', 'sm']}
-    >
-      <Flex align={'center'} flexDir={['column', 'row']}>
-        <ImageComponent
-          src="strave_logo.png"
-          altText="Strava logo"
-          height={50}
-          width={50}
-        />
-        <Heading
-          as="h2"
-          size="2xl"
-          fontWeight={200}
-          color={headingColor}
-          mb={4}
-          ml={4}
+    <Flex direction="column" align="center" w="100%" p={16} mb={48}>
+      <Flex
+        align={'center'}
+        justify={'center'}
+        mb={24}
+        sx={{
+          flexDirection: 'column',
+          '@media (min-width: 40em)': {
+            flexDirection: 'row',
+          },
+        }}
+      >
+        <Box>
+          <Image
+            w={40}
+            h={40}
+            radius="lg"
+            src={`${CLOUDINARY_URL}c_scale,h_40,w_40/adamdrake-blog/strave_logo.png`}
+            alt="Strava logo"
+          />
+        </Box>
+
+        <Title
+          order={2}
+          ml={16}
+          sx={{
+            textAlign: 'center',
+          }}
         >
           My Strava Stats - {new Date().getFullYear()}
-        </Heading>
+        </Title>
       </Flex>
       <Flex
-        width="100%"
-        justifyContent="space-between"
-        flexDirection={['column', 'row']}
+        w="100%"
+        justify="space-between"
+        sx={{
+          flexDirection: 'column',
+          '@media (min-width: 40em)': {
+            flexDirection: 'row',
+          },
+        }}
       >
         <StravaCardDetails
           heading="Total Distance Ran"

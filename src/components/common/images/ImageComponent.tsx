@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import { Box } from '@mantine/core';
 
 import { CLOUDINARY_URL } from 'constants/constants';
-import { Box } from '@chakra-ui/react';
 
 type Props = {
   src: string;
@@ -13,7 +13,7 @@ type Props = {
 
 export const ImageComponent = ({ src, altText, width, height }: Props) => {
   return (
-    <Box my={4}>
+    <Box mb={24}>
       <Image
         src={`${CLOUDINARY_URL}c_scale,h_${height},w_${width}/adamdrake-blog/${src}`}
         alt={altText}

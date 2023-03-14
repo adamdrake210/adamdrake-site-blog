@@ -1,7 +1,6 @@
 import React from 'react';
-import { Flex, Grid, Heading } from '@chakra-ui/react';
+import { Flex, Grid, Title } from '@mantine/core';
 
-import { useThemeColors } from 'hooks/useThemeColors';
 import { BookCard } from './BookCard';
 
 type Props = {
@@ -10,14 +9,12 @@ type Props = {
 };
 
 export const BookSection = ({ heading, bookList }: Props) => {
-  const { headingColor } = useThemeColors();
-
   return (
-    <Flex my={4} direction="column" alignItems="center">
-      <Heading as="h2" size="2xl" fontWeight={200} mb={4} color={headingColor}>
+    <Flex my={16} direction="column" align="center">
+      <Title order={2} fw={200} mb={24}>
         {heading}
-      </Heading>
-      <Grid templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}>
+      </Title>
+      <Grid gutter={16} gutterXs="md" gutterMd="xl" gutterXl={50}>
         {bookList?.map((book: any) => {
           return (
             <BookCard

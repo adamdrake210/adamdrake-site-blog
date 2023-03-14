@@ -4,7 +4,6 @@ import Head from 'next/head';
 import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
 import { currentlyReadingBooks, readBooks } from 'data/book-data';
-import Image from 'next/image';
 import { BooksContainer } from 'components/books/BooksContainer';
 
 type Props = {

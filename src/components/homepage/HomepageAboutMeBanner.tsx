@@ -1,31 +1,23 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
-import { ABOUT_ME_TEXT } from 'constants/constants';
-import { useThemeColors } from 'hooks/useThemeColors';
 import React from 'react';
+import { Box, Flex, Image, Text, Title } from '@mantine/core';
+import { ABOUT_ME_TEXT } from 'constants/constants';
 
 export const HomepageAboutMeBanner = () => {
-  const { headingColor } = useThemeColors();
-
   return (
-    <Box
-      as="section"
-      w="100%"
-      shadow={['none', 'none', 'none', 'sm']}
-      p={4}
-      mb={8}
-    >
-      <Heading
-        as="h1"
-        fontSize={['5xl']}
-        mb={4}
-        w="100%"
-        textAlign={['center', 'center', 'left']}
-        color={headingColor}
-        fontWeight={200}
-      >
+    <Box component="section" w="100%" p={4} mb={24}>
+      <Image
+        maw={160}
+        mr={16}
+        radius="xl"
+        src="https://res.cloudinary.com/dmiizmobu/image/upload/v1678724204/adamdrake-blog/me_selfie.jpg"
+        alt="Adam Drake AI Selfie"
+      />
+
+      <Title order={1} mb={8} w="100%">
         Hi, I&apos;m Adam Drake
-      </Heading>
-      <Text mb={4} fontSize={['xl']} textAlign="justify">
+      </Title>
+
+      <Text mb={16} size={24}>
         {ABOUT_ME_TEXT}
       </Text>
     </Box>
