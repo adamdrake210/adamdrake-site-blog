@@ -6,6 +6,7 @@ import { SITE_NAME } from 'constants/constants';
 import { Post } from 'types/types';
 import BlogPageContainer from 'components/blog/BlogPageContainer';
 import { client } from 'client';
+import { AnimateLayout } from 'layouts/AnimateLayout';
 
 type Props = {
   posts: Post[];
@@ -18,7 +19,9 @@ export default function BlogIndex({ posts }: Props) {
         <title>{SITE_NAME} | Blog</title>
       </Head>
       <PageContainer maxWidth="1000px">
-        <BlogPageContainer posts={posts} />
+        <AnimateLayout>
+          <BlogPageContainer posts={posts} />
+        </AnimateLayout>
       </PageContainer>
     </>
   );

@@ -5,6 +5,7 @@ import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
 import { BooksContainer } from 'components/books/BooksContainer';
 import { client } from 'client';
+import { AnimateLayout } from 'layouts/AnimateLayout';
 
 type Props = {
   currentBooksData: any;
@@ -28,10 +29,12 @@ export default function Books({ currentBooksData, readBooksData }: Props) {
       </Head>
 
       <PageContainer maxWidth="1000px">
-        <BooksContainer
-          currentBooks={currentBooksArray}
-          readBooks={readBooksArray}
-        />
+        <AnimateLayout>
+          <BooksContainer
+            currentBooks={currentBooksArray}
+            readBooks={readBooksArray}
+          />
+        </AnimateLayout>
       </PageContainer>
     </>
   );

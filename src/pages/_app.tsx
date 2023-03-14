@@ -5,6 +5,7 @@ import {
   MantineProvider,
 } from '@mantine/core';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { AnimatePresence } from 'framer-motion';
 
 import type { AppProps } from 'next/app';
 import { theme } from 'styles/theme';
@@ -38,7 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             colorScheme,
           }}
         >
-          <Component {...pageProps} />
+          <AnimatePresence mode="wait" initial={false}>
+            <Component {...pageProps} />
+          </AnimatePresence>
         </MantineProvider>
       </ColorSchemeProvider>
     </QueryClientProvider>

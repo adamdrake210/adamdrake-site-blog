@@ -6,7 +6,8 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Box, Code, Flex, Text, Title } from '@mantine/core';
+import { Box, Code, Flex, Text, Title, useMantineTheme } from '@mantine/core';
+import { useScroll, useSpring, motion } from 'framer-motion';
 
 const components = {
   marks: {
@@ -74,10 +75,31 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
+  const theme = useMantineTheme();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <>
       {post && (
         <PageContainer maxWidth="728px">
+          <motion.div
+            style={{
+              scaleX,
+              position: 'fixed',
+              top: 68,
+              left: 0,
+              right: 0,
+              height: 5,
+              background: theme.colors.blue[5],
+              transformOrigin: '0%',
+              zIndex: 1000,
+            }}
+          />
           <PageSeo
             title={post.title}
             description={post.description}
