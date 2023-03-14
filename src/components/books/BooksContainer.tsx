@@ -23,10 +23,10 @@ export const BooksContainer = ({ currentBooks, readBooks }: Props) => {
       {/* Already Reading */}
       <BookSection heading="Books I have read" bookList={readBooks} />
 
-      <Text size="xs" mt={48}>
+      <Text size="sm" mt={32}>
         Book covers courtesy of{' '}
         <Anchor href="https://openlibrary.org/developers/api">
-          Open Library <IconExternalLink />
+          Open Library <IconExternalLink size={16} />
         </Anchor>
         .
       </Text>
