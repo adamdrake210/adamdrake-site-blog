@@ -10,7 +10,7 @@ export const StravaCardDetails = ({ heading, statistics }: Props) => {
   return (
     <Flex direction="column" align="center" my={4}>
       <Title order={3}>{heading}</Title>
-      <Text size="xl">{statistics}</Text>
+      <Text fz={28}>{statistics}</Text>
     </Flex>
   );
 };

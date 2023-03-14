@@ -4,7 +4,7 @@ import { ABOUT_ME_TEXT } from 'constants/constants';
 
 export const HomepageAboutMeBanner = () => {
   return (
-    <Box component="section" w="100%" p={4} mb={48}>
+    <Box component="section" w="100%" p={4} mb={24}>
       <Image
         maw={160}
         mr={16}

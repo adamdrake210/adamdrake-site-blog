@@ -19,7 +19,7 @@ export default function HomepageBanner({
   const { slug, title, description } = post;
 
   return (
-    <Box component="section" w="100%" p={4} pb={8} mb={48}>
+    <Box component="section" w="100%" p={4} pb={8} mb={24}>
       <Title order={2} mb={4} w="100%">
         {pageTitle}
       </Title>

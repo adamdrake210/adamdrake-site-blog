@@ -2,18 +2,6 @@ import { MantineThemeOverride } from '@mantine/core';
 
 export const theme: MantineThemeOverride = {
   colors: {
-    primary: [
-      '#f1d9e9',
-      '#e3b2d4',
-      '#dc9fc9',
-      '#cd79b3',
-      '#c665a9',
-      '#bf529e',
-      '#b83f93',
-      '#933276',
-      '#6e2658',
-      '#37132c',
-    ],
     secondary: [
       '#e4f0f7',
       '#d6e8f3',
@@ -39,8 +27,7 @@ export const theme: MantineThemeOverride = {
       '#001224',
     ],
   },
-  primaryColor: 'primary',
-  primaryShade: 6,
+  primaryShade: 4,
   // eslint-disable-next-line quotes
   fontFamily: "'Source Serif Pro', serif",
   headings: {
