@@ -1,6 +1,7 @@
-import { Box, Button, Flex, Image, Text, Title } from '@mantine/core';
-import { CLOUDINARY_URL } from 'constants/constants';
 import React from 'react';
+import { Box, Button, Flex, Image, Text, Title } from '@mantine/core';
+import { motion } from 'framer-motion';
+import { CLOUDINARY_URL } from 'constants/constants';
 
 type Props = {
   title: string;
@@ -58,9 +59,11 @@ export const PreviewCard = ({ title, description, slug }: Props) => {
             },
           }}
         >
-          <Button size="md" mt={8} py={8}>
-            Read Blog Post
-          </Button>
+          <motion.div whileTap={{ scale: 0.991 }}>
+            <Button size="md" mt={8} py={8}>
+              Read Blog Post
+            </Button>
+          </motion.div>
         </Box>
       </Flex>
     </Flex>
