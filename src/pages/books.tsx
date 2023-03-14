@@ -3,12 +3,20 @@ import Head from 'next/head';
 
 import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
-import { currentlyReadingBooks, readBooks } from 'data/book-data';
 import { BooksContainer } from 'components/books/BooksContainer';
+import { client } from 'client';
+import { AnimateLayout } from 'layouts/AnimateLayout';
 
 type Props = {
   currentBooksData: any;
   readBooksData: any;
+};
+
+type Book = {
+  isbn: string;
+  title: string;
+  rating: number;
+  status: 'read' | 'reading' | 'want-to-read';
 };
 
 export default function Books({ currentBooksData, readBooksData }: Props) {
@@ -21,10 +29,12 @@ export default function Books({ currentBooksData, readBooksData }: Props) {
       </Head>
 
       <PageContainer maxWidth="1000px">
-        <BooksContainer
-          currentBooks={currentBooksArray}
-          readBooks={readBooksArray}
-        />
+        <AnimateLayout>
+          <BooksContainer
+            currentBooks={currentBooksArray}
+            readBooks={readBooksArray}
+          />
+        </AnimateLayout>
       </PageContainer>
     </>
   );
@@ -33,8 +43,26 @@ export default function Books({ currentBooksData, readBooksData }: Props) {
 export async function getServerSideProps() {
   const OPEN_LIBRARY_API = 'https://openlibrary.org/api/books?bibkeys=ISBN:';
 
-  const currentBooksList = currentlyReadingBooks.join(',');
-  const readBooksList = readBooks.join(',');
+  // Fetching books from Sanity
+  const books: Book[] = await client.fetch(`*[_type == "book"]`);
+
+  const currentBooksList = books
+    .map(book => {
+      if (book.status === 'reading') {
+        return book.isbn;
+      }
+    })
+    .filter(book => book)
+    .join(',');
+
+  const readBooksList = books
+    .map(book => {
+      if (book.status === 'read') {
+        return book.isbn;
+      }
+    })
+    .filter(book => book)
+    .join(',');
 
   const fetchCurrentBooks = () => {
     return fetch(
