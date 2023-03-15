@@ -1,34 +1,32 @@
-import {
-  ActionIcon,
-  Box,
-  Button,
-  Center,
-  Flex,
-  Text,
-  Title,
-  Tooltip,
-} from '@mantine/core';
-import { useClipboard } from '@mantine/hooks';
-import { IconClipboard } from '@tabler/icons-react';
+import { useState } from 'react';
+import { Box, Button, Center, Flex, Text } from '@mantine/core';
 import { useMutation } from '@tanstack/react-query';
+import { useForm } from 'react-hook-form';
+
 import { CustomLoader } from 'components/common/CustomLoader';
 import ControlledTextField from 'components/common/fields/ControlledTextField';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { postExistingImageToCloudinary } from 'services/api/cloudinaryApi';
+import { ImageUrlCopier } from './ImageUrlCopier';
 
 type UploadImageFormValues = {
   imageUrl: string;
 };
 
+type CloudinaryImageUploadRequestBody = {
+  imageUrl: string;
+};
+
+type CloudinaryImageUploadResponse = {
+  imageUrl: string;
+};
+
 export const UploadImageForm = () => {
-  const clipboard = useClipboard({ timeout: 1000 });
   const [cloudinaryUrl, setCloudinaryUrl] = useState<string>('');
 
   const { mutate, error, isLoading, isError } = useMutation<
-    { imageUrl: string },
+    CloudinaryImageUploadResponse,
     Error,
-    { imageUrl: string }
+    CloudinaryImageUploadRequestBody
   >({
     mutationFn: data => postExistingImageToCloudinary(data.imageUrl),
   });
@@ -46,7 +44,6 @@ export const UploadImageForm = () => {
       },
       {
         onSuccess: async data => {
-          console.log('data', data);
           setCloudinaryUrl(data.imageUrl);
         },
       },
@@ -75,19 +72,7 @@ export const UploadImageForm = () => {
 
           {isError && <Text color="red">{error.message}</Text>}
         </Center>
-        {cloudinaryUrl && (
-          <Box my={32}>
-            <Title order={2}>Cloudinary URL</Title>
-            <Flex align="center">
-              <Text>Cloudinary URL: {cloudinaryUrl}</Text>
-              <Tooltip label="Copied!" opened={clipboard.copied}>
-                <ActionIcon onClick={() => clipboard.copy(cloudinaryUrl)}>
-                  <IconClipboard />
-                </ActionIcon>
-              </Tooltip>
-            </Flex>
-          </Box>
-        )}
+        {cloudinaryUrl && <ImageUrlCopier cloudinaryUrl={cloudinaryUrl} />}
       </Flex>
     </form>
   );
