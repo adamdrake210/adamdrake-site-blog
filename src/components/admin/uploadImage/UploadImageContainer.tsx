@@ -5,7 +5,9 @@ import { UploadImageForm } from './UploadImageForm';
 export const UploadImageContainer = () => {
   return (
     <Box>
-      <Title order={1}>Upload Existing Image</Title>
+      <Title order={1} fz={36}>
+        Upload Existing Image
+      </Title>
       <UploadImageForm />
     </Box>
   );
