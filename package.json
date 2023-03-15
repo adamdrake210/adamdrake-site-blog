@@ -19,6 +19,7 @@
     "@portabletext/react": "^2.0.2",
     "@tabler/icons-react": "^2.9.0",
     "@tanstack/react-query": "^4.2.1",
+    "cloudinary": "^1.35.0",
     "framer-motion": "^10.3.0",
     "gray-matter": "^4.0.3",
     "next": "12.2.3",
@@ -28,6 +29,7 @@
     "next-sitemap": "^3.1.17",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.5",
     "reading-time": "^1.5.0"
   },
   "devDependencies": {
