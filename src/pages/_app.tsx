@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             colorScheme,
           }}
         >
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence mode="wait">
             <Component {...pageProps} />
           </AnimatePresence>
         </MantineProvider>

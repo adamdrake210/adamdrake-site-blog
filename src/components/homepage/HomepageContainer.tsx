@@ -7,6 +7,7 @@ import { SocialLinks } from 'components/common/SocialLinks';
 import { MyStravaStats } from 'components/strava/MyStravaStats';
 import { Post } from 'types/types';
 import { CustomDivider } from 'components/common/CustomDivider';
+import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 
 type Props = {
   latestPost: Post;
@@ -15,19 +16,25 @@ type Props = {
 export default function HomepageContainer({ latestPost }: Props) {
   return (
     <Flex mt={32} px={16} w="100%" direction="column" align="center">
-      <HomepageAboutMeBanner />
+      <AnimateFadeIn>
+        <HomepageAboutMeBanner />
+      </AnimateFadeIn>
       <CustomDivider />
 
       {latestPost && (
-        <HomepageBanner
-          post={latestPost}
-          pageCategory="blog"
-          cta="Read Blog Post"
-          pageTitle="Latest Blog Post"
-        />
+        <AnimateFadeIn>
+          <HomepageBanner
+            post={latestPost}
+            pageCategory="blog"
+            cta="Read Blog Post"
+            pageTitle="Latest Blog Post"
+          />
+        </AnimateFadeIn>
       )}
       <CustomDivider />
-      <MyStravaStats />
+      <AnimateFadeIn>
+        <MyStravaStats />
+      </AnimateFadeIn>
       <CustomDivider />
       <SocialLinks />
     </Flex>
