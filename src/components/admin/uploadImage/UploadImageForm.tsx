@@ -52,7 +52,7 @@ export const UploadImageForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Flex direction="column" justify="center">
+      <Flex direction="column" justify="center" w={600}>
         <ControlledTextField
           name="imageUrl"
           type="text"
@@ -60,7 +60,6 @@ export const UploadImageForm = () => {
           label="Image URL"
           placeholder="Enter the url for the image here..."
           disabled={isLoading}
-          width={500}
         />
         <Box mb={16}>
           <Button w={150} type="submit" disabled={isLoading}>

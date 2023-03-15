@@ -10,7 +10,6 @@ export type ControlledTextFieldProps = {
   disabled?: boolean;
   helperText?: string;
   placeholder?: string;
-  width?: number;
 };
 
 const ControlledTextField = ({
@@ -22,7 +21,6 @@ const ControlledTextField = ({
   disabled,
   helperText,
   placeholder,
-  width,
 }: ControlledTextFieldProps) => {
   return (
     <Box my={8} w="100%">
@@ -45,7 +43,7 @@ const ControlledTextField = ({
               checked={field.value}
               disabled={disabled}
               placeholder={placeholder || `Enter ${name} here`}
-              w={width || 300}
+              w="100%"
             />
           </Input.Wrapper>
         )}
