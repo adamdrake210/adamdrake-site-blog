@@ -3,9 +3,10 @@ import { Anchor, Box, Title } from '@mantine/core';
 import NextLink from 'next/link';
 
 import { PreviewCard } from 'components/blog/PreviewCard';
+import { Post } from 'types/types';
 
 type Props = {
-  post: any;
+  post: Post;
   pageCategory: string;
   cta: string;
   pageTitle: string;
@@ -16,7 +17,7 @@ export default function HomepageBanner({
   pageCategory,
   pageTitle,
 }: Props) {
-  const { slug, title, description } = post;
+  const { headerimageurl, slug, title, description } = post;
 
   return (
     <Box component="section" w="100%" p={4} pb={8} mb={24}>
@@ -43,7 +44,11 @@ export default function HomepageBanner({
           })}
           w="100%"
         >
-          <PreviewCard title={title} description={description} slug={slug} />
+          <PreviewCard
+            title={title}
+            description={description}
+            imageUrl={headerimageurl}
+          />
         </Anchor>
       </NextLink>
     </Box>

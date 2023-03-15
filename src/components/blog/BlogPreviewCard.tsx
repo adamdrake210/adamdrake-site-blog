@@ -4,12 +4,12 @@ import React from 'react';
 import { PreviewCard } from './PreviewCard';
 
 type Props = {
-  slug: string;
+  imageUrl: string;
   title: string;
   description: string;
 };
 
-const BlogPreviewCard = ({ slug, title, description }: Props) => {
+const BlogPreviewCard = ({ imageUrl, title, description }: Props) => {
   return (
     <Box
       w="100%"
@@ -19,7 +19,11 @@ const BlogPreviewCard = ({ slug, title, description }: Props) => {
         borderBottom: '2px solid #00A3C4',
       }}
     >
-      <PreviewCard title={title} description={description} slug={slug} />
+      <PreviewCard
+        title={title}
+        description={description}
+        imageUrl={imageUrl}
+      />
     </Box>
   );
 };

@@ -8,6 +8,8 @@ import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
 import { Box, Code, Flex, Text, Title, useMantineTheme } from '@mantine/core';
 import { useScroll, useSpring, motion } from 'framer-motion';
+import Image from 'next/image';
+import { WrittenDate } from 'components/common/WrittenDate';
 
 const components = {
   marks: {
@@ -61,12 +63,12 @@ const components = {
     blockquote: ({ children }: { children?: any }) => (
       <Box
         sx={theme => ({
-          borderLeft: 2,
-          borderColor: theme.colors.blue[5],
+          borderLeft: `5px solid ${theme.colors.blue[5]}`,
         })}
-        pl={4}
-        my={8}
+        pl={16}
+        my={24}
         fs="italic"
+        fz={20}
       >
         {children}
       </Box>
@@ -119,16 +121,20 @@ function Post({ post }: { post: Post }) {
             <Title order={1} fw={200}>
               {post.title}
             </Title>
+            <WrittenDate date={post._createdAt} author={post.writtenby} />
           </Flex>
-          <Box my={4}>
-            <ImageComponent
-              src={`${post.slug}`}
-              altText={post.slug}
+          <Box mb={24}>
+            <Image
+              src={post.headerimageurl}
+              alt={`Image of ${post.title}`}
               width={960}
               height={560}
+              priority
             />
           </Box>
-
+          <Text px={32} mb={16} fz={24}>
+            {post.intro}
+          </Text>
           <Box px={32} mb={48}>
             <PortableText value={post.content} components={components} />
           </Box>
