@@ -77,7 +77,6 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  console.log('🚀 ~ file: [slug].tsx:80 ~ Post ~ post:', post);
   const theme = useMantineTheme();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
