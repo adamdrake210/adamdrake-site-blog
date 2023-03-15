@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Image, Text, Title } from '@mantine/core';
+import { Box, Image, Text, Title } from '@mantine/core';
 import { ABOUT_ME_TEXT } from 'constants/constants';
 
 export const HomepageAboutMeBanner = () => {

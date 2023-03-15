@@ -5,7 +5,7 @@ import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
 import { BooksContainer } from 'components/books/BooksContainer';
 import { client } from 'client';
-import { AnimateLayout } from 'layouts/AnimateLayout';
+import { AnimateSpringFromRight } from 'components/common/animations/AnimateSpringFromRight';
 
 type Props = {
   currentBooksData: any;
@@ -29,12 +29,12 @@ export default function Books({ currentBooksData, readBooksData }: Props) {
       </Head>
 
       <PageContainer maxWidth="1000px">
-        <AnimateLayout>
+        <AnimateSpringFromRight>
           <BooksContainer
             currentBooks={currentBooksArray}
             readBooks={readBooksArray}
           />
-        </AnimateLayout>
+        </AnimateSpringFromRight>
       </PageContainer>
     </>
   );

@@ -5,46 +5,47 @@ import { useForm } from 'react-hook-form';
 
 import { CustomLoader } from 'components/common/CustomLoader';
 import ControlledTextField from 'components/common/fields/ControlledTextField';
-import { postExistingImageToCloudinary } from 'services/api/cloudinaryApi';
 import { TextCopier } from '../../common/TextCopier';
+import { createBlogPost } from 'services/api/openaiApi';
 
-type UploadImageFormValues = {
-  imageUrl: string;
+type CreateBlogPostFormValues = {
+  prompt: string;
 };
 
-type CloudinaryImageUploadRequestBody = {
-  imageUrl: string;
+type CreateBlogPostRequestBody = {
+  prompt: string;
 };
 
-type CloudinaryImageUploadResponse = {
-  imageUrl: string;
+type CreateBlogPostResponse = {
+  blogText: string;
 };
 
-export const UploadImageForm = () => {
-  const [cloudinaryUrl, setCloudinaryUrl] = useState<string>('');
+export const CreateBlogPostForm = () => {
+  const [aiBlogText, setAiBlogText] = useState<string>('');
 
   const { mutate, error, isLoading, isError } = useMutation<
-    CloudinaryImageUploadResponse,
+    CreateBlogPostResponse,
     Error,
-    CloudinaryImageUploadRequestBody
+    CreateBlogPostRequestBody
   >({
-    mutationFn: data => postExistingImageToCloudinary(data.imageUrl),
+    mutationFn: data => createBlogPost(data.prompt),
   });
 
-  const { handleSubmit, control } = useForm<UploadImageFormValues>({
+  const { handleSubmit, control } = useForm<CreateBlogPostFormValues>({
     defaultValues: {
-      imageUrl: '',
+      prompt: '',
     },
   });
 
-  const onSubmit = (formData: UploadImageFormValues) => {
+  const onSubmit = (formData: CreateBlogPostFormValues) => {
+    setAiBlogText('');
     mutate(
       {
-        imageUrl: formData.imageUrl,
+        prompt: formData.prompt,
       },
       {
         onSuccess: async data => {
-          setCloudinaryUrl(data.imageUrl);
+          setAiBlogText(data.blogText);
         },
       },
     );
@@ -54,16 +55,16 @@ export const UploadImageForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" justify="center" w={600}>
         <ControlledTextField
-          name="imageUrl"
+          name="prompt"
           type="text"
           control={control}
-          label="Image URL"
-          placeholder="Enter the url for the image here..."
+          label="Blog Post Prompt"
+          placeholder="Enter your prompt here to create a blog post..."
           disabled={isLoading}
         />
         <Box mb={16}>
           <Button w={150} type="submit" disabled={isLoading}>
-            Upload Image
+            Create Blog Post
           </Button>
         </Box>
         <Center my={8}>
@@ -71,8 +72,8 @@ export const UploadImageForm = () => {
 
           {isError && <Text color="red">{error.message}</Text>}
         </Center>
-        {cloudinaryUrl && (
-          <TextCopier textToCopy={cloudinaryUrl} title="Cloudinary URL" />
+        {aiBlogText && (
+          <TextCopier textToCopy={aiBlogText} title="AI Blog Text" />
         )}
       </Flex>
     </form>
