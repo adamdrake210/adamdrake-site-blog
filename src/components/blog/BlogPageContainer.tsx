@@ -42,7 +42,7 @@ export default function BlogPageContainer({ posts }: Props) {
                   w="100%"
                 >
                   <BlogPreviewCard
-                    slug={post.slug}
+                    imageUrl={post.headerimageurl}
                     title={post.title}
                     description={post.description}
                   />

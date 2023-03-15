@@ -6,10 +6,10 @@ import { CLOUDINARY_URL } from 'constants/constants';
 type Props = {
   title: string;
   description: string;
-  slug: string;
+  imageUrl: string;
 };
 
-export const PreviewCard = ({ title, description, slug }: Props) => {
+export const PreviewCard = ({ title, description, imageUrl }: Props) => {
   return (
     <Flex
       mb={32}
@@ -27,11 +27,7 @@ export const PreviewCard = ({ title, description, slug }: Props) => {
           },
         }}
       >
-        <Image
-          src={`${CLOUDINARY_URL}c_scale,h_230,w_400/adamdrake-blog/${slug}.png`}
-          alt={`${title}`}
-          w="100%"
-        />
+        <Image src={imageUrl} alt={`${title}`} w="100%" />
       </Box>
       <Flex
         direction="column"

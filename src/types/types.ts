@@ -4,7 +4,9 @@ export type Post = {
   content: Array<any>; // TODO find this type
   slug: string;
   tags: string;
-  writtenBy: string;
+  writtenby: string;
+  headerimageurl: string;
+  intro: string;
   _id: string;
   _createdAt: string;
   _updatedAt: string;
