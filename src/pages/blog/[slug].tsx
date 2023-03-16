@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
+import { Prism } from '@mantine/prism';
 
-import { ImageComponent } from 'components/common/images/ImageComponent';
 import PageSeo from 'components/common/PageSeo';
 import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
@@ -12,12 +12,10 @@ import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 
 const components = {
-  marks: {
-    code: ({ children }: { children?: any }) => (
-      <Code color="green" fz="lg" my={16} py={8} px={16}>
-        {children}
-      </Code>
-    ),
+  types: {
+    myCodeField: ({ value }: any) => {
+      return <Prism language="tsx">{value.code}</Prism>;
+    },
   },
   block: {
     h1: ({ children }: { children?: any }) => (
@@ -55,11 +53,7 @@ const components = {
         {children}
       </Text>
     ),
-    code: ({ children }: { children?: any }) => (
-      <Code color="red" my={8}>
-        {children}
-      </Code>
-    ),
+
     blockquote: ({ children }: { children?: any }) => (
       <Box
         sx={theme => ({
