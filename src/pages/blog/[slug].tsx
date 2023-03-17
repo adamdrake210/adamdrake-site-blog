@@ -6,8 +6,7 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Box, Code, Flex, Text, Title, useMantineTheme } from '@mantine/core';
-import { useScroll, useSpring, motion } from 'framer-motion';
+import { Box, Flex, Text, Title } from '@mantine/core';
 import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 
@@ -71,31 +70,10 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  const theme = useMantineTheme();
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   return (
     <>
       {post && (
         <PageContainer maxWidth="728px">
-          <motion.div
-            style={{
-              scaleX,
-              position: 'fixed',
-              top: 68,
-              left: 0,
-              right: 0,
-              height: 5,
-              background: theme.colors.blue[5],
-              transformOrigin: '0%',
-              zIndex: 1000,
-            }}
-          />
           <PageSeo
             title={post.title}
             description={post.description}
@@ -104,13 +82,18 @@ function Post({ post }: { post: Post }) {
             url={`https://adamdrake.dev/blog/${post.slug}`}
           />
           <Flex
-            p={32}
+            p={16}
             pt={0}
             mt={48}
             w="100%"
             justify="center"
             align="center"
             direction="column"
+            sx={{
+              '@media (max-width: 600px)': {
+                textAlign: 'center',
+              },
+            }}
           >
             <Title order={1} fw={200}>
               {post.title}
@@ -126,10 +109,10 @@ function Post({ post }: { post: Post }) {
               priority
             />
           </Box>
-          <Text px={32} mb={16} fz={24}>
+          <Text px={16} mb={16} fz={24}>
             {post.intro}
           </Text>
-          <Box px={32} mb={48}>
+          <Box px={16} mb={48}>
             <PortableText value={post.content} components={components} />
           </Box>
         </PageContainer>

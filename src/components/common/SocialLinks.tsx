@@ -30,9 +30,7 @@ export const SocialLinks = () => {
               },
             }}
           >
-            <svg viewBox="0 0 28 28">
-              <LinkedInLogo fill={iconColor} />
-            </svg>
+            <LinkedInLogo fill={iconColor} />
           </ActionIcon>
         </Tooltip>
       </a>
@@ -53,9 +51,7 @@ export const SocialLinks = () => {
               },
             }}
           >
-            <svg viewBox="0 0 65 65">
-              <GithubLogo fill={iconColor} />
-            </svg>
+            <GithubLogo fill={iconColor} />
           </ActionIcon>
         </Tooltip>
       </a>
@@ -76,9 +72,7 @@ export const SocialLinks = () => {
               },
             }}
           >
-            <svg viewBox="0 0 24 24">
-              <TwitterLogo fill={iconColor} />
-            </svg>
+            <TwitterLogo fill={iconColor} />
           </ActionIcon>
         </Tooltip>
       </a>

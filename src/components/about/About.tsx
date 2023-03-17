@@ -6,7 +6,7 @@ import { SocialLinks } from 'components/common/SocialLinks';
 
 export const About: React.FC = () => {
   return (
-    <Box p={{ base: 4, md: 8 }}>
+    <Box p={16}>
       <Title order={1} mb={16}>
         About Me
       </Title>
