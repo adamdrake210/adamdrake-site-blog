@@ -8,7 +8,7 @@ export const AnimateFadeIn = ({ children }: { children: React.ReactNode }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        duration: 2,
+        duration: 1.2,
       }}
     >
       {children}
