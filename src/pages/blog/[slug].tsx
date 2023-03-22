@@ -6,14 +6,18 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Box, Flex, Text, Title } from '@mantine/core';
+import { Anchor, Box, Flex, Text, Title } from '@mantine/core';
 import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 
 const components = {
   types: {
     myCodeField: ({ value }: any) => {
-      return <Prism language="tsx">{value.code}</Prism>;
+      return (
+        <Prism language="tsx" my={16}>
+          {value.code}
+        </Prism>
+      );
     },
   },
   block: {
@@ -47,12 +51,13 @@ const components = {
         {children}
       </Title>
     ),
-    normal: ({ children }: { children?: any }) => (
-      <Text fz="lg" fw={400} pb={8}>
-        {children}
-      </Text>
-    ),
-
+    normal: ({ children }: { children?: any }) => {
+      return (
+        <Text fz="lg" fw={400} pb={8}>
+          {children}
+        </Text>
+      );
+    },
     blockquote: ({ children }: { children?: any }) => (
       <Box
         sx={theme => ({
@@ -77,7 +82,7 @@ function Post({ post }: { post: Post }) {
           <PageSeo
             title={post.title}
             description={post.description}
-            slug={post.slug}
+            imageUrl={post.headerimageurl}
             publishedDate={post._updatedAt}
             url={`https://adamdrake.dev/blog/${post.slug}`}
           />
