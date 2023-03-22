@@ -42,13 +42,18 @@ export const theme: MantineThemeOverride = {
   },
 
   globalStyles: theme => ({
+    html: {
+      height: '100%',
+    },
     '#__next': {
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
+      height: '100%',
     },
     body: {
       ...theme.fn.fontStyles(),
+      height: '100%',
       fontWeight: 200,
       color:
         theme.colorScheme === 'dark'

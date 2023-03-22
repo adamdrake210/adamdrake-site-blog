@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { Flex, Text } from '@mantine/core';
 
 const StickyFooter = styled(Flex)`
+  position: relative;
   z-index: 10;
   backdrop-filter: saturate(180%) blur(20px);
   transition: background-color 0.1 ease-in-out;

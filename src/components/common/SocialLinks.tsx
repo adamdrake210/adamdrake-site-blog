@@ -12,7 +12,7 @@ export const SocialLinks = () => {
     theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.gray[6];
 
   return (
-    <Flex my={8}>
+    <Flex my={32}>
       <a
         href="https://www.linkedin.com/in/adam-drake-ab065417/"
         target="_blank"
