@@ -75,7 +75,6 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  console.log('🚀 ~ file: [slug].tsx:89 ~ Post ~ post:', post);
   return (
     <>
       {post && (
@@ -83,7 +82,7 @@ function Post({ post }: { post: Post }) {
           <PageSeo
             title={post.title}
             description={post.description}
-            slug={post.slug}
+            imageUrl={post.headerimageurl}
             publishedDate={post._updatedAt}
             url={`https://adamdrake.dev/blog/${post.slug}`}
           />
