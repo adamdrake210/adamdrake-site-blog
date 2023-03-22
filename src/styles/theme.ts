@@ -61,17 +61,15 @@ export const theme: MantineThemeOverride = {
           : theme.colors.gray[7],
     },
     a: {
-      textDecoration: 'none',
       color:
         theme.colorScheme === 'dark'
           ? theme.colors.gray[0]
           : theme.colors.gray[7],
       '&:hover': {
-        textDecoration: 'none',
         color:
           theme.colorScheme === 'dark'
             ? theme.colors.gray[4]
-            : theme.colors.gray[8],
+            : theme.colors.gray[5],
       },
     },
   }),
