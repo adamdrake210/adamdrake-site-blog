@@ -17,7 +17,7 @@ const PageContainer = ({ children, maxWidth }: Props) => {
           flexGrow: 1,
           zIndex: 5,
           paddingTop: 32,
-          height: '100%',
+          height: '100vh',
         }}
       >
         <Box w="100%" m="0 auto" maw={maxWidth} sx={{ overflowY: 'scroll' }}>
