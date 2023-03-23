@@ -5,7 +5,7 @@ import { SelfieImage } from './images/SelfieImage';
 
 export const AboutMe = () => {
   return (
-    <Flex mb={64}>
+    <Flex mb={64} px={16}>
       <SelfieImage maxWidth={100} />
       <Flex direction="column">
         <Title order={4} mb={8} w="100%">

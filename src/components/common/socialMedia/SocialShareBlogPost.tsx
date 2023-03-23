@@ -9,7 +9,7 @@ type Props = {
 
 export const SocialShareBlogPost = ({ title, writtenBy, url }: Props) => {
   return (
-    <Flex justify="space-between" mb={8}>
+    <Flex justify="space-between" mb={8} px={16}>
       <Anchor
         fw={700}
         target="_blank"
