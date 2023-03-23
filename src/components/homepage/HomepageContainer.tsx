@@ -3,7 +3,7 @@ import { Box, Divider, Flex } from '@mantine/core';
 
 import HomepageBanner from './HomepageBanner';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
-import { SocialLinks } from 'components/common/SocialLinks';
+import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
 import { MyStravaStats } from 'components/strava/MyStravaStats';
 import { Post } from 'types/types';
 import { CustomDivider } from 'components/common/CustomDivider';

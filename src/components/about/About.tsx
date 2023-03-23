@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Divider, Flex, Text, Title } from '@mantine/core';
 import { ABOUT_ME_TEXT } from 'constants/constants';
-import { SocialLinks } from 'components/common/SocialLinks';
+import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
 
 export const About: React.FC = () => {
   return (
