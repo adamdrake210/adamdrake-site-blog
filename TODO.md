@@ -1,6 +1,7 @@
 # TODO
 
 - How long the read is feature
+- My AI Generated Artwork page
 - Bug - social icons not showing on mobile
 - Update the UI on blog index page
 - Include Tags in blog cards

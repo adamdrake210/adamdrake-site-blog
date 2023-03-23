@@ -6,9 +6,10 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Anchor, Box, Flex, Text, Title } from '@mantine/core';
+import { Anchor, Box, Divider, Flex, Text, Title } from '@mantine/core';
 import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
+import { AboutMe } from 'components/common/AboutMe';
 
 const components = {
   types: {
@@ -120,6 +121,8 @@ function Post({ post }: { post: Post }) {
           <Box px={16} mb={48}>
             <PortableText value={post.content} components={components} />
           </Box>
+          <Divider mb={24} />
+          <AboutMe />
         </PageContainer>
       )}
     </>
