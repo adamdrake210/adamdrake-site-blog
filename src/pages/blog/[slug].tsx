@@ -105,7 +105,11 @@ function Post({ post }: { post: Post }) {
             <Title order={1} fw={200}>
               {post.title}
             </Title>
-            <WrittenDate date={post._createdAt} author={post.writtenby} />
+            <WrittenDate
+              date={post._createdAt}
+              author={post.writtenby}
+              content={post.content}
+            />
           </Flex>
           <Box mb={24}>
             <Image

@@ -1,13 +1,11 @@
 # TODO
 
-- How long the read is feature
-- My AI Generated Artwork page
-- Bug - social icons not showing on mobile
+- Cloudinary - upload image feature
 - Update the UI on blog index page
 - Include Tags in blog cards
-- Bug: Social sharing link pic not showing
+- My AI Generated Artwork page
+- Bug - social icons not showing on mobile
 - Search functionality on blog/site?
 - Click to copy blog url - https://kentcdodds.com/blog
-- Cloudinary - upload image feature
 - Framer motion: https://www.youtube.com/watch?v=He1_AH6kC8Y
 - Inspiration for some Juice - https://rauno.me/projects
