@@ -1,6 +1,7 @@
 # TODO
 
 - Cloudinary - upload image feature
+- last update in sitemap links
 - Update the UI on blog index page
 - Include Tags in blog cards
 - My AI Generated Artwork page
