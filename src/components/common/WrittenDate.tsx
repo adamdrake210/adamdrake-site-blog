@@ -22,10 +22,11 @@ const generateText = (content: any[]) => {
 };
 
 export const WrittenDate = ({ date, author, content }: Props) => {
+  // Reading Stats
   const text = generateText(content);
   const readingStats = readingTime(text);
-  console.log(readingStats);
 
+  // Convert the date to a readable format
   const convertedDate = new Date(date);
 
   return (
