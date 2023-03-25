@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text } from '@mantine/core';
 import readingTime from 'reading-time';
+import { generateContentText } from 'utils/generateContentText';
+import { calculateReadingTime } from 'utils/calculateReadingTime';
 
 type Props = {
   date: string;
@@ -8,22 +10,9 @@ type Props = {
   content: any[];
 };
 
-// This function is used to generate the text for the reading time calculation
-const generateText = (content: any[]) => {
-  const text = content
-    .map((block: any) => {
-      if (block._type !== 'block' || !block.children) {
-        return '';
-      }
-      return block.children.map((child: any) => child.text).join('');
-    })
-    .join('\n\n');
-  return text;
-};
-
 export const WrittenDate = ({ date, author, content }: Props) => {
   // Reading Stats
-  const text = generateText(content);
+  const text = generateContentText(content);
   const readingStats = readingTime(text);
 
   // Convert the date to a readable format
@@ -32,7 +21,7 @@ export const WrittenDate = ({ date, author, content }: Props) => {
   return (
     <Text fz={16} fw={200}>
       Written on {convertedDate.toISOString().substring(0, 10)} by {author} -{' '}
-      {Math.ceil(readingStats.minutes) + 1} min read
+      {calculateReadingTime(readingStats.minutes)}
     </Text>
   );
 };
