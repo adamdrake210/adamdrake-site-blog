@@ -35,14 +35,15 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
         justify="flex-start"
         px={16}
         sx={{
-          marginTop: 16,
           '@media (min-width: 40em)': {
             flex: '0 0 60%',
             marginTop: 0,
           },
         }}
       >
-        <Title order={3}>{title}</Title>
+        <Title order={3} fz={26} mb={8}>
+          {title}
+        </Title>
         <Text my={8} size="lg">
           {description}
         </Text>
@@ -56,7 +57,7 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
           }}
         >
           <motion.div whileTap={{ scale: 0.991 }}>
-            <Button size="md" mt={8} py={8}>
+            <Button size="sm" mt={8} py={8}>
               Read Blog Post
             </Button>
           </motion.div>

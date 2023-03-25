@@ -1,6 +1,5 @@
 # TODO
 
-- Include Tags in blog cards
 - Click to copy blog url - https://kentcdodds.com/blog
 
 - last update in sitemap links
@@ -9,7 +8,10 @@
 
 - Cloudinary - upload image feature
 
+- Include Tags in blog index page for search
 - Search functionality on blog/site?
+
+- Skills by image section on homepage
 
 - Hits counter on blog post:
   https://www.joshwcomeau.com/animation/css-transitions/
