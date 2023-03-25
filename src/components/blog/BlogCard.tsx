@@ -33,7 +33,7 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
         padding="lg"
         radius="md"
         withBorder
-        mih={350}
+        mih={330}
         sx={theme => ({
           '&:hover': {
             boxShadow: `0 0 0 2px ${theme.colors.blue[5]}`,
