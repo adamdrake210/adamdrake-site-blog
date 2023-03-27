@@ -1,9 +1,12 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Post } from 'types/types';
-import { Anchor, Flex, Grid, Text, Title } from '@mantine/core';
-import { BlogCard } from './BlogCard';
+import { Anchor, Box, Flex, Grid, Text, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+
+import { Post } from 'types/types';
+import { BlogCard } from './BlogCard';
+import { SITE_DOMAIN } from 'constants/constants';
+import { CopyLinkButton } from 'components/common/buttons/CopyLinkButton';
 
 type Props = {
   posts: Post[];
@@ -26,22 +29,25 @@ export default function BlogPageContainer({ posts }: Props) {
               span={isSmDown ? 12 : isMdDown ? 6 : 4}
               key={post.slug}
             >
-              <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
-                <Anchor
-                  sx={{
-                    '&:hover': {
-                      textDecoration: 'none',
-                    },
-                  }}
-                >
-                  <BlogCard
-                    title={post.title}
-                    createdDate={post._createdAt}
-                    content={post.content}
-                    imageUrl={post.headerimageurl}
-                  />
-                </Anchor>
-              </NextLink>
+              <Box sx={{ position: 'relative' }}>
+                <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
+                  <Anchor
+                    sx={{
+                      '&:hover': {
+                        textDecoration: 'none',
+                      },
+                    }}
+                  >
+                    <BlogCard
+                      title={post.title}
+                      createdDate={post._createdAt}
+                      content={post.content}
+                      imageUrl={post.headerimageurl}
+                    />
+                  </Anchor>
+                </NextLink>
+                <CopyLinkButton url={`${SITE_DOMAIN}/blog/${post.slug}`} />
+              </Box>
             </Grid.Col>
           );
         })}

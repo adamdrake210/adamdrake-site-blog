@@ -1,30 +1,29 @@
 import { client } from 'client';
+import { SITE_DOMAIN } from 'constants/constants';
 import { GetServerSideProps } from 'next';
 import { Post } from 'types/types';
-
-const MAIN_DOMAIN = 'https://adamdrake.dev';
 
 function generateSiteMap(posts: Post[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <!--We manually set the two URLs we know already-->
       <url>
-        <loc>${MAIN_DOMAIN}</loc>
+        <loc>${SITE_DOMAIN}</loc>
       </url>
       <url>
-        <loc>${MAIN_DOMAIN}/about</loc>
+        <loc>${SITE_DOMAIN}/about</loc>
       </url>
       <url>
-        <loc>${MAIN_DOMAIN}/books</loc>
+        <loc>${SITE_DOMAIN}/books</loc>
       </url>
       <url>
-        <loc>${MAIN_DOMAIN}/blog</loc>
+        <loc>${SITE_DOMAIN}/blog</loc>
       </url>
       ${posts
         .map(({ slug }) => {
           return `
         <url>
-            <loc>${`${MAIN_DOMAIN}/blog/${slug}`}</loc>
+            <loc>${`${SITE_DOMAIN}/blog/${slug}`}</loc>
         </url>
       `;
         })

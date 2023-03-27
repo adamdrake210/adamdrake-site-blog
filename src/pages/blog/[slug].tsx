@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
 import { SocialShareBlogPost } from 'components/common/socialMedia/SocialShareBlogPost';
+import { SITE_DOMAIN } from 'constants/constants';
 
 const components = {
   types: {
@@ -86,7 +87,7 @@ function Post({ post }: { post: Post }) {
             description={post.description}
             imageUrl={post.headerimageurl}
             publishedDate={post._updatedAt}
-            url={`https://adamdrake.dev/blog/${post.slug}`}
+            url={`${SITE_DOMAIN}/blog/${post.slug}`}
           />
           <Flex
             p={16}
@@ -129,7 +130,7 @@ function Post({ post }: { post: Post }) {
           <SocialShareBlogPost
             title={post.title}
             writtenBy={post.writtenby}
-            url={`https://adamdrake.dev/blog/${post.slug}`}
+            url={`${SITE_DOMAIN}/blog/${post.slug}`}
           />
 
           <Divider mb={24} />
