@@ -9,21 +9,23 @@ function generateSiteMap(posts: Post[]) {
       <!--We manually set the two URLs we know already-->
       <url>
         <loc>${SITE_DOMAIN}</loc>
-      </url>
-      <url>
+        </url>
+        <url>
         <loc>${SITE_DOMAIN}/about</loc>
-      </url>
-      <url>
+        </url>
+        <url>
         <loc>${SITE_DOMAIN}/books</loc>
-      </url>
-      <url>
+        </url>
+        <url>
         <loc>${SITE_DOMAIN}/blog</loc>
       </url>
       ${posts
-        .map(({ slug }) => {
+        .map(({ slug, _updatedAt }) => {
+          const lastUpdatedDate = new Date(_updatedAt);
           return `
         <url>
             <loc>${`${SITE_DOMAIN}/blog/${slug}`}</loc>
+            <lastmod>${lastUpdatedDate.toISOString()}</lastmod>
         </url>
       `;
         })
