@@ -1,9 +1,5 @@
 # TODO
 
-- last update in sitemap links
-- Animate the light/dark svg when clicked
-- SVG on homepage load which animate
-
 - Cloudinary - upload image feature
 
 - Include Tags in blog index page for search
@@ -21,3 +17,6 @@
 - My AI Generated Artwork page
 - Framer motion: https://www.youtube.com/watch?v=He1_AH6kC8Y
 - Inspiration for some Juice - https://rauno.me/projects
+
+- github profile: https://github.com/dirien Wow!!
+- Animate the light/dark svg when clicked
