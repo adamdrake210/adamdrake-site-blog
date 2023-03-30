@@ -20,7 +20,6 @@ export const SlugMaker = () => {
         Convert Title to Slug
       </Title>
       <Input.Wrapper
-        // error={error?.message}
         description="This is the slug that will be used in the URL"
         label="Title"
         w={600}
@@ -29,7 +28,6 @@ export const SlugMaker = () => {
           name="title"
           value={title}
           onChange={e => setTitle(e.target.value)}
-          // disabled={disabled}
           placeholder="Enter title here"
           w="100%"
         />
