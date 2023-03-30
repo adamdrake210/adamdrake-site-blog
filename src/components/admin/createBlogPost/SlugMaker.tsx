@@ -27,7 +27,9 @@ export const SlugMaker = () => {
         <Input
           name="title"
           value={title}
-          onChange={e => setTitle(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setTitle(e.target.value)
+          }
           placeholder="Enter title here"
           w="100%"
         />
