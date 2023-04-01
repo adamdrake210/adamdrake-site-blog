@@ -6,46 +6,46 @@ import { useForm } from 'react-hook-form';
 import { CustomLoader } from 'components/common/CustomLoader';
 import ControlledTextField from 'components/common/fields/ControlledTextField';
 import { TextCopier } from '../../common/TextCopier';
-import { createBlogPost } from 'services/api/openaiApi';
+import { chatGptApi } from 'services/api/chatGptApi';
 
-type CreateBlogPostFormValues = {
-  prompt: string;
+type ChatGptFormValues = {
+  message: string;
 };
 
-type CreateBlogPostRequestBody = {
-  prompt: string;
+type ChatGptRequestBody = {
+  message: string;
 };
 
-type CreateBlogPostResponse = {
-  blogText: string;
+type ChatGptResponseBody = {
+  message: string;
 };
 
-export const CreateBlogPostForm = () => {
+export const ChatGptForm = () => {
   const [aiBlogText, setAiBlogText] = useState<string>('');
 
   const { mutate, error, isLoading, isError } = useMutation<
-    CreateBlogPostResponse,
+    ChatGptResponseBody,
     Error,
-    CreateBlogPostRequestBody
+    ChatGptRequestBody
   >({
-    mutationFn: data => createBlogPost(data.prompt),
+    mutationFn: data => chatGptApi(data.message),
   });
 
-  const { handleSubmit, control } = useForm<CreateBlogPostFormValues>({
+  const { handleSubmit, control } = useForm<ChatGptFormValues>({
     defaultValues: {
-      prompt: '',
+      message: '',
     },
   });
 
-  const onSubmit = (formData: CreateBlogPostFormValues) => {
+  const onSubmit = (formData: ChatGptFormValues) => {
     setAiBlogText('');
     mutate(
       {
-        prompt: formData.prompt,
+        message: formData.message,
       },
       {
         onSuccess: async data => {
-          setAiBlogText(data.blogText);
+          setAiBlogText(data.message);
         },
       },
     );
@@ -55,15 +55,15 @@ export const CreateBlogPostForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex direction="column" justify="center" w={600}>
         <ControlledTextField
-          name="prompt"
+          name="message"
           control={control}
-          label="Blog Post Prompt"
-          placeholder="Enter your prompt here to create a blog post..."
+          label="Chat GPT message"
+          placeholder="Enter your message here..."
           disabled={isLoading}
         />
         <Box mb={16}>
           <Button w={150} type="submit" disabled={isLoading}>
-            Create Blog Post
+            Ask Chat GPT
           </Button>
         </Box>
         <Center my={8}>
@@ -72,7 +72,7 @@ export const CreateBlogPostForm = () => {
           {isError && <Text color="red">{error.message}</Text>}
         </Center>
         {aiBlogText && (
-          <TextCopier textToCopy={aiBlogText} title="AI Blog Text" />
+          <TextCopier textToCopy={aiBlogText} title="Chat GPT says" />
         )}
       </Flex>
     </form>

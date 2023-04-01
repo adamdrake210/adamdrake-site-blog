@@ -72,5 +72,13 @@ export const theme: MantineThemeOverride = {
             : theme.colors.gray[5],
       },
     },
+    li: {
+      fontSize: '1.2rem',
+      fontWeight: 400,
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.gray[0]
+          : theme.colors.gray[7],
+    },
   }),
 };

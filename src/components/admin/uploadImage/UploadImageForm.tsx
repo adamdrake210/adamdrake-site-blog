@@ -55,7 +55,6 @@ export const UploadImageForm = () => {
       <Flex direction="column" justify="center" w={600}>
         <ControlledTextField
           name="imageUrl"
-          type="text"
           control={control}
           label="Image URL"
           placeholder="Enter the url for the image here..."
