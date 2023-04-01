@@ -6,7 +6,7 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Anchor, Box, Divider, Flex, Text, Title } from '@mantine/core';
+import { Box, Divider, Flex, Text, Title } from '@mantine/core';
 import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
@@ -22,6 +22,11 @@ const components = {
         </Prism>
       );
     },
+  },
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: ({ children }: { children?: any }) => <ul>{children}</ul>,
+    number: ({ children }: { children?: any }) => <ol>{children}</ol>,
   },
   block: {
     h1: ({ children }: { children?: any }) => (
@@ -56,7 +61,7 @@ const components = {
     ),
     normal: ({ children }: { children?: any }) => {
       return (
-        <Text fz="lg" fw={400} pb={8}>
+        <Text fz="xl" fw={400} pb={8}>
           {children}
         </Text>
       );
@@ -78,6 +83,7 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
+  console.log('🚀 ~ file: [slug].tsx:81 ~ Post ~ post:', post);
   return (
     <>
       {post && (
@@ -121,7 +127,7 @@ function Post({ post }: { post: Post }) {
               priority
             />
           </Box>
-          <Text px={16} mb={16} fz={24}>
+          <Text px={16} mb={16} fz={28}>
             {post.intro}
           </Text>
           <Box px={16} mb={48}>

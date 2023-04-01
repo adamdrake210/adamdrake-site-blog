@@ -5,6 +5,7 @@ import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
 import { CreateBlogPostContainer } from 'components/admin/createBlogPost/CreateBlogPostContainer';
 import { SlugMaker } from 'components/admin/createBlogPost/SlugMaker';
+import { ChatGptForm } from 'components/admin/createBlogPost/ChatGptForm';
 
 export default function AdminCreateBlogPost() {
   return (
@@ -14,6 +15,7 @@ export default function AdminCreateBlogPost() {
       </Head>
       <PageContainer maxWidth="1000px">
         <CreateBlogPostContainer />
+        <ChatGptForm />
         <SlugMaker />
       </PageContainer>
     </>

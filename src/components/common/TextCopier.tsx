@@ -15,7 +15,7 @@ export const TextCopier = ({ textToCopy, title }: Props) => {
     <Box my={32}>
       <Title order={2}>{title}</Title>
       <Flex align="center">
-        <Text>{`${title}: ${textToCopy}`}</Text>
+        <Text fz="lg">{`${textToCopy}`}</Text>
         <Tooltip label="Copied!" opened={clipboard.copied}>
           <ActionIcon onClick={() => clipboard.copy(textToCopy)}>
             <IconClipboard />

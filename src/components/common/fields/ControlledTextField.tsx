@@ -1,11 +1,10 @@
-import { Box, Input } from '@mantine/core';
+import { Box, Input, Textarea } from '@mantine/core';
 import { Control, Controller } from 'react-hook-form';
 
 export type ControlledTextFieldProps = {
   name: string;
   control: Control<any>;
   label?: string;
-  type: string;
   rules?: any;
   disabled?: boolean;
   helperText?: string;
@@ -15,7 +14,6 @@ export type ControlledTextFieldProps = {
 const ControlledTextField = ({
   name,
   control,
-  type,
   label,
   rules,
   disabled,
@@ -34,13 +32,14 @@ const ControlledTextField = ({
             description={helperText}
             label={label || name}
           >
-            <Input
+            <Textarea
               name={name}
               onChange={field.onChange}
               error={!!error}
-              type={type}
+              minRows={4}
+              // type={type}
               value={field.value === null ? '' : field.value}
-              checked={field.value}
+              // checked={field.value}
               disabled={disabled}
               placeholder={placeholder || `Enter ${name} here`}
               w="100%"
