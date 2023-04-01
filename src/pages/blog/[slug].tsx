@@ -83,7 +83,6 @@ const components = {
 };
 
 function Post({ post }: { post: Post }) {
-  console.log('🚀 ~ file: [slug].tsx:81 ~ Post ~ post:', post);
   return (
     <>
       {post && (

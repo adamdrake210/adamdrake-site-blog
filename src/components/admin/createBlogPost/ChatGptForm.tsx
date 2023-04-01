@@ -45,7 +45,6 @@ export const ChatGptForm = () => {
       },
       {
         onSuccess: async data => {
-          console.log('🚀 ~ file: ChatGptForm.tsx:47 ~ onSubmit ~ data:', data);
           setAiBlogText(data.message);
         },
       },

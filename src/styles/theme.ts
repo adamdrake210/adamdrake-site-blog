@@ -72,12 +72,6 @@ export const theme: MantineThemeOverride = {
             : theme.colors.gray[5],
       },
     },
-    ol: {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
-    },
     li: {
       fontSize: '1.2rem',
       fontWeight: 400,

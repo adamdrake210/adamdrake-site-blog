@@ -37,9 +37,7 @@ const ControlledTextField = ({
               onChange={field.onChange}
               error={!!error}
               minRows={4}
-              // type={type}
               value={field.value === null ? '' : field.value}
-              // checked={field.value}
               disabled={disabled}
               placeholder={placeholder || `Enter ${name} here`}
               w="100%"
