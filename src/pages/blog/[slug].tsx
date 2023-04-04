@@ -6,7 +6,7 @@ import PageContainer from 'layouts/PageContainer';
 import { client } from 'client';
 import { Post } from 'types/types';
 import { GetStaticProps } from 'next';
-import { Box, Divider, Flex, Text, Title } from '@mantine/core';
+import { Box, Center, Divider, Flex, Text, Title } from '@mantine/core';
 import Image from 'next/image';
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
@@ -20,6 +20,18 @@ const components = {
         <Prism language="tsx" my={16}>
           {value.code}
         </Prism>
+      );
+    },
+    myImage: ({ value }: any) => {
+      return (
+        <Center>
+          <Image
+            src={value.cloudinaryurl}
+            alt={value.alt}
+            width={value.width}
+            height={value.height}
+          />
+        </Center>
       );
     },
   },
