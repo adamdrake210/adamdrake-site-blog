@@ -4,15 +4,15 @@ import { NextApiRequest, NextApiResponse } from 'next';
 /* eslint-disable import/no-anonymous-default-export */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { imageUrl } = req.body;
+    const { imageUrl, width, height } = req.body;
 
     const cloudinaryResponse = await v2.uploader.upload(imageUrl, {
       folder: 'adamdrake-blog',
       format: 'jpg',
       transformation: [
         {
-          width: 960,
-          height: 560,
+          width: width,
+          height: height,
           gravity: 'face',
           crop: 'fill',
         },
