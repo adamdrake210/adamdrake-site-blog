@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
   ColorScheme,
   ColorSchemeProvider,
@@ -55,6 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </AnimatePresence>
         </MantineProvider>
       </ColorSchemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
