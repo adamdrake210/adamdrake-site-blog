@@ -6,6 +6,7 @@ import { SITE_NAME } from 'constants/constants';
 import { CreateBlogPostContainer } from 'components/admin/createBlogPost/CreateBlogPostContainer';
 import { SlugMaker } from 'components/admin/createBlogPost/SlugMaker';
 import { ChatGptForm } from 'components/admin/createBlogPost/ChatGptForm';
+import { CreateLikeData } from 'components/admin/createBlogPost/CreateLikeData';
 
 export default function AdminCreateBlogPost() {
   return (
@@ -17,6 +18,7 @@ export default function AdminCreateBlogPost() {
         <CreateBlogPostContainer />
         <ChatGptForm />
         <SlugMaker />
+        <CreateLikeData />
       </PageContainer>
     </>
   );

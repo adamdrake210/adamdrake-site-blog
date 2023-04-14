@@ -4,6 +4,7 @@ import { getPostDetails } from 'services/supabase/getPostDetails';
 import { ActionIcon, Box, Center, Flex, Text, Title } from '@mantine/core';
 import { IconHeartFilled } from '@tabler/icons-react';
 import { updatePostDetails } from 'services/supabase/updatePostDetails';
+import { RQ_BLOG_POST } from 'constants/constants';
 
 type Props = {
   slug: string;
@@ -13,12 +14,11 @@ export const BlogLikeButton = ({ slug }: Props) => {
   const queryClient = useQueryClient();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ['blogPost', slug],
+    queryKey: [RQ_BLOG_POST, slug],
     queryFn: () => getPostDetails({ slug }),
   });
 
   const { mutate } = useMutation<any, Error, any>({
-    mutationKey: ['blogPost', slug],
     mutationFn: ({ id, likes }) => updatePostDetails({ id, likes }),
   });
 
@@ -27,11 +27,11 @@ export const BlogLikeButton = ({ slug }: Props) => {
       console.error(err);
     },
     onSuccess: () => {
-      queryClient.refetchQueries(['blogPost', slug]);
+      queryClient.refetchQueries([RQ_BLOG_POST, slug]);
     },
     // Always refetch after error or success:
     onSettled: () => {
-      queryClient.invalidateQueries(['blogPost', slug]);
+      queryClient.invalidateQueries([RQ_BLOG_POST, slug]);
     },
   };
 
@@ -58,7 +58,7 @@ export const BlogLikeButton = ({ slug }: Props) => {
 
   return (
     <>
-      {data && (
+      {data && data.length > 0 && (
         <Center my={16}>
           <Flex direction="column" align="center" justify="center">
             <Title order={3}>Wanna press a button?</Title>
@@ -81,7 +81,3 @@ export const BlogLikeButton = ({ slug }: Props) => {
     </>
   );
 };
-
-// Click heart to like a post
-// Update the number of likes in the database
-// Update the number of likes in the UI

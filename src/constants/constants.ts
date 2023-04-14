@@ -13,3 +13,6 @@ export const ABOUT_ME_TEXT_SHORT =
 
 export const SELFIE_IMAGE =
   'https://res.cloudinary.com/dmiizmobu/image/upload/v1678724204/adamdrake-blog/me_selfie.jpg';
+
+// React Query Keys
+export const RQ_BLOG_POST = 'blogPost';
