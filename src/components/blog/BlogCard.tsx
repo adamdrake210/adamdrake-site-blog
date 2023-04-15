@@ -56,7 +56,7 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
               {convertedDate.toISOString().substring(0, 10)},{' '}
               {calculateReadingTime(readingStats.minutes)}
             </Text>
-            <Text size="xl">{title}</Text>
+            <Text size="lg">{title}</Text>
           </Group>
         </Flex>
       </Card>

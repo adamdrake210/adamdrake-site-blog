@@ -16,12 +16,11 @@ export const SlugMaker = () => {
 
   return (
     <Box>
-      <Title order={1} fz={36}>
+      <Title order={2} fz={30}>
         Convert Title to Slug
       </Title>
       <Input.Wrapper
         description="This is the slug that will be used in the URL"
-        label="Title"
         w={600}
       >
         <Input

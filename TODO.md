@@ -1,7 +1,5 @@
 # TODO
 
-- Cloudinary - upload image feature
-
 - Include Tags in blog index page for search
 - Search functionality on blog/site?
 - Change to react-query data fetching
