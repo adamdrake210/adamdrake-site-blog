@@ -3,16 +3,10 @@ import Head from 'next/head';
 
 import PageContainer from 'layouts/PageContainer';
 import { SITE_NAME } from 'constants/constants';
-import { Post } from 'types/types';
 import BlogPageContainer from 'components/blog/BlogPageContainer';
-import { client } from 'client';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 
-type Props = {
-  posts: Post[];
-};
-
-export default function BlogIndex({ posts }: Props) {
+export default function BlogIndex() {
   return (
     <>
       <Head>
@@ -20,21 +14,9 @@ export default function BlogIndex({ posts }: Props) {
       </Head>
       <PageContainer maxWidth="1000px">
         <AnimateFadeIn>
-          <BlogPageContainer posts={posts} />
+          <BlogPageContainer />
         </AnimateFadeIn>
       </PageContainer>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const posts = await client.fetch(
-    `*[_type == "post"] | order(_createdAt desc)`,
-  );
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }

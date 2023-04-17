@@ -8,7 +8,6 @@
 
 - Hits counter on blog post:
   https://www.joshwcomeau.com/animation/css-transitions/
-- Like counter - superbase?
 
 - Bug - social icons not showing on mobile
 
