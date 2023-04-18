@@ -1,6 +1,15 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Anchor, Box, Center, Flex, Grid, Text, Title } from '@mantine/core';
+import {
+  Anchor,
+  Box,
+  Button,
+  Center,
+  Flex,
+  Grid,
+  Text,
+  Title,
+} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { Post } from 'types/types';
@@ -8,13 +17,18 @@ import { BlogCard } from './BlogCard';
 import { SITE_DOMAIN } from 'constants/constants';
 import { CopyLinkButton } from 'components/common/buttons/CopyLinkButton';
 import { useQuery } from '@tanstack/react-query';
-import { getAllPosts } from 'services/sanityio/getAllPosts';
+import {
+  BLOG_POSTS_PER_PAGE,
+  getAllPosts,
+} from 'services/sanityio/getAllPosts';
 import { CustomLoader } from 'components/common/CustomLoader';
 import ErrorMessage from 'components/common/ErrorMessage';
+import { IconArrowLeftCircle, IconArrowRightCircle } from '@tabler/icons-react';
 
 export default function BlogPageContainer() {
   const isMdDown = useMediaQuery('(max-width: 747px)');
   const isSmDown = useMediaQuery('(max-width: 600px)');
+  const [itemNumber, setItemNumber] = React.useState(0);
 
   const {
     data: posts,
@@ -22,8 +36,9 @@ export default function BlogPageContainer() {
     isError,
     error,
   } = useQuery<Post[], Error>({
-    queryKey: ['posts'],
-    queryFn: getAllPosts,
+    queryKey: ['posts', itemNumber],
+    queryFn: () => getAllPosts(itemNumber),
+    keepPreviousData: true,
   });
 
   return (
@@ -73,6 +88,25 @@ export default function BlogPageContainer() {
                 </Grid.Col>
               );
             })}
+            {/* Navigating through pages */}
+            <Flex justify="flex-end" w="100%" mr={8}>
+              <Button
+                onClick={() => setItemNumber(itemNumber - BLOG_POSTS_PER_PAGE)}
+                disabled={itemNumber === 0}
+                variant="outline"
+                mr={8}
+                leftIcon={<IconArrowLeftCircle />}
+              >
+                Back
+              </Button>
+              <Button
+                onClick={() => setItemNumber(itemNumber + BLOG_POSTS_PER_PAGE)}
+                disabled={posts.length < BLOG_POSTS_PER_PAGE}
+                rightIcon={<IconArrowRightCircle />}
+              >
+                Next
+              </Button>
+            </Flex>
           </Grid>
           {posts.length < 1 && (
             <Text fz="xl">No blog posts Found. Coming soon...</Text>
