@@ -47,7 +47,7 @@ export default function BlogPageContainer() {
         Blog
       </Title>
       {isLoading && (
-        <Center>
+        <Center w="100%">
           <CustomLoader />
         </Center>
       )}
