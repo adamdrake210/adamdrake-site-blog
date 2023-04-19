@@ -29,6 +29,7 @@ export const SocialLinks = () => {
                 transition: 'all .2s ease-in-out',
               },
             }}
+            color={iconColor}
           >
             <LinkedInLogo fill={iconColor} />
           </ActionIcon>
@@ -50,6 +51,7 @@ export const SocialLinks = () => {
                 transition: 'all .2s ease-in-out',
               },
             }}
+            color={iconColor}
           >
             <GithubLogo fill={iconColor} />
           </ActionIcon>
@@ -71,6 +73,7 @@ export const SocialLinks = () => {
                 transition: 'all .2s ease-in-out',
               },
             }}
+            color={iconColor}
           >
             <TwitterLogo fill={iconColor} />
           </ActionIcon>

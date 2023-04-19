@@ -27,7 +27,7 @@ export default function PageIndex({ latestPost }: Props) {
 
 export async function getStaticProps() {
   const posts = await client.fetch(
-    `*[_type == "post"] | order(_createdAt desc)`,
+    `*[_type == "post"] | order(_createdAt desc) [0..1]`,
   );
 
   return {

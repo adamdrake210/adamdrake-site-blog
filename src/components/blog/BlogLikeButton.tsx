@@ -1,8 +1,9 @@
 import React from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { getPostDetails } from 'services/supabase/getPostDetails';
 import { ActionIcon, Box, Center, Flex, Text, Title } from '@mantine/core';
 import { IconHeartFilled } from '@tabler/icons-react';
+
+import { getPostDetails } from 'services/supabase/getPostDetails';
 import { updatePostDetails } from 'services/supabase/updatePostDetails';
 import { RQ_BLOG_POST } from 'constants/constants';
 
@@ -35,10 +36,7 @@ export const BlogLikeButton = ({ slug }: Props) => {
     },
   };
 
-  console.log('data', data);
-
   const handleLikeClick = (id: string, likes: number) => {
-    console.log('like button clicked');
     mutate(
       {
         id,
