@@ -44,7 +44,9 @@ export async function getServerSideProps() {
   const OPEN_LIBRARY_API = 'https://openlibrary.org/api/books?bibkeys=ISBN:';
 
   // Fetching books from Sanity
-  const books: Book[] = await client.fetch(`*[_type == "book"]`);
+  const books: Book[] = await client.fetch(
+    `*[_type == "book"]| order(_createdAt desc)`,
+  );
 
   const currentBooksList = books
     .map(book => {
