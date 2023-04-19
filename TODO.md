@@ -2,7 +2,6 @@
 
 - Include Tags in blog index page for search
 - Search functionality on blog/site?
-- Change to react-query data fetching
 
 - Skills by image section on homepage
 
