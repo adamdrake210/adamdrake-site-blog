@@ -1,5 +1,14 @@
 import React from 'react';
-import { Card, Flex, Group, Image, Text } from '@mantine/core';
+import {
+  Box,
+  Card,
+  Flex,
+  Group,
+  Image,
+  Text,
+  Title,
+  useMantineTheme,
+} from '@mantine/core';
 import { motion } from 'framer-motion';
 import readingTime from 'reading-time';
 
@@ -14,6 +23,8 @@ type Props = {
 };
 
 export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
+  const theme = useMantineTheme();
+
   // Reading Stats
   const text = generateContentText(content);
   const readingStats = readingTime(text);
@@ -27,14 +38,14 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
         scale: 1.02,
         transition: { duration: 0.2 },
       }}
-      whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}
+      whileTap={{ scale: 0.98, transition: { duration: 0.2 } }}
     >
       <Card
         shadow="sm"
         padding="lg"
         radius="md"
         withBorder
-        mih={390}
+        mih={400}
         sx={theme => ({
           '&:hover': {
             boxShadow: `0 0 0 2px ${theme.colors.blue[5]}`,
@@ -51,13 +62,25 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
           align="flex-start"
           h="200px"
         >
-          <Group position="apart" mt="md" mb="xs">
-            <Text weight={500} size="lg">
-              {convertedDate.toISOString().substring(0, 10)},{' '}
-              {calculateReadingTime(readingStats.minutes)}
+          <Box>
+            <Title
+              order={5}
+              weight={700}
+              color={theme.colorScheme === 'dark' ? 'white' : 'dark'}
+              my={16}
+            >
+              {title}
+            </Title>
+            <Text weight={500} size="md" mb={0}>
+              Reading time: {calculateReadingTime(readingStats.minutes)}
             </Text>
-            <Text size="lg">{title}</Text>
-          </Group>
+            <Text
+              size="sm"
+              color={theme.colorScheme === 'dark' ? 'white' : 'dark'}
+            >
+              Written on: {convertedDate.toISOString().substring(0, 10)},{' '}
+            </Text>
+          </Box>
         </Flex>
       </Card>
     </motion.div>
