@@ -5,6 +5,7 @@ import { GithubLogo } from 'assets/icons/GithubLogo';
 import { TwitterLogo } from 'assets/icons/TwitterLogo';
 import { LinkedInLogo } from 'assets/icons/LinkedInLogo';
 import { SocialIcon } from './SocialIcon';
+import { MediumLogo } from 'assets/icons/MediumLogo';
 
 const socialIconsData = [
   {
@@ -21,6 +22,11 @@ const socialIconsData = [
     label: 'For the birds...',
     icon: <TwitterLogo />,
     href: 'https://twitter.com/FrontEndDrake',
+  },
+  {
+    label: 'For the readers...',
+    icon: <MediumLogo />,
+    href: 'https://adam-drake-frontend-developer.medium.com/',
   },
 ];
 

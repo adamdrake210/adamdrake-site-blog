@@ -45,7 +45,7 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
           {title}
         </Title>
         <Text my={8} size="lg">
-          {description}
+          {description.slice(0, 160).concat('...')}
         </Text>
         <Box
           w="100%"
