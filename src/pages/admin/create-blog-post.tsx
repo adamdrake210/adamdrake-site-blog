@@ -7,6 +7,7 @@ import { CreateBlogPostContainer } from 'components/admin/createBlogPost/CreateB
 import { SlugMaker } from 'components/admin/createBlogPost/SlugMaker';
 import { ChatGptForm } from 'components/admin/createBlogPost/ChatGptForm';
 import { CreateLikeData } from 'components/admin/createBlogPost/CreateLikeData';
+import { TranscribeAudioForm } from 'components/admin/transcribeAudio/TranscribeAudioForm';
 
 export default function AdminCreateBlogPost() {
   return (
@@ -15,10 +16,11 @@ export default function AdminCreateBlogPost() {
         <title>{SITE_NAME} | Create Blog Post</title>
       </Head>
       <PageContainer maxWidth="1000px">
-        <CreateBlogPostContainer />
         <ChatGptForm />
         <SlugMaker />
         <CreateLikeData />
+        <TranscribeAudioForm />
+        <CreateBlogPostContainer />
       </PageContainer>
     </>
   );
