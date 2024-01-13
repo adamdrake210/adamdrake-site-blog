@@ -12,6 +12,7 @@ import PageContainer from 'layouts/PageContainer';
 import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
 import { BlogLikeButton } from './BlogLikeButton';
+import { SubStackSubscribe } from 'components/substack/SubStackSubscribe';
 
 type Props = {
   post: Post;
@@ -66,8 +67,9 @@ export const BlogPost = ({ post }: Props) => {
         <PortableText value={post.content} components={blogComponents} />
       </Box>
 
-      <BlogLikeButton slug={post.slug} />
+      <SubStackSubscribe />
 
+      <BlogLikeButton slug={post.slug} />
       <SocialShareBlogPost
         title={post.title}
         writtenBy={post.writtenby}

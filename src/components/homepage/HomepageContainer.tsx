@@ -9,6 +9,7 @@ import { Post } from 'types/types';
 import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
+import { SubStackSubscribe } from 'components/substack/SubStackSubscribe';
 
 type Props = {
   latestPost: Post;
@@ -23,16 +24,17 @@ export default function HomepageContainer({ latestPost }: Props) {
       <CustomDivider />
 
       {/* Latest Post */}
-      {latestPost && (
-        <AnimateFadeIn>
+      <AnimateFadeIn>
+        {latestPost && (
           <HomepageBanner
             post={latestPost}
             pageCategory="blog"
             cta="Read Blog Post"
             pageTitle="Latest Blog Post"
           />
-        </AnimateFadeIn>
-      )}
+        )}
+        <SubStackSubscribe />
+      </AnimateFadeIn>
       {/* Skills Banner */}
       <CustomDivider />
       <AnimateFadeIn>
