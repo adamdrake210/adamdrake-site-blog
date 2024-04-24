@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, Flex } from '@mantine/core';
+import { Flex } from '@mantine/core';
 
 import HomepageBanner from './HomepageBanner';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
@@ -33,7 +33,7 @@ export default function HomepageContainer({ latestPost }: Props) {
             pageTitle="Latest Blog Post"
           />
         )}
-        <SubStackSubscribe />
+        {/* <SubStackSubscribe /> */}
       </AnimateFadeIn>
       {/* Skills Banner */}
       <CustomDivider />

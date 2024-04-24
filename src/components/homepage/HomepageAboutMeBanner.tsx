@@ -8,7 +8,7 @@ import { AnimatedCircles } from 'components/common/animations/AnimatedCircles';
 export const HomepageAboutMeBanner = () => {
   return (
     <Box component="section" w="100%" p={4} mb={24}>
-      <SelfieImage maxWidth={160} />
+      {/* <SelfieImage maxWidth={160} /> */}
 
       <Flex
         sx={{
@@ -32,7 +32,7 @@ export const HomepageAboutMeBanner = () => {
         >
           Hi, I&apos;m Adam Drake
         </Title>
-        <AnimatedCircles />
+        {/* <AnimatedCircles /> */}
       </Flex>
       <Text mb={16} size={24}>
         {ABOUT_ME_TEXT}

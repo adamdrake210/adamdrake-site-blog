@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, Flex, Image, Text, Title } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { CLOUDINARY_URL } from 'constants/constants';
+import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 
 type Props = {
   title: string;
@@ -27,26 +28,26 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
           },
         }}
       >
-        <Image src={imageUrl} alt={`${title}`} w="100%" />
+        <AnimateFadeIn duration={3}>
+          <Box style={{ borderRadius: 8 }}>
+            <Image src={imageUrl} alt={`${title}`} w="100%" />
+          </Box>
+        </AnimateFadeIn>
       </Box>
       <Flex
         direction="column"
         align="flex-start"
-        justify="flex-start"
+        justify="space-between"
         px={16}
-        sx={{
-          '@media (min-width: 40em)': {
-            flex: '0 0 60%',
-            marginTop: 0,
-          },
-        }}
       >
-        <Title order={3} fz={26} mb={8}>
-          {title}
-        </Title>
-        <Text my={8} size="lg">
-          {description.slice(0, 160).concat('...')}
-        </Text>
+        <Box>
+          <Title order={3} fz={26} mb={8}>
+            {title}
+          </Title>
+          <Text my={8} size="lg">
+            {description.slice(0, 190).concat('...')}
+          </Text>
+        </Box>
         <Box
           w="100%"
           sx={{
@@ -57,8 +58,17 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
           }}
         >
           <motion.div whileTap={{ scale: 0.991 }}>
-            <Button size="sm" mt={8} py={8}>
-              Read Blog Post
+            <Button
+              color="secondary[4]"
+              size="sm"
+              style={{
+                textTransform: 'uppercase',
+                fontFamily: "'Montserrat', sans-serif",
+              }}
+              mt={8}
+              py={8}
+            >
+              Read More
             </Button>
           </motion.div>
         </Box>

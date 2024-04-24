@@ -16,7 +16,7 @@ export const NavLinkButton = ({ btnText, href }: Props) => {
         fz="xl"
         px={16}
         uppercase
-        sx={{
+        style={{
           fontFamily: "'Montserrat', sans-serif",
           fontWeight: 200,
         }}
