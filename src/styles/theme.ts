@@ -33,11 +33,11 @@ export const theme: MantineThemeOverride = {
   headings: {
     // eslint-disable-next-line quotes
     fontFamily: "'Montserrat', serif",
-    fontWeight: 200,
+    fontWeight: '200',
     sizes: {
-      h1: { fontSize: '48px', lineHeight: 1.5 },
-      h2: { fontSize: '36px', lineHeight: 1.5 },
-      h3: { fontSize: '30px', lineHeight: 1.5 },
+      h1: { fontSize: '48px', lineHeight: '1.5' },
+      h2: { fontSize: '36px', lineHeight: '1.5' },
+      h3: { fontSize: '30px', lineHeight: '1.5' },
     },
   },
 
