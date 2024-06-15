@@ -1,6 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { Card, Grid, Text, useMantineTheme } from '@mantine/core';
+import {
+  Card,
+  Grid,
+  Text,
+  useMantineColorScheme,
+  useMantineTheme,
+} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { motion } from 'framer-motion';
 
@@ -14,6 +20,7 @@ type Props = {
 export const BookCard = ({ title, author, identifier, isbn_13 }: Props) => {
   const isSmDown = useMediaQuery('(max-width: 600px)');
   const theme = useMantineTheme();
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Grid.Col span={isSmDown ? 6 : 3}>
@@ -32,13 +39,13 @@ export const BookCard = ({ title, author, identifier, isbn_13 }: Props) => {
             radius="md"
             withBorder
             mih={300}
-            sx={{
+            style={{
               ':hover': {
                 backgroundColor: 'rgba(0, 0, 0, 0.05)',
               },
             }}
           >
-            <Card.Section sx={{ textAlign: 'center' }} p={16}>
+            <Card.Section style={{ textAlign: 'center' }} p={16}>
               <Image
                 src={`https://covers.openlibrary.org/b/isbn/${isbn_13}-M.jpg`}
                 alt={`Cover for ${title}`}
@@ -49,11 +56,12 @@ export const BookCard = ({ title, author, identifier, isbn_13 }: Props) => {
 
             <Text
               fz="lg"
-              color={
-                theme.colorScheme === 'dark'
-                  ? theme.colors.gray[0]
-                  : theme.colors.gray[8]
-              }
+              style={{
+                color:
+                  colorScheme === 'dark'
+                    ? theme.colors.gray[0]
+                    : theme.colors.gray[8],
+              }}
             >
               {title.slice(0, 20)} - {author}
             </Text>

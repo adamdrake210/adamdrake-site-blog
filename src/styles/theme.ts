@@ -1,6 +1,6 @@
-import { MantineThemeOverride } from '@mantine/core';
+import { createTheme } from '@mantine/core';
 
-export const theme: MantineThemeOverride = {
+export const theme = createTheme({
   colors: {
     secondary: [
       '#e4f0f7',
@@ -41,44 +41,44 @@ export const theme: MantineThemeOverride = {
     },
   },
 
-  globalStyles: theme => ({
-    html: {
-      height: '100%',
-    },
-    '#__next': {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-      height: '100%',
-    },
-    body: {
-      ...theme.fn.fontStyles(),
-      height: '100%',
-      fontWeight: 200,
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
-    },
-    a: {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
-      '&:hover': {
-        color:
-          theme.colorScheme === 'dark'
-            ? theme.colors.gray[4]
-            : theme.colors.gray[5],
-      },
-    },
-    li: {
-      fontSize: '1.2rem',
-      fontWeight: 400,
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
-    },
-  }),
-};
+  // other: (theme: any) => ({
+  //   html: {
+  //     height: '100%',
+  //   },
+  //   '#__next': {
+  //     display: 'flex',
+  //     flexDirection: 'column',
+  //     minHeight: '100vh',
+  //     height: '100%',
+  //   },
+  //   body: {
+  //     ...theme.fn.fontStyles(),
+  //     height: '100%',
+  //     fontWeight: 200,
+  //     color:
+  //       theme.colorScheme === 'dark'
+  //         ? theme.colors.gray[0]
+  //         : theme.colors.gray[7],
+  //   },
+  //   a: {
+  //     color:
+  //       theme.colorScheme === 'dark'
+  //         ? theme.colors.gray[0]
+  //         : theme.colors.gray[7],
+  //     '&:hover': {
+  //       color:
+  //         theme.colorScheme === 'dark'
+  //           ? theme.colors.gray[4]
+  //           : theme.colors.gray[5],
+  //     },
+  //   },
+  //   li: {
+  //     fontSize: '1.2rem',
+  //     fontWeight: 400,
+  //     color:
+  //       theme.colorScheme === 'dark'
+  //         ? theme.colors.gray[0]
+  //         : theme.colors.gray[7],
+  //   },
+  // }),
+});

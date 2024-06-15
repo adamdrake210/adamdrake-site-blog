@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Flex, Image, Text, Title } from '@mantine/core';
 import { motion } from 'framer-motion';
-import { CLOUDINARY_URL } from 'constants/constants';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 
 type Props = {
@@ -14,16 +13,16 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
   return (
     <Flex
       mb={32}
-      sx={{
+      style={{
         flexDirection: 'column',
-        '@media (min-width: 40em)': {
+        '@media (minWidth: 40em)': {
           flexDirection: 'row',
         },
       }}
     >
       <Box
-        sx={{
-          '@media (min-width: 40em)': {
+        style={{
+          '@media (minWidth: 40em)': {
             flex: '0 0 40%',
           },
         }}
@@ -50,9 +49,9 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
         </Box>
         <Box
           w="100%"
-          sx={{
+          style={{
             textAlign: 'center',
-            '@media (min-width: 40em)': {
+            '@media (minWidth: 40em)': {
               textAlign: 'left',
             },
           }}

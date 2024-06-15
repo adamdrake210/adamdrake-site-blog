@@ -24,9 +24,9 @@ export const MyStravaStats = () => {
         align={'center'}
         justify={'center'}
         mb={24}
-        sx={{
+        style={{
           flexDirection: 'column',
-          '@media (min-width: 40em)': {
+          '@media (minWidth: 40em)': {
             flexDirection: 'row',
           },
         }}
@@ -44,7 +44,7 @@ export const MyStravaStats = () => {
         <Title
           order={2}
           ml={16}
-          sx={{
+          style={{
             textAlign: 'center',
           }}
         >
@@ -54,9 +54,9 @@ export const MyStravaStats = () => {
       <Flex
         w="100%"
         justify="space-between"
-        sx={{
+        style={{
           flexDirection: 'column',
-          '@media (min-width: 40em)': {
+          '@media (minWidth: 40em)': {
             flexDirection: 'row',
           },
         }}

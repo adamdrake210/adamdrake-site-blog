@@ -6,7 +6,12 @@ export const blogComponents = {
   types: {
     myCodeField: ({ value }: any) => {
       return (
-        <Prism language="tsx" my={16}>
+        <Prism
+          language="tsx"
+          style={{
+            margin: '16px 0',
+          }}
+        >
           {value.code}
         </Prism>
       );
@@ -69,7 +74,7 @@ export const blogComponents = {
     },
     blockquote: ({ children }: { children?: any }) => (
       <Box
-        sx={theme => ({
+        style={theme => ({
           borderLeft: `5px solid ${theme.colors.blue[5]}`,
         })}
         pl={16}

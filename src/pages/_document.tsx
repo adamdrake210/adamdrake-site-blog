@@ -1,6 +1,7 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { createGetInitialProps } from '@mantine/next';
 import { GA_TRACKING_ID } from 'utils/gtag';
+import { ColorSchemeScript } from '@mantine/core';
 
 const getInitialProps = createGetInitialProps();
 
@@ -41,6 +42,7 @@ export default class Document extends NextDocument {
             integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
             crossOrigin="anonymous"
           />
+          <ColorSchemeScript defaultColorScheme="auto" />
         </Head>
         <body>
           <Main />

@@ -14,7 +14,7 @@ export const BookSection = ({ heading, bookList }: Props) => {
       <Title order={2} fw={200} mb={24}>
         {heading}
       </Title>
-      <Grid gutter={16} gutterXs="md" gutterMd="xl" gutterXl={50}>
+      <Grid gutter={16}>
         {bookList?.map((book: any) => {
           return (
             <BookCard
