@@ -57,28 +57,16 @@ export const theme = createTheme({
 
   other: (theme: any) => ({
     body: {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
+      color: theme.colors.gray[5],
     },
     a: {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
+      color: theme.colors.gray[7],
       '&:hover': {
-        color:
-          theme.colorScheme === 'dark'
-            ? theme.colors.gray[4]
-            : theme.colors.gray[5],
+        color: theme.colors.gray[5],
       },
     },
     li: {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.gray[7],
+      color: theme.colors.gray[7],
     },
   }),
 });

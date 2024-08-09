@@ -25,12 +25,7 @@ NProgress.configure({ showSpinner: false });
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <MantineProvider
-        defaultColorScheme="light"
-        theme={{
-          ...theme,
-        }}
-      >
+      <MantineProvider defaultColorScheme="light" theme={theme}>
         <AnimatePresence mode="wait">
           <Component {...pageProps} />
         </AnimatePresence>
