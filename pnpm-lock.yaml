@@ -1847,7 +1847,10 @@ packages:
       }
 
   '@mantine/code-highlight@7.12.0':
-    resolution: {integrity: sha512-qsak83T7RrmRgqabGS6Vb9ti56JKe8U5zJdbCdOlZ5yXYDMmA6XwNpxU4gzx1wTc+pc9NlRB6mgprdJi4rDLtw==}
+    resolution:
+      {
+        integrity: sha512-qsak83T7RrmRgqabGS6Vb9ti56JKe8U5zJdbCdOlZ5yXYDMmA6XwNpxU4gzx1wTc+pc9NlRB6mgprdJi4rDLtw==,
+      }
     peerDependencies:
       '@mantine/core': 7.12.0
       '@mantine/hooks': 7.12.0
@@ -1855,26 +1858,38 @@ packages:
       react-dom: ^18.2.0
 
   '@mantine/core@7.12.0':
-    resolution: {integrity: sha512-FxsaIaEnqxV71MBGGsvXXad2q9KYTaIQFVP4TSAZI6xLChklXF/qJTqvabweaoW9BaVQT75b/BnUoJFzPfyAfw==}
+    resolution:
+      {
+        integrity: sha512-FxsaIaEnqxV71MBGGsvXXad2q9KYTaIQFVP4TSAZI6xLChklXF/qJTqvabweaoW9BaVQT75b/BnUoJFzPfyAfw==,
+      }
     peerDependencies:
       '@mantine/hooks': 7.12.0
       react: ^18.2.0
       react-dom: ^18.2.0
 
   '@mantine/hooks@7.12.0':
-    resolution: {integrity: sha512-UKMSpQZMdmecZX1PKPoknfUOE9MfDPiZR1myU4wUUKpaZibvvmhYuy8mcOOmYWegapRS3ErKIAc2cNnJ1Dk4RQ==}
+    resolution:
+      {
+        integrity: sha512-UKMSpQZMdmecZX1PKPoknfUOE9MfDPiZR1myU4wUUKpaZibvvmhYuy8mcOOmYWegapRS3ErKIAc2cNnJ1Dk4RQ==,
+      }
     peerDependencies:
       react: ^18.2.0
 
   '@mantine/next@6.0.22':
-    resolution: {integrity: sha512-OIDeCaMSVfmaN0F38y6Ir8tmMZHDAmy8MhalDAFjGdTD9UKO1V9nQKTNJAuvo5yldslGlfvwhKUjKy7oy/M65g==}
+    resolution:
+      {
+        integrity: sha512-OIDeCaMSVfmaN0F38y6Ir8tmMZHDAmy8MhalDAFjGdTD9UKO1V9nQKTNJAuvo5yldslGlfvwhKUjKy7oy/M65g==,
+      }
     peerDependencies:
       next: '*'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
   '@mantine/ssr@6.0.22':
-    resolution: {integrity: sha512-ZW89nrL39sfOEOSRlUEP92y5ItWFAbKOYwtgGBS7vHZ56hd6cOWH7bLr5GoQZGLJFywB/0lIpMk+pGsaA8YVEQ==}
+    resolution:
+      {
+        integrity: sha512-ZW89nrL39sfOEOSRlUEP92y5ItWFAbKOYwtgGBS7vHZ56hd6cOWH7bLr5GoQZGLJFywB/0lIpMk+pGsaA8YVEQ==,
+      }
     peerDependencies:
       '@emotion/react': '>=11.9.0'
       '@emotion/server': '>=11.4.0'
@@ -1882,7 +1897,10 @@ packages:
       react-dom: '>=16.8.0'
 
   '@mantine/styles@6.0.22':
-    resolution: {integrity: sha512-Rud/IQp2EFYDiP4csRy2XBrho/Ct+W2/b+XbvCRTeQTmpFy/NfAKm/TWJa5zPvuv/iLTjGkVos9SHw/DteESpQ==}
+    resolution:
+      {
+        integrity: sha512-Rud/IQp2EFYDiP4csRy2XBrho/Ct+W2/b+XbvCRTeQTmpFy/NfAKm/TWJa5zPvuv/iLTjGkVos9SHw/DteESpQ==,
+      }
     peerDependencies:
       '@emotion/react': '>=11.9.0'
       react: '>=16.8.0'
@@ -3431,8 +3449,11 @@ packages:
     engines: { node: '>=6' }
 
   clsx@2.1.1:
-    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
-    engines: {node: '>=6'}
+    resolution:
+      {
+        integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==,
+      }
+    engines: { node: '>=6' }
 
   color-convert@1.9.3:
     resolution:
@@ -4991,8 +5012,11 @@ packages:
       }
 
   highlight.js@11.10.0:
-    resolution: {integrity: sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==}
-    engines: {node: '>=12.0.0'}
+    resolution:
+      {
+        integrity: sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==,
+      }
+    engines: { node: '>=12.0.0' }
 
   history@5.3.0:
     resolution:
