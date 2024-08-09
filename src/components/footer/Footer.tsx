@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { Flex, Text } from '@mantine/core';
+import { Flex, Text, useMantineTheme } from '@mantine/core';
 
 export default function Footer() {
+  const theme = useMantineTheme();
+
   return (
     <Flex
       style={{
@@ -10,6 +12,7 @@ export default function Footer() {
         zIndex: 10,
         backdropFilter: 'saturate(180%) blur(20px)',
         transition: 'background-color 0.1 ease-in-out',
+        backgroundColor: theme.colors.myColor[2],
       }}
     >
       <Flex

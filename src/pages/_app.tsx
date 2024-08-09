@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider
-        defaultColorScheme="dark"
+        defaultColorScheme="light"
         theme={{
           ...theme,
         }}

@@ -1,10 +1,9 @@
 import React from 'react';
-import { ActionIcon, Box, Flex } from '@mantine/core';
+import { ActionIcon, Box, Flex, useMantineTheme } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { SITE_NAME } from 'constants/constants';
-import SelectColorMode from './SelectColorMode';
 import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
 import { NavDrawer } from './NavDrawer';
@@ -15,10 +14,10 @@ export const navLinks = [
     link: BLOG_ROUTE,
     text: 'Blog',
   },
-  {
-    link: BOOKS_ROUTE,
-    text: 'Books',
-  },
+  // {
+  //   link: BOOKS_ROUTE,
+  //   text: 'Books',
+  // },
   {
     link: ABOUT_ROUTE,
     text: 'About',
@@ -28,15 +27,18 @@ export const navLinks = [
 const Navigation: React.FC = () => {
   const { open, handleOpen, handleClose } = useOpen();
   const isMdDown = useMediaQuery('(max-width: 768px)');
+  const theme = useMantineTheme();
 
   return (
     <Box
       style={{
         position: 'sticky',
-        zIndex: 10,
+        zIndex: 1000,
         top: 0,
+        backgroundColor: theme.colors.myColor[1],
         backdropFilter: 'saturate(110%) blur(110px)',
         transition: 'background-color 0.1 ease-in-out',
+        opacity: 0.9,
       }}
       w="100%"
       p={16}
@@ -64,13 +66,13 @@ const Navigation: React.FC = () => {
               );
             })}
 
-            <SelectColorMode />
+            {/* <SelectColorMode /> */}
           </Flex>
         )}
         {/* Mobile Buttons */}
         {isMdDown && (
           <Flex align="center">
-            <SelectColorMode />
+            {/* <SelectColorMode /> */}
             <ActionIcon onClick={handleOpen} ml={16}>
               <IconMenu2 />
             </ActionIcon>
