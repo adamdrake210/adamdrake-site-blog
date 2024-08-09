@@ -66,10 +66,10 @@ export default function BlogPageContainer() {
                   span={isSmDown ? 12 : isMdDown ? 6 : 4}
                   key={post.slug}
                 >
-                  <Box sx={{ position: 'relative' }}>
+                  <Box style={{ position: 'relative' }}>
                     <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
                       <Anchor
-                        sx={{
+                        style={{
                           '&:hover': {
                             textDecoration: 'none',
                           },
@@ -95,14 +95,14 @@ export default function BlogPageContainer() {
                 disabled={itemNumber === 0}
                 variant="outline"
                 mr={8}
-                leftIcon={<IconArrowLeftCircle />}
+                leftSection={<IconArrowLeftCircle />}
               >
                 Back
               </Button>
               <Button
                 onClick={() => setItemNumber(itemNumber + BLOG_POSTS_PER_PAGE)}
                 disabled={posts.length < BLOG_POSTS_PER_PAGE}
-                rightIcon={<IconArrowRightCircle />}
+                rightSection={<IconArrowRightCircle />}
               >
                 Next
               </Button>

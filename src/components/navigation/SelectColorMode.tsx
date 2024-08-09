@@ -11,8 +11,11 @@ function SelectColorMode() {
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
       ml={32}
+      style={{
+        backgroundColor: 'transparent',
+      }}
     >
-      {dark ? <IconSun /> : <IconMoon />}
+      {dark ? <IconSun /> : <IconMoon color={'#000000'} />}
     </ActionIcon>
   );
 }

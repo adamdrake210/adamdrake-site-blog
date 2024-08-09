@@ -1,6 +1,4 @@
 import React from 'react';
-import NextLink from 'next/link';
-import styled from '@emotion/styled';
 import { ActionIcon, Box, Flex } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
@@ -11,14 +9,6 @@ import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
 import { NavDrawer } from './NavDrawer';
 import { NavLinkButton } from './NavLinkButton';
-
-const StickyNav = styled(Flex)`
-  position: sticky;
-  z-index: 10;
-  top: 0;
-  backdrop-filter: saturate(110%) blur(110px);
-  transition: background-color 0.1 ease-in-out;
-`;
 
 export const navLinks = [
   {
@@ -40,7 +30,17 @@ const Navigation: React.FC = () => {
   const isMdDown = useMediaQuery('(max-width: 768px)');
 
   return (
-    <StickyNav w="100%" p={16}>
+    <Box
+      style={{
+        position: 'sticky',
+        zIndex: 10,
+        top: 0,
+        backdropFilter: 'saturate(110%) blur(110px)',
+        transition: 'background-color 0.1 ease-in-out',
+      }}
+      w="100%"
+      p={16}
+    >
       <Flex
         direction="row"
         justify="space-between"
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
       </Flex>
       {/* Mobile Menu */}
       <NavDrawer open={open} handleClose={handleClose} />
-    </StickyNav>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Box, Title } from '@mantine/core';
+import { Anchor, Box, Title, useMantineColorScheme } from '@mantine/core';
 import NextLink from 'next/link';
 
 import { PreviewCard } from 'components/blog/PreviewCard';
@@ -18,6 +18,7 @@ export default function HomepageBanner({
   pageTitle,
 }: Props) {
   const { headerimageurl, slug, title, description } = post;
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Box component="section" w="100%" p={4} pb={8} mb={24}>
@@ -29,15 +30,15 @@ export default function HomepageBanner({
         href={`/${pageCategory}/[slug]`}
       >
         <Anchor
-          sx={theme => ({
+          style={theme => ({
             color:
-              theme.colorScheme === 'dark'
+              colorScheme === 'dark'
                 ? theme.colors.dark[0]
                 : theme.colors.gray[9],
             '&:hover': {
               textDecoration: 'none',
               color:
-                theme.colorScheme === 'dark'
+                colorScheme === 'dark'
                   ? theme.colors.dark[2]
                   : theme.colors.gray[6],
             },

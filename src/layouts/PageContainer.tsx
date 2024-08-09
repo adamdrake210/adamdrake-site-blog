@@ -13,11 +13,11 @@ const PageContainer = ({ children, maxWidth }: Props) => {
     <>
       <Navigation />
       <Flex
-        sx={{
+        style={{
           flexGrow: 1,
         }}
       >
-        <Box w="100%" m="0 auto" maw={maxWidth} sx={{ overflowY: 'scroll' }}>
+        <Box w="100%" m="0 auto" maw={maxWidth}>
           {children}
         </Box>
       </Flex>

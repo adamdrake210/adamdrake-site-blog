@@ -36,7 +36,7 @@ export const BlogPost = ({ post }: Props) => {
         justify="center"
         align="center"
         direction="column"
-        sx={{
+        style={{
           '@media (max-width: 600px)': {
             textAlign: 'center',
           },

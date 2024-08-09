@@ -13,7 +13,7 @@ export const CopyLinkButton = ({ url }: Props) => {
     <Button
       variant="outline"
       size="xs"
-      sx={{ position: 'absolute', zIndex: 20, bottom: 16, left: 16 }}
+      style={{ position: 'absolute', zIndex: 20, bottom: 16, left: 16 }}
       onClick={() => clipboard.copy(url)}
     >
       {clipboard.copied ? 'Copied Link!' : 'Copy Blog Link'}

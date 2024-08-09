@@ -1,20 +1,17 @@
 import React from 'react';
 
-import styled from '@emotion/styled';
 import { Flex, Text } from '@mantine/core';
 
-const StickyFooter = styled(Flex)`
-  position: relative;
-  z-index: 10;
-  backdrop-filter: saturate(180%) blur(20px);
-  transition: background-color 0.1 ease-in-out;
-`;
-
 export default function Footer() {
-  // Colors for light and dark mode
-
   return (
-    <StickyFooter>
+    <Flex
+      style={{
+        position: 'relative',
+        zIndex: 10,
+        backdropFilter: 'saturate(180%) blur(20px)',
+        transition: 'background-color 0.1 ease-in-out',
+      }}
+    >
       <Flex
         w="100%"
         p="16px 24px"
@@ -26,6 +23,6 @@ export default function Footer() {
           Adam Drakes Site &#169; {new Date().getFullYear()}
         </Text>
       </Flex>
-    </StickyFooter>
+    </Flex>
   );
 }

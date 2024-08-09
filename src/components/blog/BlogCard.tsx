@@ -3,10 +3,10 @@ import {
   Box,
   Card,
   Flex,
-  Group,
   Image,
   Text,
   Title,
+  useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
 import { motion } from 'framer-motion';
@@ -24,6 +24,7 @@ type Props = {
 
 export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
   const theme = useMantineTheme();
+  const { colorScheme } = useMantineColorScheme();
 
   // Reading Stats
   const text = generateContentText(content);
@@ -46,7 +47,7 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
         radius="md"
         withBorder
         mih={400}
-        sx={theme => ({
+        style={theme => ({
           '&:hover': {
             boxShadow: `0 0 0 2px ${theme.colors.blue[5]}`,
           },
@@ -65,18 +66,22 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
           <Box>
             <Title
               order={5}
-              weight={700}
-              color={theme.colorScheme === 'dark' ? 'white' : 'dark'}
+              fw={700}
+              style={{
+                color: colorScheme === 'dark' ? 'white' : 'dark',
+              }}
               my={16}
             >
               {title}
             </Title>
-            <Text weight={500} size="md" mb={0}>
+            <Text fw={500} size="md" mb={0}>
               Reading time: {calculateReadingTime(readingStats.minutes)}
             </Text>
             <Text
               size="sm"
-              color={theme.colorScheme === 'dark' ? 'white' : 'dark'}
+              style={{
+                color: colorScheme === 'dark' ? 'white' : 'dark',
+              }}
             >
               Written on: {convertedDate.toISOString().substring(0, 10)},{' '}
             </Text>

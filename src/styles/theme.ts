@@ -1,6 +1,6 @@
-import { MantineThemeOverride } from '@mantine/core';
+import { createTheme } from '@mantine/core';
 
-export const theme: MantineThemeOverride = {
+export const theme = createTheme({
   colors: {
     secondary: [
       '#e4f0f7',
@@ -33,28 +33,16 @@ export const theme: MantineThemeOverride = {
   headings: {
     // eslint-disable-next-line quotes
     fontFamily: "'Montserrat', serif",
-    fontWeight: 200,
+    fontWeight: '200',
     sizes: {
-      h1: { fontSize: '48px', lineHeight: 1.5 },
-      h2: { fontSize: '36px', lineHeight: 1.5 },
-      h3: { fontSize: '30px', lineHeight: 1.5 },
+      h1: { fontSize: '48px', lineHeight: '1.5' },
+      h2: { fontSize: '36px', lineHeight: '1.5' },
+      h3: { fontSize: '30px', lineHeight: '1.5' },
     },
   },
 
-  globalStyles: theme => ({
-    html: {
-      height: '100%',
-    },
-    '#__next': {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-      height: '100%',
-    },
+  other: (theme: any) => ({
     body: {
-      ...theme.fn.fontStyles(),
-      height: '100%',
-      fontWeight: 200,
       color:
         theme.colorScheme === 'dark'
           ? theme.colors.gray[0]
@@ -73,12 +61,10 @@ export const theme: MantineThemeOverride = {
       },
     },
     li: {
-      fontSize: '1.2rem',
-      fontWeight: 400,
       color:
         theme.colorScheme === 'dark'
           ? theme.colors.gray[0]
           : theme.colors.gray[7],
     },
   }),
-};
+});

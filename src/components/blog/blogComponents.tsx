@@ -1,14 +1,18 @@
 import { Box, Center, Text, Title } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Image from 'next/image';
 
 export const blogComponents = {
   types: {
     myCodeField: ({ value }: any) => {
       return (
-        <Prism language="tsx" my={16}>
-          {value.code}
-        </Prism>
+        <CodeHighlight
+          language="tsx"
+          style={{
+            margin: '16px 0',
+          }}
+          code={value.code}
+        />
       );
     },
     myImage: ({ value }: any) => {
@@ -69,7 +73,7 @@ export const blogComponents = {
     },
     blockquote: ({ children }: { children?: any }) => (
       <Box
-        sx={theme => ({
+        style={theme => ({
           borderLeft: `5px solid ${theme.colors.blue[5]}`,
         })}
         pl={16}

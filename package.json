@@ -7,16 +7,17 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11",
-    "@mantine/core": "^6.0.1",
-    "@mantine/hooks": "^6.0.1",
-    "@mantine/next": "^6.0.1",
-    "@mantine/prism": "^6.0.2",
+    "@mantine/code-highlight": "^7.12.0",
+    "@mantine/core": "^7.12.0",
+    "@mantine/hooks": "^7.12.0",
+    "@mantine/next": "^6.0.22",
     "@portabletext/react": "^2.0.2",
     "@supabase/supabase-js": "^2.17.0",
     "@tabler/icons-react": "^2.46.0",
@@ -44,6 +45,9 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
+    "postcss": "^8.4.38",
+    "postcss-preset-mantine": "^1.15.0",
+    "postcss-simple-vars": "^7.0.1",
     "prettier": "^2.7.1",
     "typescript": "4.7.4"
   }

@@ -11,7 +11,7 @@ function AboutIndex() {
       <Head>
         <title>{SITE_NAME} | About</title>
       </Head>
-      <PageContainer maxWidth="700px">
+      <PageContainer maxWidth="1000px">
         <About />
       </PageContainer>
     </>

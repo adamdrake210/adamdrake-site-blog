@@ -16,7 +16,7 @@ export const SocialIcon = ({ label, icon, href }: Props) => {
           w={60}
           h={60}
           mx={32}
-          sx={{
+          style={{
             '&:hover': {
               transform: 'scale(1.1);',
               transition: 'all .2s ease-in-out',
