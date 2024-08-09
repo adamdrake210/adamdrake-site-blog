@@ -1,0 +1,25 @@
+html {
+  height: '100%';
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-weight: 200;
+}
+
+li {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0070f3;
+}

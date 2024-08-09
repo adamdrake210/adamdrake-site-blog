@@ -17,18 +17,18 @@ importers:
       '@emotion/styled':
         specifier: ^11
         version: 11.11.5(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@types/react@18.0.15)(react@18.2.0)
+      '@mantine/code-highlight':
+        specifier: ^7.12.0
+        version: 7.12.0(@mantine/core@7.12.0(@mantine/hooks@7.12.0(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.12.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@mantine/core':
-        specifier: ^7.8.1
-        version: 7.8.1(@mantine/hooks@7.8.1(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^7.12.0
+        version: 7.12.0(@mantine/hooks@7.12.0(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@mantine/hooks':
-        specifier: ^7.8.1
-        version: 7.8.1(react@18.2.0)
+        specifier: ^7.12.0
+        version: 7.12.0(react@18.2.0)
       '@mantine/next':
-        specifier: ^6.0.21
-        version: 6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(next@12.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@mantine/prism':
-        specifier: ^6.0.21
-        version: 6.0.21(@mantine/core@7.8.1(@mantine/hooks@7.8.1(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.8.1(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^6.0.22
+        version: 6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(next@12.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@portabletext/react':
         specifier: ^2.0.2
         version: 2.0.3(react@18.2.0)
@@ -1221,52 +1221,47 @@ packages:
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
-  '@mantine/core@7.8.1':
-    resolution: {integrity: sha512-dttbP2BhBzFJYBqgAQedJRca5+MXlJbppRhRsufnFeO7YC/UpZutOoHQ9dxGEQnhAWJ/d+wuRvYWG/gXex+wYQ==}
+  '@mantine/code-highlight@7.12.0':
+    resolution: {integrity: sha512-qsak83T7RrmRgqabGS6Vb9ti56JKe8U5zJdbCdOlZ5yXYDMmA6XwNpxU4gzx1wTc+pc9NlRB6mgprdJi4rDLtw==}
     peerDependencies:
-      '@mantine/hooks': 7.8.1
+      '@mantine/core': 7.12.0
+      '@mantine/hooks': 7.12.0
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@mantine/hooks@7.8.1':
-    resolution: {integrity: sha512-zCLqnxTUR2N6Awbt4rv/26UKTc75dXTVmCPsWUb6wdQExuC28fucG6kMoNYHVmOBDq9f3KP9zWOGDelHM2ogZA==}
+  '@mantine/core@7.12.0':
+    resolution: {integrity: sha512-FxsaIaEnqxV71MBGGsvXXad2q9KYTaIQFVP4TSAZI6xLChklXF/qJTqvabweaoW9BaVQT75b/BnUoJFzPfyAfw==}
+    peerDependencies:
+      '@mantine/hooks': 7.12.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+
+  '@mantine/hooks@7.12.0':
+    resolution: {integrity: sha512-UKMSpQZMdmecZX1PKPoknfUOE9MfDPiZR1myU4wUUKpaZibvvmhYuy8mcOOmYWegapRS3ErKIAc2cNnJ1Dk4RQ==}
     peerDependencies:
       react: ^18.2.0
 
-  '@mantine/next@6.0.21':
-    resolution: {integrity: sha512-McaVZZsmUol3yY92mSJSgcMQKFST97pVxNtI7Z52YocyuTjPPFXmqxF/TFj24A7noh1wzvRCPjfd9HX66sY+iQ==}
+  '@mantine/next@6.0.22':
+    resolution: {integrity: sha512-OIDeCaMSVfmaN0F38y6Ir8tmMZHDAmy8MhalDAFjGdTD9UKO1V9nQKTNJAuvo5yldslGlfvwhKUjKy7oy/M65g==}
     peerDependencies:
       next: '*'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@mantine/prism@6.0.21':
-    resolution: {integrity: sha512-M9hDUAuuxiINI7f07V0qlX532UXlOTpBqNcG1WWm80t6C0fHjzkTvFj77QpnGS73+MI88mV8ru458y10bQjTBA==}
-    peerDependencies:
-      '@mantine/core': 6.0.21
-      '@mantine/hooks': 6.0.21
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@mantine/ssr@6.0.21':
-    resolution: {integrity: sha512-TVPiz7VxbBntT42UFg4LCRqsv6HM5nvL5d2jBBbFcg9oztJ/5KVGhrtWbu2+kpq/uWWOpmE0sKDs3HQ/qr1PdQ==}
+  '@mantine/ssr@6.0.22':
+    resolution: {integrity: sha512-ZW89nrL39sfOEOSRlUEP92y5ItWFAbKOYwtgGBS7vHZ56hd6cOWH7bLr5GoQZGLJFywB/0lIpMk+pGsaA8YVEQ==}
     peerDependencies:
       '@emotion/react': '>=11.9.0'
       '@emotion/server': '>=11.4.0'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@mantine/styles@6.0.21':
-    resolution: {integrity: sha512-PVtL7XHUiD/B5/kZ/QvZOZZQQOj12QcRs3Q6nPoqaoPcOX5+S7bMZLMH0iLtcGq5OODYk0uxlvuJkOZGoPj8Mg==}
+  '@mantine/styles@6.0.22':
+    resolution: {integrity: sha512-Rud/IQp2EFYDiP4csRy2XBrho/Ct+W2/b+XbvCRTeQTmpFy/NfAKm/TWJa5zPvuv/iLTjGkVos9SHw/DteESpQ==}
     peerDependencies:
       '@emotion/react': '>=11.9.0'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
-
-  '@mantine/utils@6.0.21':
-    resolution: {integrity: sha512-33RVDRop5jiWFao3HKd3Yp7A9mEq4HAJxJPTuYm1NkdqX6aTKOQK7wT8v8itVodBp+sb4cJK6ZVdD1UurK/txQ==}
-    peerDependencies:
-      react: '>=16.8.0'
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
@@ -2138,8 +2133,8 @@ packages:
     resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
     engines: {node: '>=6'}
 
-  clsx@2.1.0:
-    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==}
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
   color-convert@1.9.3:
@@ -3028,6 +3023,10 @@ packages:
 
   hastscript@6.0.0:
     resolution: {integrity: sha512-nDM6bvd7lIqDUiYEiu5Sl/+6ReP0BMk/2f4U/Rooccxkj0P5nm+acM5PrGJ/t5I8qPGiqZSE6hVAwZEdZIvP4w==}
+
+  highlight.js@11.10.0:
+    resolution: {integrity: sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==}
+    engines: {node: '>=12.0.0'}
 
   history@5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
@@ -4150,11 +4149,6 @@ packages:
   pretty-ms@7.0.1:
     resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
     engines: {node: '>=10'}
-
-  prism-react-renderer@1.3.5:
-    resolution: {integrity: sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==}
-    peerDependencies:
-      react: '>=0.14.9'
 
   prismjs@1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
@@ -6459,11 +6453,20 @@ snapshots:
 
   '@juggle/resize-observer@3.4.0': {}
 
-  '@mantine/core@7.8.1(@mantine/hooks@7.8.1(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mantine/code-highlight@7.12.0(@mantine/core@7.12.0(@mantine/hooks@7.12.0(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.12.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@mantine/core': 7.12.0(@mantine/hooks@7.12.0(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@mantine/hooks': 7.12.0(react@18.2.0)
+      clsx: 2.1.1
+      highlight.js: 11.10.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
+  '@mantine/core@7.12.0(@mantine/hooks@7.12.0(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@floating-ui/react': 0.26.12(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@mantine/hooks': 7.8.1(react@18.2.0)
-      clsx: 2.1.0
+      '@mantine/hooks': 7.12.0(react@18.2.0)
+      clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-number-format: 5.3.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -6473,14 +6476,14 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@mantine/hooks@7.8.1(react@18.2.0)':
+  '@mantine/hooks@7.12.0(react@18.2.0)':
     dependencies:
       react: 18.2.0
 
-  '@mantine/next@6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(next@12.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mantine/next@6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(next@12.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@mantine/ssr': 6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@mantine/styles': 6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@mantine/ssr': 6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@mantine/styles': 6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next: 12.2.3(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -6488,35 +6491,22 @@ snapshots:
       - '@emotion/react'
       - '@emotion/server'
 
-  '@mantine/prism@6.0.21(@mantine/core@7.8.1(@mantine/hooks@7.8.1(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@mantine/hooks@7.8.1(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@mantine/core': 7.8.1(@mantine/hooks@7.8.1(react@18.2.0))(@types/react@18.0.15)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@mantine/hooks': 7.8.1(react@18.2.0)
-      '@mantine/utils': 6.0.21(react@18.2.0)
-      prism-react-renderer: 1.3.5(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
-  '@mantine/ssr@6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mantine/ssr@6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(@emotion/server@11.11.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@emotion/react': 11.11.4(@types/react@18.0.15)(react@18.2.0)
       '@emotion/server': 11.11.0
-      '@mantine/styles': 6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@mantine/styles': 6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       html-react-parser: 1.4.12(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@mantine/styles@6.0.21(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mantine/styles@6.0.22(@emotion/react@11.11.4(@types/react@18.0.15)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@emotion/react': 11.11.4(@types/react@18.0.15)(react@18.2.0)
       clsx: 1.1.1
       csstype: 3.0.9
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-
-  '@mantine/utils@6.0.21(react@18.2.0)':
-    dependencies:
-      react: 18.2.0
 
   '@mdx-js/mdx@2.3.0':
     dependencies:
@@ -7708,7 +7698,7 @@ snapshots:
 
   clsx@1.1.1: {}
 
-  clsx@2.1.0: {}
+  clsx@2.1.1: {}
 
   color-convert@1.9.3:
     dependencies:
@@ -8230,8 +8220,8 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.21.0)(typescript@4.7.4)
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.29.1)(eslint@8.21.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1)(eslint@8.21.0)
+      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0))(eslint@8.21.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.21.0)
       eslint-plugin-react: 7.34.1(eslint@8.21.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.21.0)
@@ -8249,11 +8239,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1)(eslint@8.21.0):
+  eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0):
     dependencies:
       debug: 4.3.4(supports-color@5.5.0)
       eslint: 8.21.0
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1)(eslint@8.21.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0))(eslint@8.21.0)
       glob: 7.2.3
       is-glob: 4.0.3
       resolve: 1.22.8
@@ -8261,18 +8251,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1)(eslint@8.21.0))(eslint@8.21.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0))(eslint@8.21.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.21.0)(typescript@4.7.4)
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.29.1)(eslint@8.21.0)
+      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1)(eslint@8.21.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0))(eslint@8.21.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -8282,7 +8272,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.21.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1)(eslint@8.21.0))(eslint@8.21.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.21.0)(typescript@4.7.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@2.7.1(eslint-plugin-import@2.29.1(eslint@8.21.0))(eslint@8.21.0))(eslint@8.21.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -8860,6 +8850,8 @@ snapshots:
       hast-util-parse-selector: 2.2.5
       property-information: 5.6.0
       space-separated-tokens: 1.1.5
+
+  highlight.js@11.10.0: {}
 
   history@5.3.0:
     dependencies:
@@ -10150,10 +10142,6 @@ snapshots:
   pretty-ms@7.0.1:
     dependencies:
       parse-ms: 2.1.0
-
-  prism-react-renderer@1.3.5(react@18.2.0):
-    dependencies:
-      react: 18.2.0
 
   prismjs@1.27.0: {}
 

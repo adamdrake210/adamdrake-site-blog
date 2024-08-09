@@ -7,7 +7,9 @@ import NProgress from 'nprogress';
 
 import type { AppProps } from 'next/app';
 import '@mantine/core/styles.css';
+import '@mantine/code-highlight/styles.css';
 import { theme } from 'styles/theme';
+import 'styles/index.css';
 
 const queryClient = new QueryClient();
 

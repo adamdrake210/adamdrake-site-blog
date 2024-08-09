@@ -3,8 +3,6 @@ import React from 'react';
 import { Flex, Text } from '@mantine/core';
 
 export default function Footer() {
-  // Colors for light and dark mode
-
   return (
     <Flex
       style={{

@@ -58,7 +58,7 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
         >
           <motion.div whileTap={{ scale: 0.991 }}>
             <Button
-              color="secondary[4]"
+              color="var(--mantine-color-cyan-6)"
               size="sm"
               style={{
                 textTransform: 'uppercase',

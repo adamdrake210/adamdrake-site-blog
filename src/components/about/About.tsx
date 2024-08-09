@@ -10,7 +10,7 @@ export const About: React.FC = () => {
       <Title order={1} mb={16}>
         About Me
       </Title>
-      <Text mb={32} size="lg">
+      <Text mb={32} size="xl">
         {ABOUT_ME_TEXT}
       </Text>
       <Divider />
