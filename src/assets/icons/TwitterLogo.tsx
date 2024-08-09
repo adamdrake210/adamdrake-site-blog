@@ -1,12 +1,10 @@
-import { useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { useMantineTheme } from '@mantine/core';
 import React from 'react';
 
 export const TwitterLogo = () => {
-  const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
 
-  const iconColor =
-    colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.gray[6];
+  const iconColor = theme.colors.gray[6];
 
   return (
     <svg

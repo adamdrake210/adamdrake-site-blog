@@ -32,7 +32,7 @@ const socialIconsData = [
 
 export const SocialLinks = () => {
   return (
-    <Flex my={32}>
+    <Flex my={32} wrap={'wrap'} align={'center'} justify={'center'}>
       {socialIconsData.map(({ label, icon, href }) => (
         <SocialIcon key={label} label={label} icon={icon} href={href} />
       ))}

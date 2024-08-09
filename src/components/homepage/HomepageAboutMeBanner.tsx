@@ -10,7 +10,7 @@ export const HomepageAboutMeBanner = () => {
         style={{
           marginBottom: 8,
           alignItems: 'center',
-          '@media (max-width: 600px)': {
+          '@media (maxWidth: 600px)': {
             flexDirection: 'column',
             alignItems: 'flex-start',
             marginBottom: 24,
@@ -21,7 +21,7 @@ export const HomepageAboutMeBanner = () => {
           order={1}
           mr={6}
           style={{
-            '@media (max-width: 600px)': {
+            '@media (maxWidth: 600px)': {
               fontSize: 36,
             },
           }}

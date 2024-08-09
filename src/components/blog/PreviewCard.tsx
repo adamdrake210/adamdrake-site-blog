@@ -28,7 +28,7 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
         }}
       >
         <AnimateFadeIn duration={3}>
-          <Box style={{ borderRadius: 8 }}>
+          <Box style={{ borderRadius: 8 }} mb={16}>
             <Image src={imageUrl} alt={`${title}`} w="100%" />
           </Box>
         </AnimateFadeIn>
