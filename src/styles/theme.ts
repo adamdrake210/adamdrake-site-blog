@@ -43,10 +43,10 @@ export const theme = createTheme({
   },
   primaryShade: 4,
   // eslint-disable-next-line quotes
-  fontFamily: "'Source Serif Pro', serif",
+  fontFamily: "'Lora', serif",
   headings: {
     // eslint-disable-next-line quotes
-    fontFamily: "'Montserrat', serif",
+    fontFamily: "'Red Hat Display', serif",
     fontWeight: '200',
     sizes: {
       h1: { fontSize: '48px', lineHeight: '1.5' },

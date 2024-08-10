@@ -62,7 +62,7 @@ export const PreviewCard = ({ title, description, imageUrl }: Props) => {
               size="sm"
               style={{
                 textTransform: 'uppercase',
-                fontFamily: "'Montserrat', sans-serif",
+                fontFamily: "'Red Hat Display', sans-serif",
               }}
               mt={8}
               py={8}

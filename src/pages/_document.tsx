@@ -33,9 +33,13 @@ export default class Document extends NextDocument {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Source+Serif+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
             rel="stylesheet"
           />
+          {/* <link */}
+          {/*   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Source+Serif+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" */}
+          {/*   rel="stylesheet" */}
+          {/* /> */}
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
