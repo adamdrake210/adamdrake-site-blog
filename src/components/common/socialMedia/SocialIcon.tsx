@@ -13,9 +13,9 @@ export const SocialIcon = ({ label, icon, href }: Props) => {
       <Tooltip label={label}>
         <ActionIcon
           variant="transparent"
-          w={60}
-          h={60}
-          mx={32}
+          w={40}
+          h={40}
+          mx={12}
           style={{
             '&:hover': {
               transform: 'scale(1.1);',
