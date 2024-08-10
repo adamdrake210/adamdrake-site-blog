@@ -17,24 +17,15 @@ export const HomepageAboutMeBanner = () => {
           },
         }}
       >
-        <Title
-          order={1}
-          mr={6}
-          style={{
-            fontSize: 96,
-            '@media (maxWidth: 600px)': {
-              fontSize: 36,
-            },
-          }}
-        >
+        <Title order={1} mr={6} fz={{ base: 48, md: 64, lg: 96 }}>
           Hi, I&apos;m Adam Drake
         </Title>
         {/* <AnimatedCircles /> */}
       </Flex>
-      <Text mb={16} fz={36}>
+      <Text mb={16} fz={{ base: 28, md: 36 }}>
         {ABOUT_ME_SUB_TITLE}
       </Text>
-      <Text mb={16} fz={24}>
+      <Text mb={16} fz={{ base: 20, md: 24 }}>
         {ABOUT_ME_TEXT}
       </Text>
     </Box>
