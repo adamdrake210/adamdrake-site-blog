@@ -24,7 +24,7 @@ export const About: React.FC = () => {
           Redux, JavaScript, TypeScript, Next.js, Node.js, Vite, AWS, Docker,
           and Vitest on a daily basis. I thrive on building React-based
           applications, designing robust front-end architectures, and developing
-          efficient Backend APIs. Over the years, I've learned to love the
+          efficient Backend APIs. Over the years, I&apos;ve learned to love the
           process of coding and continuously strive for excellence.
         </Text>
         <Text mb={16} size="xl">
