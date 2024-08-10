@@ -62,27 +62,18 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
           justify="space-between"
           align="flex-start"
           h="200px"
+          style={{
+            color: 'var(--mantine-color-gray-7)',
+          }}
         >
           <Box>
-            <Title
-              order={5}
-              fw={700}
-              style={{
-                color: colorScheme === 'dark' ? 'white' : 'dark',
-              }}
-              my={16}
-            >
+            <Title order={5} fw={700} my={16}>
               {title}
             </Title>
             <Text fw={500} size="md" mb={0}>
               Reading time: {calculateReadingTime(readingStats.minutes)}
             </Text>
-            <Text
-              size="sm"
-              style={{
-                color: colorScheme === 'dark' ? 'white' : 'dark',
-              }}
-            >
+            <Text size="sm">
               Written on: {convertedDate.toISOString().substring(0, 10)},{' '}
             </Text>
           </Box>
