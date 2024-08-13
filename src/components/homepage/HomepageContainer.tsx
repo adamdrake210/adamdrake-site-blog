@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Grid, Text } from '@mantine/core';
+import { Box, Flex, Grid, Text, Title } from '@mantine/core';
 import NextLink from 'next/link';
 import { useMediaQuery } from '@mantine/hooks';
 
@@ -31,6 +31,9 @@ export default function HomepageContainer({ latestPosts }: Props) {
       <AnimateFadeIn>
         {latestPosts && latestPosts.length > 0 ? (
           <>
+            <Title order={2} mb={16}>
+              Recently Published
+            </Title>
             <Grid>
               {latestPosts.map(post => {
                 return (
