@@ -1,15 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import {
-  Anchor,
-  Box,
-  Button,
-  Center,
-  Flex,
-  Grid,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Box, Button, Center, Flex, Grid, Text, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { Post } from 'types/types';

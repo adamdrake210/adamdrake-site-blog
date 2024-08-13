@@ -6,7 +6,7 @@ export const SITE_NAME = 'Adam Drake';
 export const SITE_DOMAIN = 'https://adamdrake.dev';
 
 export const ABOUT_ME_SUB_TITLE =
-  'I am a Frontend Developer who likes to build things.';
+  'I am a Frontend Software Developer who likes to write...';
 
 export const ABOUT_ME_TEXT =
   "I work with React, Redux, JavaScript, Next.js, Nodejs, Vite, AWS, Docker and Jest on a daily basis. I love building React based applications, front end architecture, Backend APIs and coding in general. It's important to love the process. I am currently diving deep on Computer Science fundamentals to give me a solid, general overview.";

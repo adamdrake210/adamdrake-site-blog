@@ -8,10 +8,10 @@ import { client } from 'client';
 import { Post } from 'types/types';
 
 type Props = {
-  latestPost: Post;
+  latestPosts: Post[];
 };
 
-export default function PageIndex({ latestPost }: Props) {
+export default function PageIndex({ latestPosts }: Props) {
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ export default function PageIndex({ latestPost }: Props) {
       </Head>
 
       <PageContainer maxWidth="1000px">
-        <HomepageContainer latestPost={latestPost} />
+        <HomepageContainer latestPosts={latestPosts} />
       </PageContainer>
     </>
   );
@@ -27,12 +27,12 @@ export default function PageIndex({ latestPost }: Props) {
 
 export async function getStaticProps() {
   const posts = await client.fetch(
-    `*[_type == "post"] | order(_createdAt desc) [0..1]`,
+    `*[_type == "post"] | order(_createdAt desc) [0..8]`,
   );
 
   return {
     props: {
-      latestPost: posts[0],
+      latestPosts: posts,
     },
   };
 }

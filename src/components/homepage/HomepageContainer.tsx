@@ -1,7 +1,8 @@
 import React from 'react';
-import { Flex } from '@mantine/core';
+import { Box, Flex, Grid, Text } from '@mantine/core';
+import NextLink from 'next/link';
+import { useMediaQuery } from '@mantine/hooks';
 
-import HomepageBanner from './HomepageBanner';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
 import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
 import { MyStravaStats } from 'components/strava/MyStravaStats';
@@ -9,12 +10,16 @@ import { Post } from 'types/types';
 import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
+import { BlogCard } from 'components/blog/BlogCard';
 
 type Props = {
-  latestPost: Post;
+  latestPosts: Post[];
 };
 
-export default function HomepageContainer({ latestPost }: Props) {
+export default function HomepageContainer({ latestPosts }: Props) {
+  const isMdDown = useMediaQuery('(max-width: 747px)');
+  const isSmDown = useMediaQuery('(max-width: 600px)');
+
   return (
     <Flex mt={32} px={16} w="100%" direction="column" align="center">
       <AnimateFadeIn>
@@ -24,15 +29,36 @@ export default function HomepageContainer({ latestPost }: Props) {
 
       {/* Latest Post */}
       <AnimateFadeIn>
-        {latestPost && (
-          <HomepageBanner
-            post={latestPost}
-            pageCategory="blog"
-            cta="Read Blog Post"
-            pageTitle="Latest Blog Post"
-          />
+        {latestPosts && latestPosts.length > 0 ? (
+          <>
+            <Grid>
+              {latestPosts.map(post => {
+                return (
+                  <Grid.Col
+                    mb={8}
+                    span={isSmDown ? 12 : isMdDown ? 6 : 4}
+                    key={post.slug}
+                  >
+                    <Box style={{ position: 'relative' }}>
+                      <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
+                        <a>
+                          <BlogCard
+                            title={post.title}
+                            createdDate={post._createdAt}
+                            content={post.content}
+                            imageUrl={post.headerimageurl}
+                          />
+                        </a>
+                      </NextLink>
+                    </Box>
+                  </Grid.Col>
+                );
+              })}
+            </Grid>
+          </>
+        ) : (
+          <Text fz="xl">No blog posts Found. Coming soon...</Text>
         )}
-        {/* <SubStackSubscribe /> */}
       </AnimateFadeIn>
       {/* Skills Banner */}
       <CustomDivider />
