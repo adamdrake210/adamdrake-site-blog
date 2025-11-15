@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Box, Button, Flex, Text, Title, Grid } from '@mantine/core';
 import NextLink from 'next/link';
-import { MediumLogo } from 'assets/icons/MediumLogo';
 
 const featuredPosts = [
   {

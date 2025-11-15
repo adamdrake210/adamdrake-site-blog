@@ -15,7 +15,7 @@ export const ABOUT_ME_TEXT_SHORT =
   'Adam Drake is a Frontend React Developer who is very passionate about the quality of the web. He lives with his wife and three children in Prague in the Czech Republic.';
 
 export const SELFIE_IMAGE =
-  'https://res.cloudinary.com/dmiizmobu/image/upload/v1678724204/adamdrake-blog/me_selfie.jpg';
+  'https://res.cloudinary.com/dmiizmobu/image/upload/v1763233923/adam_drake_prof_1_aqbdbc.png';
 
 // React Query Keys
 export const RQ_BLOG_POST = 'blogPost';
