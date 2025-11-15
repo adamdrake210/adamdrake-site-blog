@@ -1,7 +1,7 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
-import { Box, Divider, Flex, Text, Title } from '@mantine/core';
+import { Box, Center, Divider, Flex, Text, Title } from '@mantine/core';
 
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
@@ -13,6 +13,7 @@ import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
 import { BlogLikeButton } from './BlogLikeButton';
 import { SubStackSubscribe } from 'components/substack/SubStackSubscribe';
+import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 
 type Props = {
   post: Post;
@@ -67,9 +68,24 @@ export const BlogPost = ({ post }: Props) => {
         <PortableText value={post.content} components={blogComponents} />
       </Box>
 
-      <SubStackSubscribe />
+      {post.mediumurl && (
+        <Flex direction="column" gap={16}>
+          <Divider mb={16} />
+          <Box>
+            <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
+              Want to read more?
+            </Title>
+            <Text fz="lg" mb={6}>
+              The full version of this article lives on Medium — you can finish
+              by clicking the button below.{' '}
+            </Text>
+          </Box>
+          <Center my={16} mb={48}>
+            <MediumCtaButton mediumUrl={post.mediumurl} />
+          </Center>
+        </Flex>
+      )}
 
-      <BlogLikeButton slug={post.slug} />
       <SocialShareBlogPost
         title={post.title}
         writtenBy={post.writtenby}
