@@ -1,6 +1,16 @@
 import React from 'react';
-import { Card, Box, Button, Flex, Text, Title, Grid } from '@mantine/core';
+import {
+  Card,
+  Box,
+  Button,
+  Flex,
+  Text,
+  Title,
+  Grid,
+  Center,
+} from '@mantine/core';
 import NextLink from 'next/link';
+import { MediumSubscribeButton } from 'components/common/buttons/MediumSubscribeButton';
 
 const featuredPosts = [
   {
@@ -60,6 +70,9 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
           </Grid.Col>
         ))}
       </Grid>
+      <Center my={24}>
+        <MediumSubscribeButton />
+      </Center>
     </Box>
   );
 };

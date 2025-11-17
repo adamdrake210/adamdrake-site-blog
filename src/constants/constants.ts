@@ -5,6 +5,9 @@ export const SITE_NAME = 'Adam Drake';
 
 export const SITE_DOMAIN = 'https://adamdrake.dev';
 
+export const MEDIUM_SUBSCRIBE_URL =
+  'https://medium.com/r/?url=https%3A%2F%2Fadam-drake-frontend-developer.medium.com%2Fsubscribe%2F';
+
 export const ABOUT_ME_SUB_TITLE =
   'I’m a passionate Frontend Software Developer, writer, and tech educator. Here you’ll find practical insights on productivity, modern web stacks, and navigating developer life.';
 
