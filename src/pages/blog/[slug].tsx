@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
 
 import { client } from 'client';
-import { Post } from 'types/types';
+import { Post as PostType } from 'types/types';
 import { BlogPost } from 'components/blog/BlogPost';
 
-function Post({ post }: { post: Post }) {
+function Post({ post }: { post: PostType }) {
   return <>{post && <BlogPost post={post} />}</>;
 }
 
