@@ -70,7 +70,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
           </Grid.Col>
         ))}
       </Grid>
-      <Center my={24}>
+      <Center my={32}>
         <MediumSubscribeButton />
       </Center>
     </Box>
