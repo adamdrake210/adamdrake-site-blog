@@ -29,14 +29,12 @@ export const LatestPosts = ({ latestPosts }: Props) => {
                 >
                   <Box style={{ position: 'relative' }}>
                     <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
-                      <a>
-                        <BlogCard
-                          title={post.title}
-                          createdDate={post._createdAt}
-                          content={post.content}
-                          imageUrl={post.headerimageurl}
-                        />
-                      </a>
+                      <BlogCard
+                        title={post.title}
+                        createdDate={post._createdAt}
+                        content={post.content}
+                        imageUrl={post.headerimageurl}
+                      />
                     </NextLink>
                   </Box>
                 </Grid.Col>

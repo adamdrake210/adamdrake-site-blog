@@ -11,8 +11,6 @@ import { Post } from 'types/types';
 import PageContainer from 'layouts/PageContainer';
 import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
-import { BlogLikeButton } from './BlogLikeButton';
-import { SubStackSubscribe } from 'components/substack/SubStackSubscribe';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 
 type Props = {
@@ -52,16 +50,15 @@ export const BlogPost = ({ post }: Props) => {
           content={post.content}
         />
       </Flex>
-      <Box mb={24}>
-        <Image
+      <Box mb={24} maw={800}>
+        <img
           src={post.headerimageurl}
           alt={`Image of ${post.title}`}
-          width={960}
-          height={560}
-          priority
+          width={'100%'}
+          height={'auto'}
         />
       </Box>
-      <Text px={16} mb={16} fz={28}>
+      <Text px={16} mb={16} fz={26}>
         {post.intro}
       </Text>
       <Box px={16} mb={48}>
