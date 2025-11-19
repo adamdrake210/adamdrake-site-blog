@@ -5,6 +5,7 @@ export type Post = {
   slug: string;
   tags: string;
   writtenby: string;
+  mediumurl: string;
   headerimageurl: string;
   intro: string;
   _id: string;

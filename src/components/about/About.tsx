@@ -2,22 +2,28 @@ import React from 'react';
 
 import { Box, Divider, Flex, Text, Title } from '@mantine/core';
 import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
-import Image from 'next/image';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
+import { SelfieImage } from 'components/common/images/SelfieImage';
+import { useMediaQuery } from '@mantine/hooks';
 
 export const About: React.FC = () => {
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
   return (
     <AnimateFadeIn>
       <Box p={16}>
         <Title order={1} mb={16}>
           About Me
         </Title>
-        <Image
-          src="https://res.cloudinary.com/dmiizmobu/image/upload/v1723294340/adamdrake-blog/about_me_image.png"
-          alt="Adam Drake"
-          width={300}
-          height={300}
-        />
+        <Flex
+          justify={isSmallScreen ? 'center' : 'space-between'}
+          my={16}
+          direction={isSmallScreen ? 'column-reverse' : 'row'}
+        >
+          <Box>
+            <SelfieImage maxWidth={200} />
+          </Box>
+        </Flex>
         <Text mb={16} size="xl">
           As a <b>Staff Frontend Engineer</b> at Chemify, I am deeply passionate
           about the quality of the web. I specialise in working with React,

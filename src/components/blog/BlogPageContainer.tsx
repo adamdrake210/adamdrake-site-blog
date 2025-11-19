@@ -59,14 +59,12 @@ export default function BlogPageContainer() {
                 >
                   <Box style={{ position: 'relative' }}>
                     <NextLink as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
-                      <a>
-                        <BlogCard
-                          title={post.title}
-                          createdDate={post._createdAt}
-                          content={post.content}
-                          imageUrl={post.headerimageurl}
-                        />
-                      </a>
+                      <BlogCard
+                        title={post.title}
+                        createdDate={post._createdAt}
+                        content={post.content}
+                        imageUrl={post.headerimageurl}
+                      />
                     </NextLink>
                     <CopyLinkButton url={`${SITE_DOMAIN}/blog/${post.slug}`} />
                   </Box>

@@ -14,9 +14,9 @@
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11",
-    "@mantine/code-highlight": "^7.12.0",
-    "@mantine/core": "^7.12.0",
-    "@mantine/hooks": "^7.12.0",
+    "@mantine/code-highlight": "^8.3.0",
+    "@mantine/core": "^8.3.0",
+    "@mantine/hooks": "^8.3.0",
     "@mantine/next": "^6.0.22",
     "@portabletext/react": "^2.0.2",
     "@supabase/supabase-js": "^2.17.0",
@@ -27,7 +27,7 @@
     "cloudinary": "^1.35.0",
     "framer-motion": "^10.3.0",
     "gray-matter": "^4.0.3",
-    "next": "12.2.3",
+    "next": "16.0.3",
     "next-mdx-remote": "^4.1.0",
     "next-sanity": "^4.1.5",
     "next-seo": "^5.5.0",
@@ -44,11 +44,11 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.3",
+    "eslint-config-next": "16.0.3",
     "postcss": "^8.4.38",
     "postcss-preset-mantine": "^1.15.0",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^2.7.1",
-    "typescript": "4.7.4"
+    "typescript": "5.9.3"
   }
 }
