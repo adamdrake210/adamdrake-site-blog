@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex } from '@mantine/core';
 
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
@@ -9,7 +8,6 @@ import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
-import { LatestPosts } from './LatestPosts';
 
 type Props = {
   latestPosts: Post[];
@@ -24,10 +22,6 @@ export default function HomepageContainer({ latestPosts }: Props) {
         <HomepageFeaturedMediumPosts />
         <CustomDivider />
       </AnimateFadeIn>
-      {/* Latest Post */}
-      {/* <AnimateFadeIn>
-        <LatestPosts latestPosts={latestPosts} />
-      </AnimateFadeIn> */}
       {/* Skills Banner */}
       <AnimateFadeIn>
         <SkillsBannerContainer />
