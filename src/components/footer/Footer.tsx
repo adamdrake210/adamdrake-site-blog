@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Flex, Text, useMantineTheme } from '@mantine/core';
 
 export default function Footer() {
