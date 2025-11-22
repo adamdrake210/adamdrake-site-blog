@@ -6,6 +6,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 
 import type { AppProps } from 'next/app';
+import { SleekLineCursor } from 'components/common/SleekLineCursor';
 import '@mantine/core/styles.css';
 import '@mantine/code-highlight/styles.css';
 import { theme } from 'styles/theme';
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider defaultColorScheme="light" theme={theme}>
+        <SleekLineCursor trails={15} />
         <AnimatePresence mode="wait">
           <Component {...pageProps} />
         </AnimatePresence>

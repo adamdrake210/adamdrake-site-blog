@@ -1,5 +1,4 @@
-import React from 'react';
-import { Flex } from '@mantine/core';
+import { Flex, useMantineTheme } from '@mantine/core';
 
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
 import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
@@ -9,25 +8,32 @@ import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
-import { LatestPosts } from './LatestPosts';
 
 type Props = {
   latestPosts: Post[];
 };
 
 export default function HomepageContainer({ latestPosts }: Props) {
+  const theme = useMantineTheme();
+
   return (
-    <Flex mt={32} px={16} w="100%" direction="column" align="center">
+    <Flex
+      px={16}
+      w="100%"
+      direction="column"
+      align="center"
+      bg={theme.colors.myColor[1]}
+      style={{
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
       <AnimateFadeIn>
         <HomepageAboutMeBanner />
         <CustomDivider />
         <HomepageFeaturedMediumPosts />
         <CustomDivider />
       </AnimateFadeIn>
-      {/* Latest Post */}
-      {/* <AnimateFadeIn>
-        <LatestPosts latestPosts={latestPosts} />
-      </AnimateFadeIn> */}
       {/* Skills Banner */}
       <AnimateFadeIn>
         <SkillsBannerContainer />
