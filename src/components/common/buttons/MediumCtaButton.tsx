@@ -14,7 +14,7 @@ export const MediumCtaButton = ({ mediumUrl }: { mediumUrl: string }) => {
       style={{ fontWeight: 500 }}
       radius="md"
     >
-      Read Full Article on Medium
+      Read This Article on Medium
     </Button>
   );
 };

@@ -59,23 +59,15 @@ export const BlogPost = ({ post }: Props) => {
               height={'auto'}
             />
           </Box>
-          <Text px={16} mb={16} fz={26}>
-            {post.intro}
-          </Text>
-          <Box px={16} mb={48}>
-            <PortableText value={post.content} components={blogComponents} />
-          </Box>
-
           {post.mediumurl && (
             <Flex direction="column" gap={16}>
               <Divider mb={16} />
               <Box>
                 <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
-                  Want to read more?
+                  Medium Member?
                 </Title>
                 <Text fz="lg" mb={6}>
-                  The full version of this article lives on Medium — you can
-                  finish by clicking the button below.{' '}
+                  My Medium friends can read this story over on Medium.
                 </Text>
               </Box>
               <Center my={16} mb={48}>
@@ -83,6 +75,12 @@ export const BlogPost = ({ post }: Props) => {
               </Center>
             </Flex>
           )}
+          <Text px={16} mb={16} fz={26}>
+            {post.intro}
+          </Text>
+          <Box px={16} mb={48}>
+            <PortableText value={post.content} components={blogComponents} />
+          </Box>
 
           <SocialShareBlogPost
             title={post.title}
