@@ -3,17 +3,12 @@ import { Flex, useMantineTheme } from '@mantine/core';
 import { HomepageAboutMeBanner } from './HomepageAboutMeBanner';
 import { SocialLinks } from 'components/common/socialMedia/SocialLinks';
 import { MyStravaStats } from 'components/strava/MyStravaStats';
-import { Post } from 'types/types';
 import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
 
-type Props = {
-  latestPosts: Post[];
-};
-
-export default function HomepageContainer({ latestPosts }: Props) {
+export default function HomepageContainer() {
   const theme = useMantineTheme();
 
   return (

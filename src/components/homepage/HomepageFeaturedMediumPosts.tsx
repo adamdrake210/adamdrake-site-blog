@@ -71,7 +71,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
                   </Text>
                 </Box>
                 <Flex mt={10} gap={8} justify="flex-end">
-                  <NextLink href={`/blog/${post.slug}`} passHref legacyBehavior>
+                  <NextLink href={`/blog/${post.slug}`} passHref>
                     <Button variant="light">Read Excerpt</Button>
                   </NextLink>
                 </Flex>
