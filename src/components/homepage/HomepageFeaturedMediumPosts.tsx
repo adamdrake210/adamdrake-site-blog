@@ -13,6 +13,7 @@ import {
 } from '@mantine/core';
 import NextLink from 'next/link';
 import { MediumSubscribeButton } from 'components/common/buttons/MediumSubscribeButton';
+import { BlogButtons } from './BlogButtons';
 
 const featuredPosts = [
   {
@@ -79,9 +80,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
           </Grid.Col>
         ))}
       </Grid>
-      <Center my={32}>
-        <MediumSubscribeButton />
-      </Center>
+      <BlogButtons />
     </Box>
   );
 };

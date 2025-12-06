@@ -15,7 +15,7 @@ export const MediumSubscribeButton = () => {
       style={{ fontWeight: 500 }}
       radius="md"
     >
-      See More Articles on Medium
+      Read Articles on Medium
     </Button>
   );
 };
