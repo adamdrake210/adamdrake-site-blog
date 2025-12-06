@@ -24,8 +24,9 @@ export const BlogButtons = () => {
         color="dark"
         radius="md"
         leftSection={<IconBook />}
+        w={200}
       >
-        Read Blog Posts
+        Blog
       </Button>
       <MediumSubscribeButton />
       <SubstackButton />

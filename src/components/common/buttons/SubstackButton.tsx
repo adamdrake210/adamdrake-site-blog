@@ -14,8 +14,9 @@ export const SubstackButton = () => {
       color="dark"
       style={{ fontWeight: 500 }}
       radius="md"
+      w={200}
     >
-      Read Articles on Substack
+      Substack
     </Button>
   );
 };
