@@ -1,22 +1,22 @@
 import { Button } from '@mantine/core';
-import { MediumLogo } from 'assets/icons/MediumLogo';
-import { MEDIUM_SUBSCRIBE_URL } from 'constants/constants';
+import { IconStack2 } from '@tabler/icons-react';
+import { SUBSTACK_URL } from 'constants/constants';
 
-export const MediumSubscribeButton = () => {
+export const SubstackButton = () => {
   return (
     <Button
       variant="filled"
       component="a"
       size="lg"
-      href={MEDIUM_SUBSCRIBE_URL}
+      href={SUBSTACK_URL}
       target="_blank"
-      leftSection={<MediumLogo />}
+      leftSection={<IconStack2 />}
       color="dark"
       style={{ fontWeight: 500 }}
       radius="md"
       w={200}
     >
-      Medium
+      Substack
     </Button>
   );
 };

@@ -1,17 +1,11 @@
-import React from 'react';
 import Head from 'next/head';
 
 import PageContainer from 'layouts/PageContainer';
 import HomepageContainer from 'components/homepage/HomepageContainer';
 import { SITE_NAME } from 'constants/constants';
 import { client } from 'client';
-import { Post } from 'types/types';
 
-type Props = {
-  latestPosts: Post[];
-};
-
-export default function PageIndex({ latestPosts }: Props) {
+export default function PageIndex() {
   return (
     <>
       <Head>
@@ -19,7 +13,7 @@ export default function PageIndex({ latestPosts }: Props) {
       </Head>
 
       <PageContainer maxWidth="1000px">
-        <HomepageContainer latestPosts={latestPosts} />
+        <HomepageContainer />
       </PageContainer>
     </>
   );

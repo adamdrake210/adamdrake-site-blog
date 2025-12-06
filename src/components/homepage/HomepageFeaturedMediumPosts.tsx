@@ -13,6 +13,7 @@ import {
 } from '@mantine/core';
 import NextLink from 'next/link';
 import { MediumSubscribeButton } from 'components/common/buttons/MediumSubscribeButton';
+import { BlogButtons } from './BlogButtons';
 
 const featuredPosts = [
   {
@@ -70,7 +71,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
                   </Text>
                 </Box>
                 <Flex mt={10} gap={8} justify="flex-end">
-                  <NextLink href={`/blog/${post.slug}`} passHref legacyBehavior>
+                  <NextLink href={`/blog/${post.slug}`} passHref>
                     <Button variant="light">Read Excerpt</Button>
                   </NextLink>
                 </Flex>
@@ -79,9 +80,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
           </Grid.Col>
         ))}
       </Grid>
-      <Center my={32}>
-        <MediumSubscribeButton />
-      </Center>
+      <BlogButtons />
     </Box>
   );
 };
