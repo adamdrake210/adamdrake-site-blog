@@ -6,7 +6,9 @@ export const SITE_NAME = 'Adam Drake';
 export const SITE_DOMAIN = 'https://adamdrake.dev';
 
 export const MEDIUM_SUBSCRIBE_URL =
-  'https://medium.com/r/?url=https%3A%2F%2Fadam-drake-frontend-developer.medium.com%2Fsubscribe%2F';
+  'https://adam-drake-frontend-developer.medium.com/subscribe';
+
+export const BUY_ME_A_COFFEE_URL = 'https://www.buymeacoffee.com/adam.dev';
 
 export const SUBSTACK_SUBSCRIBE_URL =
   'https://adamdrake.substack.com/subscribe';
@@ -27,3 +29,7 @@ export const SELFIE_IMAGE =
 
 // React Query Keys
 export const RQ_BLOG_POST = 'blogPost';
+
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/adam-drake-ab065417/';
+
+export const GITHUB_URL = 'https://github.com/adamdrake210';

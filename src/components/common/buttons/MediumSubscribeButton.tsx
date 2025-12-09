@@ -2,7 +2,13 @@ import { Button } from '@mantine/core';
 import { MediumLogo } from 'assets/icons/MediumLogo';
 import { MEDIUM_SUBSCRIBE_URL } from 'constants/constants';
 
-export const MediumSubscribeButton = () => {
+export const MediumSubscribeButton = ({
+  buttomText = 'Medium',
+  buttonWidth = 200,
+}: {
+  buttomText?: string;
+  buttonWidth?: number | 'auto';
+}) => {
   return (
     <Button
       variant="filled"
@@ -14,9 +20,9 @@ export const MediumSubscribeButton = () => {
       color="dark"
       style={{ fontWeight: 500 }}
       radius="md"
-      w={200}
+      w={buttonWidth}
     >
-      Medium
+      {buttomText}
     </Button>
   );
 };
