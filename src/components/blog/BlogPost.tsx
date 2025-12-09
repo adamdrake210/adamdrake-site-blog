@@ -11,6 +11,7 @@ import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
+import AboutMeBlurb from 'components/about/AboutMeBlurb';
 
 type Props = {
   post: Post;
@@ -60,27 +61,33 @@ export const BlogPost = ({ post }: Props) => {
             />
           </Box>
           {post.mediumurl && (
-            <Flex direction="column" gap={16}>
-              <Divider mb={16} />
-              <Box>
-                <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
-                  Medium Member?
-                </Title>
-                <Text fz="lg" mb={6}>
-                  My Medium friends can read this story over on Medium.
-                </Text>
-              </Box>
-              <Center my={16} mb={48}>
-                <MediumCtaButton mediumUrl={post.mediumurl} />
-              </Center>
-            </Flex>
+            <>
+              <Flex direction="column" gap={16}>
+                <Divider mb={16} />
+                <Box>
+                  <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
+                    Medium Member?
+                  </Title>
+                  <Text fz="lg" mb={6}>
+                    My Medium friends can read this story over on Medium.
+                  </Text>
+                </Box>
+                <Center my={16} mb={48}>
+                  <MediumCtaButton mediumUrl={post.mediumurl} />
+                </Center>
+              </Flex>
+              <Divider my={16} />
+            </>
           )}
+
           <Text px={16} mb={16} fz={26}>
             {post.intro}
           </Text>
           <Box px={16} mb={48}>
             <PortableText value={post.content} components={blogComponents} />
           </Box>
+          <Divider my={16} />
+          <AboutMeBlurb />
 
           <SocialShareBlogPost
             title={post.title}
