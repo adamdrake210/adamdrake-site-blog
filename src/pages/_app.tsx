@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider defaultColorScheme="light" theme={theme}>
-        <SleekLineCursor trails={15} />
+        {/*<SleekLineCursor trails={15} />*/}
         <AnimatePresence mode="wait">
           <Component {...pageProps} />
         </AnimatePresence>

@@ -17,6 +17,28 @@ import { BlogButtons } from './BlogButtons';
 
 const featuredPosts = [
   {
+    slug: 'software-developers-will-be-thriving-in-5-years-despite-what-your-youtube-feed-says',
+    title:
+      'Software Developers Will Be Thriving in 5 Years (Despite What Your YouTube Feed Says)',
+    image:
+      'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*0K97PqU0afCpYJA5zAEhFw.png',
+    summary:
+      '2025 has been an extraordinary year for Generative AI. My Youtube feed has been overrun with AI headlines all telling me “AI will replace you”.',
+    mediumUrl:
+      'https://medium.com/javascript-in-plain-english/software-developers-will-be-thriving-in-5-years-despite-what-your-youtube-feed-says-4898d4af4663',
+  },
+  {
+    slug: 'claude-code-just-released-a-feature-that-genuinely-scares-me-and-i-use-ai-every-day',
+    title:
+      'Claude Code Just Released a Feature That Genuinely Scares Me (And I Use AI Every Day)',
+    image:
+      'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Z8EPL6SGy4TAJ9dftVkgfQ.png',
+    summary:
+      'I was watching Netflix with my family the other night. It was the Musical version of Matilda. I was very much “On” even though I should have been relaxing.',
+    mediumUrl:
+      'https://medium.com/gitconnected/claude-code-just-released-a-feature-that-genuinely-scares-me-and-i-use-ai-every-day-4f23cd3051c0',
+  },
+  {
     slug: 'its-the-perfect-time-to-be-a-senior-developer',
     title: 'It’s the Perfect Time to be a Senior Developer',
     image:
@@ -24,25 +46,6 @@ const featuredPosts = [
     summary:
       'Why senior/experienced devs are perfectly poised to leverage AI—and how your high-level perspective offers a big career advantage in the new era.',
     mediumUrl: 'https://medium.com/p/9bfb53fca535',
-  },
-  {
-    slug: 'using-the-atlassian-mcp-server-in-cursor',
-    title: 'Using the Atlassian MCP server in Cursor',
-    image:
-      'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*x2Swk7sY439NC06pVRJ7sg.png',
-    summary:
-      'How the Atlassian MCP server can supercharge your workflow with Jira and Confluence inside Cursor. Real-world dev experience and setup steps.',
-    mediumUrl: 'https://medium.com/p/3b2b193b70be',
-  },
-  {
-    slug: 'my-new-favourite-stack-tanstack-start-laravel-postgres-and-mantine',
-    title:
-      'My New Favourite Stack — Tanstack Start, Laravel, Postgres and Mantine',
-    image:
-      'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*z3J76v8ZpPdT4gpjjKHFqw.png',
-    summary:
-      'The modern stack that’s helped me launch personal projects with speed: Tanstack Start, Mantine, Laravel, and Postgres. Why they work so well together.',
-    mediumUrl: 'https://medium.com/p/95b161a7b73c',
   },
 ];
 
@@ -72,7 +75,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
                 </Box>
                 <Flex mt={10} gap={8} justify="flex-end">
                   <NextLink href={`/blog/${post.slug}`} passHref>
-                    <Button variant="light">Read Excerpt</Button>
+                    <Button variant="light">Read Article</Button>
                   </NextLink>
                 </Flex>
               </Flex>
