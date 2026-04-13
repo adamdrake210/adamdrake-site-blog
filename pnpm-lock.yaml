@@ -32,6 +32,9 @@ importers:
       '@portabletext/react':
         specifier: ^2.0.2
         version: 2.0.3(react@18.2.0)
+      '@sanity/client':
+        specifier: ^7.20.0
+        version: 7.20.0
       '@supabase/supabase-js':
         specifier: ^2.17.0
         version: 2.42.5
@@ -1557,6 +1560,10 @@ packages:
   '@sanity/client@6.15.20':
     resolution: {integrity: sha512-0RTrIxle2S/2FWnwVb/R16S6iqYTh8KPZc5JN6xgXYFwt5A6O/npZK3fA/F/2LJuRjTZXoqP0mQHFngsyKYRIQ==}
     engines: {node: '>=14.18'}
+
+  '@sanity/client@7.20.0':
+    resolution: {integrity: sha512-uKwfqA+UfyWH6QzqpDD2DQnZu+WRa2iCM3OJ9AoyDZB9oHLl2NKI+9mX1xEZ7PiBuq09pogI7sxKaTKnaB6d+g==}
+    engines: {node: '>=20'}
 
   '@sanity/codegen@3.39.0':
     resolution: {integrity: sha512-ab42ElTO5Bu8TeU/IPYlwe9bRXsV05LMDPPqBDN+70egGJ1LB3s/FNwhC2e0LM+t89Qha8VFAFOUadmaru+ddA==}
@@ -3196,6 +3203,10 @@ packages:
     resolution: {integrity: sha512-3ferjw17+sUrDws9Q5JOvC2ecaEjXQlBTarRNe7JLtKhzsnc7AILYzgn0TD0NZNuaeb7rEcGLX7tGHsDISJyAg==}
     engines: {node: '>=14.0.0'}
 
+  get-it@8.7.2:
+    resolution: {integrity: sha512-slSwC/BBAnoz9OnHopU+V5pJKAieddoF6dmx2CvbWMRePgup8ftiB+D7d+pr2PZzcqNtZOVDMoLOsXGsERhTEg==}
+    engines: {node: '>=14.0.0'}
+
   get-nonce@1.0.1:
     resolution: {integrity: sha512-FJhYRoDaiatfEkUK8HKlicmu/3SGFD51q3itKDGoSTysQJBnfOcxU5GxnhE1E6soB76MbT0MBtnKJuXyAx+96Q==}
     engines: {node: '>=6'}
@@ -4021,6 +4032,11 @@ packages:
   nano-pubsub@3.0.0:
     resolution: {integrity: sha512-zoTNyBafxG0+F5PP3T3j1PKMr7gedriSdYRhLFLRFCz0OnQfQ6BkVk9peXVF30hz633Bw0Zh5McleOrXPjWYCQ==}
     engines: {node: '>=18'}
+
+  nanoid@3.3.11:
+    resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
 
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -5131,6 +5147,9 @@ packages:
 
   through2@3.0.2:
     resolution: {integrity: sha512-enaDQ4MUyP2W6ZyT6EsMzqBPZaM/avg8iuo+l2d3QCs0J+6RaqkHV/2/lOwDTueBHeJ/2LG9lrLW3d5rWPucuQ==}
+
+  through2@4.0.2:
+    resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -7071,6 +7090,13 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
+  '@sanity/client@7.20.0':
+    dependencies:
+      '@sanity/eventsource': 5.0.2
+      get-it: 8.7.2
+      nanoid: 3.3.11
+      rxjs: 7.8.1
+
   '@sanity/codegen@3.39.0':
     dependencies:
       '@babel/core': 7.24.4
@@ -7249,7 +7275,7 @@ snapshots:
 
   '@sanity/presentation@1.12.7(@sanity/client@6.15.20(debug@4.4.3))(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
     dependencies:
-      '@sanity/client': 6.15.20
+      '@sanity/client': 6.15.20(debug@4.4.3)
       '@sanity/icons': 2.11.8(react@18.2.0)
       '@sanity/preview-url-secret': 1.6.11(@sanity/client@6.15.20(debug@4.4.3))
       '@sanity/ui': 2.1.4(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
@@ -7283,7 +7309,7 @@ snapshots:
 
   '@sanity/preview-url-secret@1.6.11(@sanity/client@6.15.20(debug@4.4.3))':
     dependencies:
-      '@sanity/client': 6.15.20
+      '@sanity/client': 6.15.20(debug@4.4.3)
       '@sanity/uuid': 3.0.2
 
   '@sanity/schema@3.39.0(debug@3.2.7)':
@@ -9301,6 +9327,13 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
+  get-it@8.7.2:
+    dependencies:
+      decompress-response: 7.0.0
+      is-retry-allowed: 2.2.0
+      through2: 4.0.2
+      tunnel-agent: 0.6.0
+
   get-nonce@1.0.1: {}
 
   get-proto@1.0.1:
@@ -9884,7 +9917,7 @@ snapshots:
       cssstyle: 4.0.1
       data-urls: 5.0.0
       decimal.js: 10.4.3
-      form-data: 4.0.0
+      form-data: 4.0.5
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.4
@@ -10130,6 +10163,8 @@ snapshots:
       object-assign: 4.1.1
 
   nano-pubsub@3.0.0: {}
+
+  nanoid@3.3.11: {}
 
   nanoid@3.3.7: {}
 
@@ -10932,7 +10967,7 @@ snapshots:
       '@sanity/bifur-client': 0.3.1
       '@sanity/block-tools': 3.39.0
       '@sanity/cli': 3.39.0
-      '@sanity/client': 6.15.20
+      '@sanity/client': 6.15.20(debug@4.4.3)
       '@sanity/color': 3.0.6
       '@sanity/diff': 3.39.0
       '@sanity/diff-match-patch': 3.1.1
@@ -11500,6 +11535,10 @@ snapshots:
   through2@3.0.2:
     dependencies:
       inherits: 2.0.4
+      readable-stream: 3.6.2
+
+  through2@4.0.2:
+    dependencies:
       readable-stream: 3.6.2
 
   through@2.3.8: {}
