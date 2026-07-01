@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm tsc *)",
+      "Bash(pnpm test *)",
+      "Bash(source ~/agent-utils/.env)",
+      "Bash(glab api user *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__mcp-atlassian__confluence_get_page"
+    ]
+  }
+}

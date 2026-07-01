@@ -13,7 +13,7 @@ export const NavLinkButton = ({ btnText, href }: Props) => {
   return (
     <NextLink href={href}>
       <Text
-        fz={32}
+        fz={24}
         px={16}
         style={{
           fontFamily: "'Red Hat Display', sans-serif",

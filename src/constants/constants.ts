@@ -68,3 +68,6 @@ export const BOOK_INTRO_PARAGRAPHS = [
   'The current trend is Multi-agent orchestration. Experienced developers are already claiming that using a single Agent is archaic and rudimentary and if you still work this way you are nothing more than a luddite. The world is moving fast. But I still think it’s important to seek out the truth and declare, as close as one can with words, the reality of what is going on at the ground level. As is often the case, what is reported in the media is not what is happening out in the field.',
   'I’m hoping this can help developers understand where they currently stand and which way to move forward. Which skills they will need to work on and which they can start to leave behind. How to continue to make progress and not find themselves caught unaware and potentially out of work. In order to make these decisions though it’s important to know the landscape in which you find yourself and that is my attempt in writing this book. To navigate the current landscape and report back to you - the reader - in an easy and digestible form. Let’s begin.',
 ];
+export const CONTACT_EMAIL = 'adamgedrake@gmail.com';
+
+export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';

@@ -9,6 +9,7 @@ import {
   BLOG_ROUTE,
   BOOK_ROUTE,
   BOOKS_ROUTE,
+  HIRE_ME_ROUTE,
 } from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
 import { NavDrawer } from './NavDrawer';
@@ -26,7 +27,10 @@ export const navLinks = [
   // {
   //   link: BOOKS_ROUTE,
   //   text: 'Books',
-  // },
+  {
+    link: HIRE_ME_ROUTE,
+    text: 'Hire Me',
+  }, // },
   {
     link: ABOUT_ROUTE,
     text: 'About',
