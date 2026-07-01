@@ -4,7 +4,12 @@ import { IconMenu2 } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { SITE_NAME } from 'constants/constants';
-import { ABOUT_ROUTE, BLOG_ROUTE, BOOKS_ROUTE } from 'constants/routeConstants';
+import {
+  ABOUT_ROUTE,
+  BLOG_ROUTE,
+  BOOK_ROUTE,
+  BOOKS_ROUTE,
+} from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
 import { NavDrawer } from './NavDrawer';
 import { NavLinkButton } from './NavLinkButton';
@@ -13,6 +18,10 @@ export const navLinks = [
   {
     link: BLOG_ROUTE,
     text: 'Blog',
+  },
+  {
+    link: BOOK_ROUTE,
+    text: 'Book',
   },
   // {
   //   link: BOOKS_ROUTE,

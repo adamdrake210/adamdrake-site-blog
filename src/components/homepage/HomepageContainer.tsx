@@ -7,6 +7,7 @@ import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
+import { BookTeaserCard } from './BookTeaserCard';
 
 export default function HomepageContainer() {
   const theme = useMantineTheme();
@@ -25,6 +26,8 @@ export default function HomepageContainer() {
     >
       <AnimateFadeIn>
         <HomepageAboutMeBanner />
+        <CustomDivider />
+        <BookTeaserCard />
         <CustomDivider />
         <HomepageFeaturedMediumPosts />
         <CustomDivider />
