@@ -33,3 +33,7 @@ export const RQ_BLOG_POST = 'blogPost';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/adam-drake-ab065417/';
 
 export const GITHUB_URL = 'https://github.com/adamdrake210';
+
+export const CONTACT_EMAIL = 'adamgedrake@gmail.com';
+
+export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';
