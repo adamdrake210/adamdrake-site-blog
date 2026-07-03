@@ -33,9 +33,15 @@ a:hover {
 
 /* --- Ink-on-paper details --- */
 
+/* Ink and paper swap in night mode */
+:root {
+  --ink: var(--mantine-color-myColor-9);
+  --paper: var(--mantine-color-myColor-0);
+}
+
 ::selection {
-  background: var(--mantine-color-myColor-9);
-  color: var(--mantine-color-myColor-0);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 /* Drop cap for the opening paragraph of a blog post */
@@ -46,12 +52,12 @@ a:hover {
   font-size: 4.4em;
   line-height: 0.8;
   padding: 6px 12px 0 0;
-  color: var(--mantine-color-myColor-9);
+  color: var(--ink);
 }
 
 /* Prose links draw their underline in from the left */
 .blog-content a {
-  color: var(--mantine-color-myColor-9);
+  color: var(--ink);
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
   background-position: 0 100%;
@@ -60,7 +66,7 @@ a:hover {
 }
 
 .blog-content a:hover {
-  color: var(--mantine-color-myColor-9);
+  color: var(--ink);
   background-size: 100% 1px;
 }
 
@@ -94,4 +100,29 @@ a:hover {
 
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+/* --- Night mode (↑ ↑ ↓ ↓ ← → ← → B A — you either know or you don't) --- */
+
+body.night-mode {
+  background-color: #001e3c;
+  --ink: var(--mantine-color-myColor-1);
+  --paper: #001e3c;
+  --mantine-color-body: #001e3c;
+  --mantine-color-text: #ede8e2;
+  --mantine-color-dimmed: #b0a698;
+  --mantine-color-gray-2: #2a4560;
+  --mantine-color-gray-3: #33506b;
+  --mantine-color-gray-4: #40587a;
+  --mantine-color-gray-5: #c3bab0;
+  --mantine-color-gray-6: #d6cec5;
+  --mantine-color-gray-7: #ede8e2;
+  --mantine-color-gray-8: #fbf4ee;
+}
+
+/* Cards and papers become softly elevated navy panels at night */
+body.night-mode .mantine-Paper-root {
+  background-color: #12304e;
+  border-color: #33506b;
+  transition: background-color 0.6s ease;
 }

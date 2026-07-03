@@ -1,7 +1,10 @@
 import { Flex, Text, useMantineTheme } from '@mantine/core';
 
+import { useNightMode } from 'context/NightModeContext';
+
 export default function Footer() {
   const theme = useMantineTheme();
+  const { night } = useNightMode();
 
   return (
     <Flex
@@ -9,8 +12,8 @@ export default function Footer() {
         position: 'relative',
         zIndex: 10,
         backdropFilter: 'saturate(180%) blur(20px)',
-        transition: 'background-color 0.1 ease-in-out',
-        backgroundColor: theme.colors.myColor[2],
+        transition: 'background-color 0.6s ease',
+        backgroundColor: night ? theme.colors.dark[8] : theme.colors.myColor[2],
       }}
     >
       <Flex
