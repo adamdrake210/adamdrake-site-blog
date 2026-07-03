@@ -204,8 +204,10 @@ export const BlogLikeButton = ({ slug }: Props) => {
                     onPointerUp={endHold}
                     onPointerLeave={endHold}
                     onPointerCancel={endHold}
-                    onContextMenu={event => event.preventDefault()}
-                    onClick={event => {
+                    onContextMenu={(event: React.MouseEvent) =>
+                      event.preventDefault()
+                    }
+                    onClick={(event: React.MouseEvent) => {
                       // Pointer events handle mouse/touch; detail === 0
                       // means this click came from the keyboard
                       if (event.detail === 0) {

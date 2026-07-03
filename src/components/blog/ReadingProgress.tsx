@@ -16,7 +16,7 @@ export const ReadingProgress = () => {
         left: 0,
         right: 0,
         height: 2,
-        backgroundColor: 'var(--mantine-color-myColor-9)',
+        backgroundColor: 'var(--ink)',
         transformOrigin: '0%',
         scaleX,
         zIndex: 2000,
