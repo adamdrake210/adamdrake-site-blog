@@ -13,6 +13,7 @@ import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import AboutMeBlurb from 'components/about/AboutMeBlurb';
 import { ReadingProgress } from './ReadingProgress';
+import { BlogLikeButton } from './BlogLikeButton';
 
 type Props = {
   post: Post;
@@ -88,6 +89,7 @@ export const BlogPost = ({ post }: Props) => {
           <Box px={16} mb={48} className="blog-content">
             <PortableText value={post.content} components={blogComponents} />
           </Box>
+          <BlogLikeButton slug={post.slug} />
           <Divider my={16} />
           <AboutMeBlurb />
 
