@@ -12,6 +12,7 @@ import { blogComponents } from './blogComponents';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import AboutMeBlurb from 'components/about/AboutMeBlurb';
+import { ReadingProgress } from './ReadingProgress';
 
 type Props = {
   post: Post;
@@ -20,6 +21,7 @@ type Props = {
 export const BlogPost = ({ post }: Props) => {
   return (
     <PageContainer maxWidth="760px">
+      <ReadingProgress />
       <AnimateFadeIn duration={2}>
         <Box px={16}>
           <PageSeo
@@ -80,10 +82,10 @@ export const BlogPost = ({ post }: Props) => {
             </>
           )}
 
-          <Text px={16} mb={16} fz={26}>
+          <Text px={16} mb={16} fz={26} className="drop-cap">
             {post.intro}
           </Text>
-          <Box px={16} mb={48}>
+          <Box px={16} mb={48} className="blog-content">
             <PortableText value={post.content} components={blogComponents} />
           </Box>
           <Divider my={16} />
