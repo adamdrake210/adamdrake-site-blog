@@ -41,7 +41,8 @@ export const theme = createTheme({
       '#001224',
     ],
   },
-  primaryShade: 4,
+  primaryColor: 'myColor',
+  primaryShade: 7,
   // eslint-disable-next-line quotes
   fontFamily: "'Lora', serif",
   headings: {
