@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Button, Text, useMantineTheme } from '@mantine/core';
+import { Text } from '@mantine/core';
 
 type Props = {
   btnText: string;
@@ -8,19 +8,17 @@ type Props = {
 };
 
 export const NavLinkButton = ({ btnText, href }: Props) => {
-  const theme = useMantineTheme();
-
   return (
     <NextLink href={href}>
       <Text
         fz={24}
         px={16}
+        className="nav-link"
         style={{
           fontFamily: "'Red Hat Display', sans-serif",
           fontWeight: 200,
           textTransform: 'uppercase',
           backgroundColor: 'transparent',
-          color: theme.colors.gray[6],
         }}
       >
         {btnText}
