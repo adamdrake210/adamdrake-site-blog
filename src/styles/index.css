@@ -102,6 +102,74 @@ a:hover {
   transform: scaleX(1);
 }
 
+/* --- Rolling text button --- */
+
+.rolling-btn,
+.rolling-btn:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.rolling-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.rolling-btn-text {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.rolling-btn-line {
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rolling-btn-line:nth-child(2) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.rolling-btn:hover .rolling-btn-line {
+  transform: translateY(-100%);
+}
+
+.rolling-btn-icon {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.rolling-btn-icon svg {
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rolling-btn-icon svg:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+
+.rolling-btn:hover .rolling-btn-icon svg {
+  transform: translateX(100%);
+}
+
 /* --- Night mode (↑ ↑ ↓ ↓ ← → ← → B A — you either know or you don't) --- */
 
 body.night-mode {
