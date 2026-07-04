@@ -12,6 +12,8 @@ import { blogComponents } from './blogComponents';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import AboutMeBlurb from 'components/about/AboutMeBlurb';
+import { ReadingProgress } from './ReadingProgress';
+import { BlogLikeButton } from './BlogLikeButton';
 
 type Props = {
   post: Post;
@@ -19,86 +21,91 @@ type Props = {
 
 export const BlogPost = ({ post }: Props) => {
   return (
-    <PageContainer maxWidth="760px">
-      <AnimateFadeIn duration={2}>
-        <Box px={16}>
-          <PageSeo
-            title={post.title}
-            description={post.description}
-            imageUrl={post.headerimageurl}
-            publishedDate={post._updatedAt}
-            url={`${SITE_DOMAIN}/blog/${post.slug}`}
-          />
-          <Flex
-            p={16}
-            pt={0}
-            mt={48}
-            w="100%"
-            justify="center"
-            align="center"
-            direction="column"
-            style={{
-              '@media (max-width: 600px)': {
-                textAlign: 'center',
-              },
-            }}
-          >
-            <Title order={1} fw={200}>
-              {post.title}
-            </Title>
-            <WrittenDate
-              date={post._createdAt}
-              author={post.writtenby}
-              content={post.content}
+    <>
+      {/* Outside PageContainer so it stacks above the sticky nav */}
+      <ReadingProgress />
+      <PageContainer maxWidth="760px">
+        <AnimateFadeIn duration={2}>
+          <Box px={16}>
+            <PageSeo
+              title={post.title}
+              description={post.description}
+              imageUrl={post.headerimageurl}
+              publishedDate={post._updatedAt}
+              url={`${SITE_DOMAIN}/blog/${post.slug}`}
             />
-          </Flex>
-          <Box mb={24} maw={800}>
-            <img
-              src={post.headerimageurl}
-              alt={`Image of ${post.title}`}
-              width={'100%'}
-              height={'auto'}
+            <Flex
+              p={16}
+              pt={0}
+              mt={48}
+              w="100%"
+              justify="center"
+              align="center"
+              direction="column"
+              style={{
+                '@media (max-width: 600px)': {
+                  textAlign: 'center',
+                },
+              }}
+            >
+              <Title order={1} fw={200}>
+                {post.title}
+              </Title>
+              <WrittenDate
+                date={post._createdAt}
+                author={post.writtenby}
+                content={post.content}
+              />
+            </Flex>
+            <Box mb={24} maw={800}>
+              <img
+                src={post.headerimageurl}
+                alt={`Image of ${post.title}`}
+                width={'100%'}
+                height={'auto'}
+              />
+            </Box>
+            {post.mediumurl && (
+              <>
+                <Flex direction="column" gap={16}>
+                  <Divider mb={16} />
+                  <Box>
+                    <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
+                      Medium Member?
+                    </Title>
+                    <Text fz="lg" mb={6}>
+                      My Medium friends can read this story over on Medium.
+                    </Text>
+                  </Box>
+                  <Center my={16} mb={48}>
+                    <MediumCtaButton mediumUrl={post.mediumurl} />
+                  </Center>
+                </Flex>
+                <Divider my={16} />
+              </>
+            )}
+
+            <Text px={16} mb={16} fz={26} className="drop-cap">
+              {post.intro}
+            </Text>
+            <Box px={16} mb={48} className="blog-content">
+              <PortableText value={post.content} components={blogComponents} />
+            </Box>
+            <BlogLikeButton slug={post.slug} />
+            <Divider my={16} />
+            <AboutMeBlurb />
+
+            <SocialShareBlogPost
+              title={post.title}
+              writtenBy={post.writtenby}
+              url={`${SITE_DOMAIN}/blog/${post.slug}`}
             />
+
+            <Divider mb={24} />
+            <AboutMe />
           </Box>
-          {post.mediumurl && (
-            <>
-              <Flex direction="column" gap={16}>
-                <Divider mb={16} />
-                <Box>
-                  <Title order={2} fz={{ base: 28, md: 32 }} mb={10}>
-                    Medium Member?
-                  </Title>
-                  <Text fz="lg" mb={6}>
-                    My Medium friends can read this story over on Medium.
-                  </Text>
-                </Box>
-                <Center my={16} mb={48}>
-                  <MediumCtaButton mediumUrl={post.mediumurl} />
-                </Center>
-              </Flex>
-              <Divider my={16} />
-            </>
-          )}
-
-          <Text px={16} mb={16} fz={26}>
-            {post.intro}
-          </Text>
-          <Box px={16} mb={48}>
-            <PortableText value={post.content} components={blogComponents} />
-          </Box>
-          <Divider my={16} />
-          <AboutMeBlurb />
-
-          <SocialShareBlogPost
-            title={post.title}
-            writtenBy={post.writtenby}
-            url={`${SITE_DOMAIN}/blog/${post.slug}`}
-          />
-
-          <Divider mb={24} />
-          <AboutMe />
-        </Box>
-      </AnimateFadeIn>
-    </PageContainer>
+        </AnimateFadeIn>
+      </PageContainer>
+    </>
   );
 };

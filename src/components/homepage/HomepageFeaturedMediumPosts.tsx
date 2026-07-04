@@ -1,18 +1,6 @@
 import React from 'react';
-import {
-  Card,
-  Box,
-  Button,
-  Flex,
-  Text,
-  Title,
-  Grid,
-  Center,
-  CardSection,
-  Image,
-} from '@mantine/core';
-import NextLink from 'next/link';
-import { MediumSubscribeButton } from 'components/common/buttons/MediumSubscribeButton';
+import { Card, Box, Flex, Text, Title, Grid, Image } from '@mantine/core';
+import { RollingButton } from 'components/common/buttons/RollingButton';
 import { BlogButtons } from './BlogButtons';
 
 const featuredPosts = [
@@ -74,9 +62,10 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
                   </Text>
                 </Box>
                 <Flex mt={10} gap={8} justify="flex-end">
-                  <NextLink href={`/blog/${post.slug}`} passHref>
-                    <Button variant="light">Read Article</Button>
-                  </NextLink>
+                  <RollingButton
+                    label="Read Article"
+                    href={`/blog/${post.slug}`}
+                  />
                 </Flex>
               </Flex>
             </Card>

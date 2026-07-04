@@ -11,6 +11,7 @@ import {
   HIRE_ME_ROUTE,
 } from 'constants/routeConstants';
 import { useOpen } from 'hooks/useOpen';
+import { useNightMode } from 'context/NightModeContext';
 import { NavDrawer } from './NavDrawer';
 import { NavLinkButton } from './NavLinkButton';
 
@@ -36,6 +37,7 @@ const Navigation: React.FC = () => {
   const { open, handleOpen, handleClose } = useOpen();
   const isMdDown = useMediaQuery('(max-width: 768px)');
   const theme = useMantineTheme();
+  const { night } = useNightMode();
 
   return (
     <Box
@@ -43,10 +45,10 @@ const Navigation: React.FC = () => {
         position: 'sticky',
         zIndex: 1000,
         top: 0,
-        backgroundColor: theme.colors.myColor[1],
+        backgroundColor: night ? theme.colors.dark[7] : theme.colors.myColor[1],
         backdropFilter: 'saturate(110%) blur(110px)',
-        transition: 'background-color 0.1 ease-in-out',
-        opacity: 0.9,
+        transition: 'background-color 0.6s ease',
+        opacity: 0.97,
       }}
       w="100%"
       p={16}
