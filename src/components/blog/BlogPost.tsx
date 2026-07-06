@@ -11,6 +11,7 @@ import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
+import { SmoothImage } from 'components/common/images/SmoothImage';
 import AboutMeBlurb from 'components/about/AboutMeBlurb';
 import { ReadingProgress } from './ReadingProgress';
 import { BlogLikeButton } from './BlogLikeButton';
@@ -58,11 +59,10 @@ export const BlogPost = ({ post }: Props) => {
               />
             </Flex>
             <Box mb={24} maw={800}>
-              <img
+              <SmoothImage
                 src={post.headerimageurl}
                 alt={`Image of ${post.title}`}
-                width={'100%'}
-                height={'auto'}
+                radius="md"
               />
             </Box>
             {post.mediumurl && (

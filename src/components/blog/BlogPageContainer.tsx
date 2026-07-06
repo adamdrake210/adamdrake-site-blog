@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Box, Button, Center, Flex, Grid, Text, Title } from '@mantine/core';
+import { Box, Center, Flex, Grid, Pagination, Text, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { Post } from 'types/types';
@@ -11,15 +11,16 @@ import { useQuery } from '@tanstack/react-query';
 import {
   BLOG_POSTS_PER_PAGE,
   getAllPosts,
+  getPostCount,
 } from 'services/sanityio/getAllPosts';
 import { CustomLoader } from 'components/common/CustomLoader';
 import ErrorMessage from 'components/common/ErrorMessage';
-import { IconArrowLeftCircle, IconArrowRightCircle } from '@tabler/icons-react';
 
 export default function BlogPageContainer() {
   const isMdDown = useMediaQuery('(max-width: 747px)');
   const isSmDown = useMediaQuery('(max-width: 600px)');
-  const [itemNumber, setItemNumber] = React.useState(0);
+  const [page, setPage] = React.useState(1);
+  const itemNumber = (page - 1) * BLOG_POSTS_PER_PAGE;
 
   const {
     data: posts,
@@ -31,6 +32,15 @@ export default function BlogPageContainer() {
     queryFn: () => getAllPosts(itemNumber),
     keepPreviousData: true,
   });
+
+  const { data: totalPosts } = useQuery<number>({
+    queryKey: ['postCount'],
+    queryFn: getPostCount,
+  });
+
+  const totalPages = totalPosts
+    ? Math.ceil(totalPosts / BLOG_POSTS_PER_PAGE)
+    : 1;
 
   return (
     <Flex my={16} w="100%" direction="column" align="flex-start" px={16}>
@@ -71,24 +81,13 @@ export default function BlogPageContainer() {
                 </Grid.Col>
               );
             })}
-            {/* Navigating through pages */}
-            <Flex justify="flex-end" w="100%" mr={8}>
-              <Button
-                onClick={() => setItemNumber(itemNumber - BLOG_POSTS_PER_PAGE)}
-                disabled={itemNumber === 0}
-                variant="outline"
-                mr={8}
-                leftSection={<IconArrowLeftCircle />}
-              >
-                Back
-              </Button>
-              <Button
-                onClick={() => setItemNumber(itemNumber + BLOG_POSTS_PER_PAGE)}
-                disabled={posts.length < BLOG_POSTS_PER_PAGE}
-                rightSection={<IconArrowRightCircle />}
-              >
-                Next
-              </Button>
+            {/* Pagination */}
+            <Flex justify="center" w="100%" mt={16}>
+              <Pagination
+                total={totalPages}
+                value={page}
+                onChange={setPage}
+              />
             </Flex>
           </Grid>
           {posts.length < 1 && (

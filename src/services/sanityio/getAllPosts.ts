@@ -10,3 +10,7 @@ export const getAllPosts = async (itemNumber: number): Promise<Post[]> => {
     )}...${String(BLOG_POSTS_PER_PAGE + itemNumber)}]`,
   );
 };
+
+export const getPostCount = async (): Promise<number> => {
+  return await client.fetch(`count(*[_type == "post"])`);
+};

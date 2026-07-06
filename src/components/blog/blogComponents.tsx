@@ -1,6 +1,6 @@
 import { Box, Center, Text, Title } from '@mantine/core';
 import { CodeHighlight } from '@mantine/code-highlight';
-import Image from 'next/image';
+import { SmoothNextImage } from 'components/common/images/SmoothNextImage';
 
 export const blogComponents = {
   types: {
@@ -18,7 +18,7 @@ export const blogComponents = {
     myImage: ({ value }: any) => {
       return (
         <Center>
-          <Image
+          <SmoothNextImage
             src={value.cloudinaryurl}
             alt={value.alt}
             width={value.width}
