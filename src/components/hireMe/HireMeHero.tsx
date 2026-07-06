@@ -94,8 +94,14 @@ export const HireMeHero: React.FC = () => {
             label="LinkedIn"
             icon={<LinkedInLogo />}
             href={LINKEDIN_URL}
+            index={0}
           />
-          <SocialIcon label="GitHub" icon={<GithubLogo />} href={GITHUB_URL} />
+          <SocialIcon
+            label="GitHub"
+            icon={<GithubLogo />}
+            href={GITHUB_URL}
+            index={1}
+          />
         </Flex>
       </Flex>
     </Box>

@@ -170,6 +170,32 @@ a:hover {
   transform: translateX(100%);
 }
 
+/* --- Social icons --- */
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: var(--mantine-color-myColor-2);
+  color: var(--mantine-color-myColor-9);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  background-color: var(--mantine-color-myColor-7);
+  color: var(--mantine-color-myColor-0);
+}
+
 /* --- Night mode (↑ ↑ ↓ ↓ ← → ← → B A — you either know or you don't) --- */
 
 body.night-mode {
@@ -193,4 +219,15 @@ body.night-mode .mantine-Paper-root {
   background-color: #12304e;
   border-color: #33506b;
   transition: background-color 0.6s ease;
+}
+
+body.night-mode .social-icon {
+  background-color: #12304e;
+  color: var(--mantine-color-gray-6);
+}
+
+body.night-mode .social-icon:hover,
+body.night-mode .social-icon:focus-visible {
+  background-color: #33506b;
+  color: var(--mantine-color-gray-8);
 }
