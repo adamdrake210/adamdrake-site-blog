@@ -30,11 +30,11 @@ export default function HomepageContainer() {
       <AnimateFadeIn>
         <SkillsBannerContainer />
       </AnimateFadeIn>
-      {/* Strava Stats */}
-      <CustomDivider />
+      {/* TODO: Re-enable Strava stats once API connection is fixed */}
+      {/* <CustomDivider />
       <AnimateFadeIn>
         <MyStravaStats />
-      </AnimateFadeIn>
+      </AnimateFadeIn> */}
       {/* Social Media */}
       <CustomDivider />
       <SocialLinks />

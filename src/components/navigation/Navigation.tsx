@@ -2,8 +2,8 @@ import React from 'react';
 import { ActionIcon, Box, Flex, useMantineTheme } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
+import { motion } from 'framer-motion';
 
-import { SITE_NAME } from 'constants/constants';
 import {
   ABOUT_ROUTE,
   BLOG_ROUTE,
@@ -13,6 +13,7 @@ import {
 import { useOpen } from 'hooks/useOpen';
 import { useNightMode } from 'context/NightModeContext';
 import { NavDrawer } from './NavDrawer';
+import { NavBrand } from './NavBrand';
 import { NavLinkButton } from './NavLinkButton';
 
 export const navLinks = [
@@ -61,9 +62,7 @@ const Navigation: React.FC = () => {
         w="100%"
         m="0 auto"
       >
-        <Box>
-          <NavLinkButton btnText={SITE_NAME} href="/" />
-        </Box>
+        <NavBrand />
         {!isMdDown && (
           <Flex align="center">
             {navLinks.map(navLink => {
@@ -83,9 +82,14 @@ const Navigation: React.FC = () => {
         {isMdDown && (
           <Flex align="center">
             {/* <SelectColorMode /> */}
-            <ActionIcon onClick={switchOpen} ml={16}>
-              <IconMenu2 />
-            </ActionIcon>
+            <motion.div
+              whileTap={{ scale: 0.85, rotate: 90 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+            >
+              <ActionIcon onClick={switchOpen} ml={16} size="lg">
+                <IconMenu2 size={26} />
+              </ActionIcon>
+            </motion.div>
           </Flex>
         )}
       </Flex>

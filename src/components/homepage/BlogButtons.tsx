@@ -1,8 +1,9 @@
-import { Button, Flex } from '@mantine/core';
+import { Flex } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { IconBook } from '@tabler/icons-react';
-import { MediumSubscribeButton } from 'components/common/buttons/MediumSubscribeButton';
-import { SubstackButton } from 'components/common/buttons/SubstackButton';
+import { IconBook, IconStack2 } from '@tabler/icons-react';
+import { MediumLogo } from 'assets/icons/MediumLogo';
+import { RollingButton } from 'components/common/buttons/RollingButton';
+import { MEDIUM_SUBSCRIBE_URL, SUBSTACK_URL } from 'constants/constants';
 
 export const BlogButtons = () => {
   const isMdDown = useMediaQuery('(max-width: 747px)');
@@ -16,20 +17,21 @@ export const BlogButtons = () => {
       w="100%"
       my={64}
     >
-      <Button
-        component="a"
-        href="/blog"
-        variant="filled"
+      <RollingButton label="Blog" href="/blog" icon={<IconBook size={20} />} size="lg" />
+      <RollingButton
+        label="Medium"
+        href={MEDIUM_SUBSCRIBE_URL}
+        external
+        icon={<MediumLogo size={20} />}
         size="lg"
-        color="dark"
-        radius="md"
-        leftSection={<IconBook />}
-        w={200}
-      >
-        Blog
-      </Button>
-      <MediumSubscribeButton />
-      <SubstackButton />
+      />
+      <RollingButton
+        label="Substack"
+        href={SUBSTACK_URL}
+        external
+        icon={<IconStack2 size={20} />}
+        size="lg"
+      />
     </Flex>
   );
 };

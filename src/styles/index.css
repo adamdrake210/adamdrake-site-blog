@@ -128,14 +128,19 @@ a:hover {
 }
 
 .rolling-btn-text {
+  display: inline-flex;
+}
+
+.rolling-btn-char {
   position: relative;
-  display: block;
+  display: inline-block;
   overflow: hidden;
 }
 
 .rolling-btn-line {
   display: block;
   transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: var(--char-delay, 0ms);
 }
 
 .rolling-btn-line:nth-child(2) {
@@ -168,6 +173,23 @@ a:hover {
 
 .rolling-btn:hover .rolling-btn-icon svg {
   transform: translateX(100%);
+}
+
+/* Leading icon (static, sits before the rolling text) */
+.rolling-btn-leading-icon {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  opacity: 0.7;
+}
+
+/* Large variant — slightly bigger with a lighter brown */
+.rolling-btn--lg,
+.rolling-btn--lg:hover {
+  padding: 14px 28px;
+  font-size: 16px;
+  gap: 10px;
+  background-color: #8a745a;
 }
 
 /* --- Social icons --- */
