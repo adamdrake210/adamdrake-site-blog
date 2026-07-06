@@ -16,7 +16,7 @@ export const MediumSubscribeButton = ({
       size="lg"
       href={MEDIUM_SUBSCRIBE_URL}
       target="_blank"
-      leftSection={<MediumLogo />}
+      leftSection={<MediumLogo size={25} />}
       color="dark"
       style={{ fontWeight: 500 }}
       radius="md"
