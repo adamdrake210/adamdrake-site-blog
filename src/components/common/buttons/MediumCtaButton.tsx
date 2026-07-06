@@ -9,7 +9,7 @@ export const MediumCtaButton = ({ mediumUrl }: { mediumUrl: string }) => {
       size="lg"
       href={mediumUrl}
       target="_blank"
-      leftSection={<MediumLogo />}
+      leftSection={<MediumLogo size={25} />}
       color="dark"
       style={{ fontWeight: 500 }}
       radius="md"

@@ -1,19 +1,15 @@
-import { useMantineTheme } from '@mantine/core';
 import React from 'react';
 
 export const TwitterLogo = () => {
-  const theme = useMantineTheme();
-
-  const iconColor = theme.colors.gray[6];
-
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="54"
-      height="54"
       viewBox="0 0 24 24"
+      width="100%"
+      height="100%"
       stroke="currentColor"
-      fill={iconColor}
+      fill="currentColor"
+      aria-hidden="true"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
