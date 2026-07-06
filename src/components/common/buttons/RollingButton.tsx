@@ -7,18 +7,43 @@ type Props = {
   href?: string;
   onClick?: () => void;
   external?: boolean;
+  icon?: React.ReactNode;
+  size?: 'default' | 'lg';
 };
 
-// Pill button where the label rolls up and its twin rolls in from
-// below on hover, while the arrow swaps out to the right
-export const RollingButton = ({ label, href, onClick, external }: Props) => {
+const STAGGER_MS = 30;
+
+// Pill button where each letter rolls up individually in rapid
+// sequence on hover, while the arrow swaps out to the right
+export const RollingButton = ({
+  label,
+  href,
+  onClick,
+  external,
+  icon,
+  size = 'default',
+}: Props) => {
+  const chars = label.split('');
+  const cls = `rolling-btn${size === 'lg' ? ' rolling-btn--lg' : ''}`;
+
   const content = (
     <>
-      <span className="rolling-btn-text">
-        <span className="rolling-btn-line">{label}</span>
-        <span className="rolling-btn-line" aria-hidden="true">
-          {label}
-        </span>
+      {icon && <span className="rolling-btn-leading-icon">{icon}</span>}
+      <span className="rolling-btn-text" aria-label={label}>
+        {chars.map((ch, i) => (
+          <span
+            key={i}
+            className="rolling-btn-char"
+            style={
+              { '--char-delay': `${i * STAGGER_MS}ms` } as React.CSSProperties
+            }
+          >
+            <span className="rolling-btn-line">{ch === ' ' ? '\u00A0' : ch}</span>
+            <span className="rolling-btn-line" aria-hidden="true">
+              {ch === ' ' ? '\u00A0' : ch}
+            </span>
+          </span>
+        ))}
       </span>
       <span className="rolling-btn-icon">
         <IconArrowRight size={16} stroke={2.2} />
@@ -30,7 +55,7 @@ export const RollingButton = ({ label, href, onClick, external }: Props) => {
   if (href && external) {
     return (
       <a
-        className="rolling-btn"
+        className={cls}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -42,14 +67,14 @@ export const RollingButton = ({ label, href, onClick, external }: Props) => {
 
   if (href) {
     return (
-      <NextLink className="rolling-btn" href={href}>
+      <NextLink className={cls} href={href}>
         {content}
       </NextLink>
     );
   }
 
   return (
-    <button className="rolling-btn" type="button" onClick={onClick}>
+    <button className={cls} type="button" onClick={onClick}>
       {content}
     </button>
   );
