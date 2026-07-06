@@ -34,7 +34,7 @@ export const navLinks = [
 ];
 
 const Navigation: React.FC = () => {
-  const { open, handleOpen, handleClose } = useOpen();
+  const { open, switchOpen, handleClose } = useOpen();
   const isMdDown = useMediaQuery('(max-width: 768px)');
   const theme = useMantineTheme();
   const { night } = useNightMode();
@@ -83,7 +83,7 @@ const Navigation: React.FC = () => {
         {isMdDown && (
           <Flex align="center">
             {/* <SelectColorMode /> */}
-            <ActionIcon onClick={handleOpen} ml={16}>
+            <ActionIcon onClick={switchOpen} ml={16}>
               <IconMenu2 />
             </ActionIcon>
           </Flex>

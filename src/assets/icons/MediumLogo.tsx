@@ -1,11 +1,15 @@
 import React from 'react';
 
-export const MediumLogo = () => {
+export const MediumLogo = ({
+  size = '100%',
+}: {
+  size?: number | string;
+}) => {
   return (
     <svg
       viewBox="0 0 1043.63 592.71"
-      width="100%"
-      height="100%"
+      width={size}
+      height={size}
       fill="currentColor"
       aria-hidden="true"
     >
