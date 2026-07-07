@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Grid, useMantineTheme } from '@mantine/core';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Grid } from '@mantine/core';
+import { motion } from 'framer-motion';
 import { Skill, skillsData } from './data/skillsData';
 import { SkillCard } from './SkillCard';
 
 export const SkillsBanner = () => {
   const [modSkills, setModSkills] = useState<Skill[]>([]);
+
+  const twinkleVariants = useMemo(
+    () =>
+      skillsData.map(() => ({
+        duration: 2 + Math.random() * 3,
+        delay: Math.random() * 3,
+      })),
+    []
+  );
 
   useEffect(() => {
     if (skillsData?.length === 0) {
@@ -19,9 +29,19 @@ export const SkillsBanner = () => {
 
   return (
     <Grid grow gutter={'lg'} w="100%">
-      {modSkills?.map(skill => (
+      {modSkills?.map((skill, i) => (
         <Grid.Col key={skill.id} span={2}>
-          <SkillCard skill={skill} />
+          <motion.div
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{
+              duration: twinkleVariants[i].duration,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: twinkleVariants[i].delay,
+            }}
+          >
+            <SkillCard skill={skill} />
+          </motion.div>
         </Grid.Col>
       ))}
     </Grid>

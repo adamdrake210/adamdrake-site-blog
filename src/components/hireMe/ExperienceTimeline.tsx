@@ -7,7 +7,7 @@ import { experienceData } from './data/experienceData';
 
 export const ExperienceTimeline: React.FC = () => {
   return (
-    <Box my={40}>
+    <Box id="experience" my={40}>
       <Title order={2} mb={24}>
         Experience
       </Title>
