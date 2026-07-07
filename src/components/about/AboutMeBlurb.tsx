@@ -116,10 +116,7 @@ const AboutMeBlurb = () => {
       </Text>
 
       <Center my={32}>
-        <MediumSubscribeButton
-          buttomText="Subscribe on Medium"
-          buttonWidth={'auto'}
-        />
+        <MediumSubscribeButton buttomText="Subscribe on Medium" />
       </Center>
     </Box>
   );
