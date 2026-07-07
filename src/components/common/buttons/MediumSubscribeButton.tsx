@@ -1,28 +1,18 @@
-import { Button } from '@mantine/core';
 import { MediumLogo } from 'assets/icons/MediumLogo';
 import { MEDIUM_SUBSCRIBE_URL } from 'constants/constants';
+import { RollingButton } from './RollingButton';
 
 export const MediumSubscribeButton = ({
   buttomText = 'Medium',
-  buttonWidth = 200,
 }: {
   buttomText?: string;
-  buttonWidth?: number | 'auto';
 }) => {
   return (
-    <Button
-      variant="filled"
-      component="a"
-      size="lg"
+    <RollingButton
+      label={buttomText}
       href={MEDIUM_SUBSCRIBE_URL}
-      target="_blank"
-      leftSection={<MediumLogo size={25} />}
-      color="dark"
-      style={{ fontWeight: 500 }}
-      radius="md"
-      w={buttonWidth}
-    >
-      {buttomText}
-    </Button>
+      external
+      icon={<MediumLogo size={20} />}
+    />
   );
 };
