@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import PageContainer from 'layouts/PageContainer';
 import HomepageContainer from 'components/homepage/HomepageContainer';
+import { LoadingScreen } from 'components/common/LoadingScreen';
 import { SITE_NAME } from 'constants/constants';
 import { client } from 'client';
 
@@ -12,9 +13,11 @@ export default function PageIndex() {
         <title>{SITE_NAME} | Home</title>
       </Head>
 
-      <PageContainer maxWidth="1000px">
-        <HomepageContainer />
-      </PageContainer>
+      <LoadingScreen>
+        <PageContainer maxWidth="1000px">
+          <HomepageContainer />
+        </PageContainer>
+      </LoadingScreen>
     </>
   );
 }

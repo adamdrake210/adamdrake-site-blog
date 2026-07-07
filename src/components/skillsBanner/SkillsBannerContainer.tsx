@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Title } from '@mantine/core';
+import { Box, Flex, Title } from '@mantine/core';
 import { SkillsBanner } from './SkillsBanner';
 import { RollingButton } from 'components/common/buttons/RollingButton';
 import { HIRE_ME_ROUTE } from 'constants/routeConstants';
@@ -11,10 +11,12 @@ export const SkillsBannerContainer = () => {
         Technical Skills & Tools
       </Title>
       <SkillsBanner />
-      <RollingButton
-        label="Find out more"
-        href={`${HIRE_ME_ROUTE}#experience`}
-      />
+      <Box mt={32}>
+        <RollingButton
+          label="Find out more"
+          href={`${HIRE_ME_ROUTE}#experience`}
+        />
+      </Box>
     </Flex>
   );
 };

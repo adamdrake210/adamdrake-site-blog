@@ -1,6 +1,14 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Box, Center, Flex, Grid, Pagination, Text, Title } from '@mantine/core';
+import {
+  Box,
+  Center,
+  Flex,
+  Grid,
+  Pagination,
+  Text,
+  Title,
+} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 import { Post } from 'types/types';
@@ -83,11 +91,7 @@ export default function BlogPageContainer() {
             })}
             {/* Pagination */}
             <Flex justify="center" w="100%" mt={16}>
-              <Pagination
-                total={totalPages}
-                value={page}
-                onChange={setPage}
-              />
+              <Pagination total={totalPages} value={page} onChange={setPage} />
             </Flex>
           </Grid>
           {posts.length < 1 && (
