@@ -158,7 +158,7 @@ export const BlogLikeButton = ({ slug }: Props) => {
       {data && data.length > 0 && (
         <Center my={16}>
           <Flex direction="column" align="center" justify="center">
-            <Title order={3}>Wanna press a button?</Title>
+            <Title order={3}>Want to show some LOVE?</Title>
             <Text fz="sm" c="dimmed" mb={8}>
               (you can hold it down)
             </Text>

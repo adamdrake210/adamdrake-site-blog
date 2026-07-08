@@ -45,7 +45,7 @@ export const LoadingScreen = ({ children }: Props) => {
             key="loading-screen"
             initial={{ y: 0 }}
             exit={{ y: '100vh' }}
-            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
             style={{
               position: 'fixed',
               inset: 0,
@@ -55,17 +55,12 @@ export const LoadingScreen = ({ children }: Props) => {
                 : theme.colors.myColor[9],
             }}
           >
-            <Flex
-              align="center"
-              justify="center"
-              h="100vh"
-              direction="column"
-            >
+            <Flex align="center" justify="center" h="100vh" direction="column">
               <Text
                 ff="'Red Hat Display', serif"
                 fw={200}
                 c={night ? theme.colors.myColor[0] : theme.colors.myColor[0]}
-                style={{ fontSize: 48, lineHeight: 1 }}
+                style={{ fontSize: 32, lineHeight: 1 }}
               >
                 {count}
               </Text>
