@@ -32,7 +32,7 @@ export const BlogPost = ({ post }: Props) => {
               title={post.title}
               description={post.description}
               imageUrl={post.headerimageurl}
-              publishedDate={post._updatedAt}
+              publishedDate={post._createdAt}
               url={`${SITE_DOMAIN}/blog/${post.slug}`}
             />
             <Flex
@@ -43,11 +43,7 @@ export const BlogPost = ({ post }: Props) => {
               justify="center"
               align="center"
               direction="column"
-              style={{
-                '@media (max-width: 600px)': {
-                  textAlign: 'center',
-                },
-              }}
+              ta={{ base: 'center', sm: 'left' }}
             >
               <Title order={1} fw={200}>
                 {post.title}

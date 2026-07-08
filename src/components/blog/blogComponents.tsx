@@ -66,7 +66,7 @@ export const blogComponents = {
     ),
     normal: ({ children }: { children?: any }) => {
       return (
-        <Text fz="xl" fw={400} pb={8}>
+        <Text fz="xl" fw={400} pb={16}>
           {children}
         </Text>
       );
