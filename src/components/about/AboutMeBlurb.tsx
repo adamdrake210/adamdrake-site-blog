@@ -85,35 +85,6 @@ const AboutMeBlurb = () => {
         blog is more than just articles; it&#39;s a community of like-minded
         developers who share a love for innovation and learning.
       </Text>
-      <Title order={3} mt={18} fw={600}>
-        About me
-      </Title>
-      <Text>
-        I&#39;m a passionate Frontend Developer specialising in React and
-        TypeScript. My professional journey revolves around exploring and
-        mastering new tools and libraries within the JavaScript ecosystem.
-      </Text>
-      <Text mt={10}>
-        Check out my{' '}
-        <Anchor
-          href={LINKEDIN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: 'underline', fontWeight: 'bold' }}
-        >
-          LinkedIn
-        </Anchor>{' '}
-        and{' '}
-        <Anchor
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: 'underline', fontWeight: 'bold' }}
-        >
-          Github
-        </Anchor>{' '}
-        if you are interested.
-      </Text>
 
       <Center my={32}>
         <MediumSubscribeButton buttomText="Subscribe on Medium" />
