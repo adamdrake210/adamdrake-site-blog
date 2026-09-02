@@ -60,6 +60,7 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
               src={imageUrl}
               height={170}
               alt={`Image for ${title}`}
+              sizes="(max-width: 600px) 100vw, (max-width: 747px) 50vw, 320px"
             />
           ) : (
             <Box h={170} bg={colorScheme === 'dark' ? 'dark.5' : 'myColor.1'} />

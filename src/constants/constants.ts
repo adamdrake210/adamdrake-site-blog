@@ -39,3 +39,5 @@ export const CONTACT_EMAIL = 'adamgedrake@gmail.com';
 export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';
 
 export const BLOG_CONTENT_WIDTH = 760 - 16 * 4;
+
+export const BLOG_HEADER_IMAGE_WIDTH = 760 - 16 * 2;
