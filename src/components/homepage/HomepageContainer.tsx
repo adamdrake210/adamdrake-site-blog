@@ -7,6 +7,7 @@ import { CustomDivider } from 'components/common/CustomDivider';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
+import { HomepageMedriterBanner } from './HomepageMedriterBanner';
 
 export default function HomepageContainer() {
   return (
@@ -26,6 +27,10 @@ export default function HomepageContainer() {
         <HomepageFeaturedMediumPosts />
         <CustomDivider />
       </AnimateFadeIn>
+      <AnimateFadeIn>
+        <HomepageMedriterBanner />
+      </AnimateFadeIn>
+      <CustomDivider />
       {/* Skills Banner */}
       <AnimateFadeIn>
         <SkillsBannerContainer />
