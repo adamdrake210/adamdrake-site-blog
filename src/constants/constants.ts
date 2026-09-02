@@ -41,3 +41,16 @@ export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';
 export const BLOG_CONTENT_WIDTH = 760 - 16 * 4;
 
 export const BLOG_HEADER_IMAGE_WIDTH = 760 - 16 * 2;
+
+export const MEDRITER_URL = 'https://medriter.com/';
+
+export const MEDRITER_POST_SLUG =
+  'i-spent-6-months-building-the-writing-app-i-always-wanted-one-click-publish-to-medium-and-my-blog';
+
+export const MEDRITER_IMAGE =
+  'https://res.cloudinary.com/dmiizmobu/image/upload/v1788243596/adamdrake-blog/rbxuzd9i2a8wi6fw2hnw.jpg';
+
+export const MEDRITER_DESCRIPTION =
+  'Medriter is a local-first Mac app for writing articles and publishing them to Medium and your own blog in one click. Your drafts stay on your machine — no account, no subscription.';
+
+export const MEDRITER_DETAILS = 'macOS · $29 once · 7-day free trial';

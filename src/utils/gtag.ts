@@ -18,6 +18,11 @@ type GAEvent = {
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const ga_event = ({ action, category, label, value }: GAEvent) => {
   // @ts-ignore
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  // @ts-ignore
   window.gtag('event', action, {
     event_category: category,
     event_label: label,
