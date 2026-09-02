@@ -7,6 +7,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'res.cloudinary.com' },
       { protocol: 'https', hostname: 'covers.openlibrary.org' },
       { protocol: 'https', hostname: 'miro.medium.com' },
+      { protocol: 'https', hostname: 'cdn-images-1.medium.com' },
     ],
   },
   env: {

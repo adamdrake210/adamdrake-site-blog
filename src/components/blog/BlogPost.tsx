@@ -4,7 +4,7 @@ import { Box, Center, Divider, Flex, Text, Title } from '@mantine/core';
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
 import { SocialShareBlogPost } from 'components/common/socialMedia/SocialShareBlogPost';
-import { SITE_DOMAIN } from 'constants/constants';
+import { BLOG_HEADER_IMAGE_WIDTH, SITE_DOMAIN } from 'constants/constants';
 import { Post } from 'types/types';
 import PageContainer from 'layouts/PageContainer';
 import PageSeo from 'components/common/PageSeo';
@@ -61,6 +61,8 @@ export const BlogPost = ({ post }: Props) => {
                   alt={`Image of ${post.title}`}
                   radius="md"
                   aspectRatio={16 / 9}
+                  sizes={`(max-width: 760px) 100vw, ${BLOG_HEADER_IMAGE_WIDTH}px`}
+                  priority
                 />
               </Box>
             )}
