@@ -37,3 +37,5 @@ export const GITHUB_URL = 'https://github.com/adamdrake210';
 export const CONTACT_EMAIL = 'adamgedrake@gmail.com';
 
 export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';
+
+export const BLOG_CONTENT_WIDTH = 760 - 16 * 4;

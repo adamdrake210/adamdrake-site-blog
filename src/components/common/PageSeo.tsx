@@ -6,7 +6,7 @@ type Props = {
   title: string;
   description: string;
   publishedDate: string;
-  imageUrl: string;
+  imageUrl?: string;
   url: string;
   author?: string;
 };
@@ -19,10 +19,7 @@ const PageSeo: React.FC<Props> = ({
   url,
   author,
 }) => {
-  const featuredImage = {
-    url: imageUrl,
-    alt: title,
-  };
+  const images = imageUrl ? [{ url: imageUrl, alt: title }] : [];
 
   return (
     <>
@@ -38,7 +35,7 @@ const PageSeo: React.FC<Props> = ({
           url,
           title,
           description: description,
-          images: [featuredImage],
+          images,
         }}
       />
       <ArticleJsonLd
@@ -47,7 +44,7 @@ const PageSeo: React.FC<Props> = ({
         datePublished={publishedDate}
         description={description}
         publisherLogo="/static/favicon.ico"
-        images={[featuredImage.url]}
+        images={images.map(image => image.url)}
         publisherName={author}
         title={title}
         url={url}
