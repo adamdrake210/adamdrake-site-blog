@@ -30,7 +30,7 @@ export const BlogPost = ({ post }: Props) => {
           <Box px={16}>
             <PageSeo
               title={post.title}
-              description={post.description}
+              description={post.description || post.intro}
               imageUrl={post.headerimageurl}
               publishedDate={post._createdAt}
               url={`${SITE_DOMAIN}/blog/${post.slug}`}
@@ -54,13 +54,16 @@ export const BlogPost = ({ post }: Props) => {
                 content={post.content}
               />
             </Flex>
-            <Box mb={24} maw={800}>
-              <SmoothImage
-                src={post.headerimageurl}
-                alt={`Image of ${post.title}`}
-                radius="md"
-              />
-            </Box>
+            {post.headerimageurl && (
+              <Box mb={24}>
+                <SmoothImage
+                  src={post.headerimageurl}
+                  alt={`Image of ${post.title}`}
+                  radius="md"
+                  aspectRatio={16 / 9}
+                />
+              </Box>
+            )}
             {post.mediumurl && (
               <>
                 <Flex direction="column" gap={16}>

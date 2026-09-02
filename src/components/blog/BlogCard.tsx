@@ -55,7 +55,16 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
         })}
       >
         <Card.Section>
-          <SmoothImage src={imageUrl} height={170} alt={`Image for ${title}`} />
+          {imageUrl ? (
+            <SmoothImage
+              src={imageUrl}
+              height={170}
+              alt={`Image for ${title}`}
+            />
+          ) : (
+            // Keep the card the same height as its neighbours in the grid.
+            <Box h={170} bg={colorScheme === 'dark' ? 'dark.5' : 'myColor.1'} />
+          )}
         </Card.Section>
 
         <Flex
