@@ -99,6 +99,22 @@ To add a page to the main nav, add an entry to the `navLinks` array in
 hire-me/CV page is meant to be shared directly via its URL rather than linked
 from the header.
 
+## Code comments
+
+**Do not add comments.** The code should explain itself through clear naming and
+structure. Assume the reader knows TypeScript, React, and Mantine — do not
+narrate what a line does, restate a prop, or explain a standard idiom.
+
+The only exception is genuine business logic or a non-obvious external
+constraint that a reader could not recover from the code: a workaround for a
+third-party quirk, a rule that comes from the Sanity content model or a
+publishing pipeline, or a value that looks arbitrary but is not. Even then,
+prefer encoding the reasoning in the code itself — a named constant, a derived
+expression, or a well-named helper beats a comment.
+
+Never leave commented-out code, TODOs, or JSDoc that only repeats the type
+signature.
+
 ## Styling / design system
 
 Theme is defined in `src/styles/theme.ts` (Mantine `createTheme`):

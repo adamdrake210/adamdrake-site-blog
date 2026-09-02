@@ -1,6 +1,6 @@
 import { Box, Center, Text, Title } from '@mantine/core';
 import { CodeHighlight } from '@mantine/code-highlight';
-import Image from 'next/image';
+import { SmoothNextImage } from 'components/common/images/SmoothNextImage';
 
 export const blogComponents = {
   types: {
@@ -16,15 +16,26 @@ export const blogComponents = {
       );
     },
     myImage: ({ value }: any) => {
+      if (!value?.cloudinaryurl) return null;
+
+      const { caption } = value;
+
       return (
-        <Center>
-          <Image
-            src={value.cloudinaryurl}
-            alt={value.alt}
-            width={value.width}
-            height={value.height}
-          />
-        </Center>
+        <Box component="figure" m={0} my={24}>
+          <Center>
+            <SmoothNextImage
+              src={value.cloudinaryurl}
+              alt={value.alt || caption || ''}
+              width={value.width}
+              height={value.height}
+            />
+          </Center>
+          {caption && (
+            <Text component="figcaption" ta="center" fz="sm" c="dimmed" mt={8}>
+              {caption}
+            </Text>
+          )}
+        </Box>
       );
     },
   },
@@ -66,7 +77,7 @@ export const blogComponents = {
     ),
     normal: ({ children }: { children?: any }) => {
       return (
-        <Text fz="xl" fw={400} pb={8}>
+        <Text fz="xl" fw={400} pb={16}>
           {children}
         </Text>
       );

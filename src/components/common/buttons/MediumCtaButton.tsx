@@ -1,20 +1,14 @@
-import { Button } from '@mantine/core';
 import { MediumLogo } from 'assets/icons/MediumLogo';
+import { RollingButton } from './RollingButton';
 
 export const MediumCtaButton = ({ mediumUrl }: { mediumUrl: string }) => {
   return (
-    <Button
-      variant="filled"
-      component="a"
-      size="lg"
+    <RollingButton
+      label="Read This Article on Medium"
       href={mediumUrl}
-      target="_blank"
-      leftSection={<MediumLogo size={25} />}
-      color="dark"
-      style={{ fontWeight: 500 }}
-      radius="md"
-    >
-      Read This Article on Medium
-    </Button>
+      external
+      icon={<MediumLogo size={20} />}
+      size="lg"
+    />
   );
 };

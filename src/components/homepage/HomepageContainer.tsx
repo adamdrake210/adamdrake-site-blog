@@ -8,6 +8,7 @@ import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
 import { SkillsBannerContainer } from 'components/skillsBanner/SkillsBannerContainer';
 import HomepageFeaturedMediumPosts from './HomepageFeaturedMediumPosts';
 import { BookTeaserCard } from './BookTeaserCard';
+import { HomepageMedriterBanner } from './HomepageMedriterBanner';
 
 export default function HomepageContainer() {
   return (
@@ -29,15 +30,19 @@ export default function HomepageContainer() {
         <HomepageFeaturedMediumPosts />
         <CustomDivider />
       </AnimateFadeIn>
+      <AnimateFadeIn>
+        <HomepageMedriterBanner />
+      </AnimateFadeIn>
+      <CustomDivider />
       {/* Skills Banner */}
       <AnimateFadeIn>
         <SkillsBannerContainer />
       </AnimateFadeIn>
-      {/* Strava Stats */}
-      <CustomDivider />
+      {/* TODO: Re-enable Strava stats once API connection is fixed */}
+      {/* <CustomDivider />
       <AnimateFadeIn>
         <MyStravaStats />
-      </AnimateFadeIn>
+      </AnimateFadeIn> */}
       {/* Social Media */}
       <CustomDivider />
       <SocialLinks />

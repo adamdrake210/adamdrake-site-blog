@@ -3,12 +3,13 @@ import {
   Box,
   Card,
   Flex,
-  Image,
   Text,
   Title,
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
+
+import { SmoothImage } from 'components/common/images/SmoothImage';
 import { motion } from 'framer-motion';
 import readingTime from 'reading-time';
 
@@ -54,7 +55,16 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
         })}
       >
         <Card.Section>
-          <Image src={imageUrl} height={170} alt={`Image for ${title}`}></Image>
+          {imageUrl ? (
+            <SmoothImage
+              src={imageUrl}
+              height={170}
+              alt={`Image for ${title}`}
+              sizes="(max-width: 600px) 100vw, (max-width: 747px) 50vw, 320px"
+            />
+          ) : (
+            <Box h={170} bg={colorScheme === 'dark' ? 'dark.5' : 'myColor.1'} />
+          )}
         </Card.Section>
 
         <Flex

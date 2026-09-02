@@ -4,13 +4,14 @@ import { Box, Center, Divider, Flex, Text, Title } from '@mantine/core';
 import { WrittenDate } from 'components/common/WrittenDate';
 import { AboutMe } from 'components/common/AboutMe';
 import { SocialShareBlogPost } from 'components/common/socialMedia/SocialShareBlogPost';
-import { SITE_DOMAIN } from 'constants/constants';
+import { BLOG_HEADER_IMAGE_WIDTH, SITE_DOMAIN } from 'constants/constants';
 import { Post } from 'types/types';
 import PageContainer from 'layouts/PageContainer';
 import PageSeo from 'components/common/PageSeo';
 import { blogComponents } from './blogComponents';
 import { MediumCtaButton } from 'components/common/buttons/MediumCtaButton';
 import { AnimateFadeIn } from 'components/common/animations/AnimateFadeIn';
+import { SmoothImage } from 'components/common/images/SmoothImage';
 import AboutMeBlurb from 'components/about/AboutMeBlurb';
 import { ReadingProgress } from './ReadingProgress';
 import { BlogLikeButton } from './BlogLikeButton';
@@ -29,9 +30,9 @@ export const BlogPost = ({ post }: Props) => {
           <Box px={16}>
             <PageSeo
               title={post.title}
-              description={post.description}
+              description={post.description || post.intro}
               imageUrl={post.headerimageurl}
-              publishedDate={post._updatedAt}
+              publishedDate={post._createdAt}
               url={`${SITE_DOMAIN}/blog/${post.slug}`}
             />
             <Flex
@@ -42,11 +43,7 @@ export const BlogPost = ({ post }: Props) => {
               justify="center"
               align="center"
               direction="column"
-              style={{
-                '@media (max-width: 600px)': {
-                  textAlign: 'center',
-                },
-              }}
+              ta={{ base: 'center', sm: 'left' }}
             >
               <Title order={1} fw={200}>
                 {post.title}
@@ -57,14 +54,18 @@ export const BlogPost = ({ post }: Props) => {
                 content={post.content}
               />
             </Flex>
-            <Box mb={24} maw={800}>
-              <img
-                src={post.headerimageurl}
-                alt={`Image of ${post.title}`}
-                width={'100%'}
-                height={'auto'}
-              />
-            </Box>
+            {post.headerimageurl && (
+              <Box mb={24}>
+                <SmoothImage
+                  src={post.headerimageurl}
+                  alt={`Image of ${post.title}`}
+                  radius="md"
+                  aspectRatio={16 / 9}
+                  sizes={`(max-width: 760px) 100vw, ${BLOG_HEADER_IMAGE_WIDTH}px`}
+                  priority
+                />
+              </Box>
+            )}
             {post.mediumurl && (
               <>
                 <Flex direction="column" gap={16}>

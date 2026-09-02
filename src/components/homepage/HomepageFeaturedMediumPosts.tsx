@@ -72,7 +72,7 @@ const HomepageFeaturedMediumPosts = ({}: Props) => {
           </Grid.Col>
         ))}
       </Grid>
-      <BlogButtons />
+      {/*<BlogButtons />*/}
     </Box>
   );
 };
