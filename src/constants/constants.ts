@@ -37,3 +37,9 @@ export const GITHUB_URL = 'https://github.com/adamdrake210';
 export const CONTACT_EMAIL = 'adamgedrake@gmail.com';
 
 export const CV_DOWNLOAD_URL = '/adam_drake_resume.pdf';
+
+// Usable width of the blog article column, in px: PageContainer's 760px maw
+// minus the two nested px={16} wrappers in BlogPost (760 - 16 * 4). Used to
+// tell next/image how wide an image actually renders, so it stops requesting
+// 2048px (or 3840px on retina) files for a ~700px slot.
+export const BLOG_CONTENT_WIDTH = 696;
