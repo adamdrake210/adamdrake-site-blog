@@ -17,7 +17,7 @@ export const HomepageMedriterBanner = () => {
   return (
     <Box component="section" w="100%" my={24}>
       <Grid gutter={32} align="center">
-        <Grid.Col span={{ base: 12, md: 5 }} order={{ base: 1, md: 2 }}>
+        <Grid.Col span={{ base: 12, md: 5 }} order={{ base: 1, md: 1 }}>
           <Box
             style={{
               overflow: 'hidden',
@@ -33,7 +33,7 @@ export const HomepageMedriterBanner = () => {
             />
           </Box>
         </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 7 }} order={{ base: 2, md: 1 }}>
+        <Grid.Col span={{ base: 12, md: 7 }} order={{ base: 2, md: 2 }}>
           <Title order={2} fz={{ base: 28, md: 40 }} mb={16}>
             I built a writing app
           </Title>
