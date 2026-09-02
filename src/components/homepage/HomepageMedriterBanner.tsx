@@ -9,9 +9,12 @@ import {
   MEDRITER_DETAILS,
   MEDRITER_IMAGE,
   MEDRITER_POST_SLUG,
-  MEDRITER_URL,
 } from 'constants/constants';
 import { BLOG_ROUTE } from 'constants/routeConstants';
+import { ga_event } from 'utils/gtag';
+import { medriterUrl } from 'utils/medriterUrl';
+
+const CAMPAIGN = 'homepage-banner';
 
 export const HomepageMedriterBanner = () => {
   return (
@@ -52,8 +55,15 @@ export const HomepageMedriterBanner = () => {
             />
             <RollingButton
               label="Get Medriter"
-              href={MEDRITER_URL}
+              href={medriterUrl(CAMPAIGN)}
               external
+              onClick={() =>
+                ga_event({
+                  action: 'outbound_click',
+                  category: 'medriter',
+                  label: CAMPAIGN,
+                })
+              }
               icon={<IconDownload size={20} />}
               size="lg"
             />

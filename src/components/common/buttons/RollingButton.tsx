@@ -59,6 +59,7 @@ export const RollingButton = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={onClick}
       >
         {content}
       </a>
@@ -67,7 +68,7 @@ export const RollingButton = ({
 
   if (href) {
     return (
-      <NextLink className={cls} href={href}>
+      <NextLink className={cls} href={href} onClick={onClick}>
         {content}
       </NextLink>
     );
