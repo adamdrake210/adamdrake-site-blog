@@ -62,7 +62,6 @@ export const BlogCard = ({ title, createdDate, content, imageUrl }: Props) => {
               alt={`Image for ${title}`}
             />
           ) : (
-            // Keep the card the same height as its neighbours in the grid.
             <Box h={170} bg={colorScheme === 'dark' ? 'dark.5' : 'myColor.1'} />
           )}
         </Card.Section>

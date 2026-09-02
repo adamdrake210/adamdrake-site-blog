@@ -19,8 +19,6 @@ const PageSeo: React.FC<Props> = ({
   url,
   author,
 }) => {
-  // Posts published without a header image would otherwise emit an
-  // og:image with an empty url, which breaks the social card.
   const images = imageUrl ? [{ url: imageUrl, alt: title }] : [];
 
   return (

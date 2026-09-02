@@ -8,11 +8,6 @@ type Props = {
   width?: string | number;
   height?: string | number;
   radius?: string | number;
-  /**
-   * Reserves space via CSS aspect-ratio before the image lands, so content
-   * below doesn't jump. Callers that crop to a fixed pixel height (BlogCard)
-   * should leave this unset and keep using `height`.
-   */
   aspectRatio?: number;
 };
 
@@ -27,9 +22,6 @@ export const SmoothImage = ({
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  // A missing src never fires onLoad, and a dead URL only fires onError —
-  // either way the Skeleton below would sit there as a grey box forever.
-  // Worth guarding: 36 posts hotlink miro.medium.com, which rotates URLs.
   if (!src || failed) return null;
 
   return (
